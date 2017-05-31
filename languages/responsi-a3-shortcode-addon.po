@@ -1,0 +1,436 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Responsi bbPress Addon\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-09 16:29+0700\n"
+"PO-Revision-Date: 2015-11-09 16:29+0700\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en_GB\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-Basepath: ../\n"
+"X-Textdomain-Support: yes\n"
+"X-Generator: Poedit 1.6.9\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: admin/responsi-a3-shortcode-addon-admin.php:58
+msgid "Responsi Shortcode Customize Menu"
+msgstr ""
+
+#: customize/customize.php:62
+msgid "Responsi Shortcode"
+msgstr ""
+
+#: customize/customize.php:76
+msgid "Settings"
+msgstr ""
+
+#: customize/customize.php:82
+msgid "Icons"
+msgstr ""
+
+#: customize/customize.php:88
+msgid "Flip Boxes"
+msgstr ""
+
+#: customize/customize.php:94
+msgid "Full Width Sections"
+msgstr ""
+
+#: customize/customize.php:100
+msgid "Tabs"
+msgstr ""
+
+#: customize/customize.php:127
+msgid "WordPress [HR] Tags"
+msgstr ""
+
+#: customize/customize.php:141
+msgid "HR Line Colour"
+msgstr ""
+
+#: customize/customize.php:158
+msgid "WordPress Quote Tags"
+msgstr ""
+
+#: customize/customize.php:159
+msgid "WordPress Blockquote and Shortcode Quote Icon"
+msgstr ""
+
+#: customize/customize.php:172
+msgid "Quotation Icon"
+msgstr ""
+
+#: customize/customize.php:189
+msgid "Quote Icon Colour"
+msgstr ""
+
+#: customize/customize.php:206
+msgid "Shortcode Quote Boxed Background"
+msgstr ""
+
+#: customize/customize.php:220
+msgid "Shortcode Quote Boxed Display"
+msgstr ""
+
+#: customize/customize.php:237
+msgid "Quote Background Colour"
+msgstr ""
+
+#: customize/customize.php:254
+msgid "Quote Border - Top"
+msgstr ""
+
+#: customize/customize.php:255 customize/customize.php:276
+#: customize/customize.php:297 customize/customize.php:429
+#: customize/customize.php:626 customize/customize.php:742
+#: customize/customize.php:814 customize/customize.php:910
+#: customize/customize.php:1007 customize/customize.php:1028
+#: customize/customize.php:1049 customize/customize.php:1070
+#: customize/customize.php:1413 customize/customize.php:1434
+#: customize/customize.php:1455 customize/customize.php:1476
+msgid "No Border = 0px."
+msgstr ""
+
+#: customize/customize.php:275
+msgid "Quote Border - Bottom"
+msgstr ""
+
+#: customize/customize.php:296
+msgid "Quote Border - Left and Right"
+msgstr ""
+
+#: customize/customize.php:317
+msgid "Quote Border Corner Style"
+msgstr ""
+
+#: customize/customize.php:318
+msgid ""
+"Rounded - Move slider right to increase the px value (rounded corner "
+"effect), left to decrease. Applies to all 4 corners."
+msgstr ""
+
+#: customize/customize.php:337
+msgid "Quote Border Shadow  "
+msgstr ""
+
+#: customize/customize.php:362
+msgid "Shortcode Icons Default Style"
+msgstr ""
+
+#: customize/customize.php:363
+msgid ""
+"<strong>Conditionals:</strong><br/>1. Set a Default style for the 592 Font "
+"Awesome icons that can be inserted by shortcode.<br/>2. Default style can be "
+"customized for each individual icon when inserting it by shortcode.<br/>3. "
+"Changing the Font Awesome default style updates all icons that have been "
+"embedded using the default style.<br/>4. Changing the Font Awesome default "
+"style does not affect icons inserted with a custom style.<br/>5. Default "
+"style created here applies to Unorder List Icons shortcode."
+msgstr ""
+
+#: customize/customize.php:376
+msgid "Icon Default Size"
+msgstr ""
+
+#: customize/customize.php:394
+msgid "Icon Default Colour"
+msgstr ""
+
+#: customize/customize.php:411
+msgid "Icon Default Background Colour"
+msgstr ""
+
+#: customize/customize.php:412
+msgid ""
+"For no colour replace the Hex # (e.g #000000) with the word - transparent"
+msgstr ""
+
+#: customize/customize.php:428
+msgid "Icon Background Border"
+msgstr ""
+
+#: customize/customize.php:449
+msgid "Border Corner Style"
+msgstr ""
+
+#: customize/customize.php:450 customize/customize.php:647
+#: customize/customize.php:763
+msgid ""
+"Use the slider to apply round to Border Corners. 0 = Square. Set at max 100 "
+"= Circle."
+msgstr ""
+
+#: customize/customize.php:469
+msgid "Shadow Effect"
+msgstr ""
+
+#: customize/customize.php:494
+msgid "Internal Border Padding"
+msgstr ""
+
+#: customize/customize.php:495 customize/customize.php:523
+#: customize/customize.php:886 customize/customize.php:1188
+#: customize/customize.php:1233 customize/customize.php:1594
+#: customize/customize.php:1639
+msgid "Numeric px vales ex. 10 = 10px."
+msgstr ""
+
+#: customize/customize.php:522
+msgid "External Border Margin"
+msgstr ""
+
+#: customize/customize.php:550
+msgid "Shortcode Flip Boxes Front Side Default Style"
+msgstr ""
+
+#: customize/customize.php:564
+msgid "Flip Box Background Color Frontside"
+msgstr ""
+
+#: customize/customize.php:565
+msgid "Controls the color of frontside background color."
+msgstr ""
+
+#: customize/customize.php:581
+msgid "Flip Box Heading Font Frontside"
+msgstr ""
+
+#: customize/customize.php:603
+msgid "Flip Box Text Font Frontside"
+msgstr ""
+
+#: customize/customize.php:625 customize/customize.php:741
+msgid "Flip Box Border"
+msgstr ""
+
+#: customize/customize.php:646 customize/customize.php:762
+msgid "Flip Box Border Corner Style"
+msgstr ""
+
+#: customize/customize.php:666
+msgid "Shortcode Flip Boxes Back Side Default Style"
+msgstr ""
+
+#: customize/customize.php:680
+msgid "Flip Box Background Color Backside"
+msgstr ""
+
+#: customize/customize.php:681
+msgid "Controls the color of backside background color."
+msgstr ""
+
+#: customize/customize.php:697
+msgid "Flip Box Heading Font Backside"
+msgstr ""
+
+#: customize/customize.php:719
+msgid "Flip Box Text Font Backside"
+msgstr ""
+
+#: customize/customize.php:782
+msgid "Shortcode Full Width Section Default Style"
+msgstr ""
+
+#: customize/customize.php:783
+msgid ""
+"Conditionals:<br>1. Use with Full Width 100% page template to create full "
+"width sections that span the entire width of your browser window, or keep "
+"content contained inside a set px width. Add section background images, "
+"borders, colours, padding, positioning and content with the shortcode<br>2. "
+"Use with Posts and Pages to create custom full content width sections (not "
+"edge to edge of the browser screen)<br>3. The settings below are default "
+"settings. All can be edited from the Full Content Section insert shortcode "
+"pop-up settings."
+msgstr ""
+
+#: customize/customize.php:796
+msgid "Full Width Section Background Colour"
+msgstr ""
+
+#: customize/customize.php:797
+msgid "Default Full Width Section Background colour."
+msgstr ""
+
+#: customize/customize.php:813
+msgid "Full Width Section Top and Bottom Borders"
+msgstr ""
+
+#: customize/customize.php:834
+msgid "Default Interior Content Width"
+msgstr ""
+
+#: customize/customize.php:835
+msgid ""
+"Default Interior Content Width in px if the Interior Content Width option is "
+"used for the Full Width Section."
+msgstr ""
+
+#: customize/customize.php:854
+msgid "Tabs Style"
+msgstr ""
+
+#: customize/customize.php:868
+msgid "Container Margin"
+msgstr ""
+
+#: customize/customize.php:885 customize/customize.php:1232
+msgid "Margin"
+msgstr ""
+
+#: customize/customize.php:909
+msgid "Tabs Border"
+msgstr ""
+
+#: customize/customize.php:930
+msgid "Tabs Corner"
+msgstr ""
+
+#: customize/customize.php:950
+msgid "Tabs Font"
+msgstr ""
+
+#: customize/customize.php:972
+msgid "Icon Colour"
+msgstr ""
+
+#: customize/customize.php:989 customize/customize.php:1291
+msgid "Background Colour"
+msgstr ""
+
+#: customize/customize.php:1006 customize/customize.php:1412
+msgid "Border Top"
+msgstr ""
+
+#: customize/customize.php:1027 customize/customize.php:1433
+msgid "Border Bottom"
+msgstr ""
+
+#: customize/customize.php:1048 customize/customize.php:1454
+msgid "Border Left"
+msgstr ""
+
+#: customize/customize.php:1069 customize/customize.php:1475
+msgid "Border Right"
+msgstr ""
+
+#: customize/customize.php:1090 customize/customize.php:1496
+msgid "Corner Top/Left"
+msgstr ""
+
+#: customize/customize.php:1110 customize/customize.php:1516
+msgid "Corner Top/Right"
+msgstr ""
+
+#: customize/customize.php:1130 customize/customize.php:1536
+msgid "Corner Bottom/Left"
+msgstr ""
+
+#: customize/customize.php:1150 customize/customize.php:1556
+msgid "Corner Bottom/Right"
+msgstr ""
+
+#: customize/customize.php:1170
+msgid "Tabs Padding"
+msgstr ""
+
+#: customize/customize.php:1187 customize/customize.php:1593
+msgid "Padding"
+msgstr ""
+
+#: customize/customize.php:1215
+msgid "Tabs Margin"
+msgstr ""
+
+#: customize/customize.php:1260
+msgid "Tabs Inactive Style"
+msgstr ""
+
+#: customize/customize.php:1274
+msgid "Font Colour"
+msgstr ""
+
+#: customize/customize.php:1308
+msgid "Border Top Colour"
+msgstr ""
+
+#: customize/customize.php:1325
+msgid "Border Bottom Colour"
+msgstr ""
+
+#: customize/customize.php:1342
+msgid "Border Left Colour"
+msgstr ""
+
+#: customize/customize.php:1359
+msgid "Border Right Colour"
+msgstr ""
+
+#: customize/customize.php:1376
+msgid "Content Tabs Style"
+msgstr ""
+
+#: customize/customize.php:1390
+msgid "Font"
+msgstr ""
+
+#: customize/customize.php:1576
+msgid "Tabs Content Padding"
+msgstr ""
+
+#: customize/customize.php:1621 customize/customize.php:1638
+msgid "Tabs Content Margin"
+msgstr ""
+
+#: responsi-a3-shortcode.php:41
+#, php-format
+msgid ""
+"This is a plugin for Responsi Framework, you need to install <a href=\"%s\" "
+"target=\"_blank\">Responsi Framework</a> theme from WordPress first before "
+"can activate this."
+msgstr ""
+
+#: responsi-a3-shortcode.php:45
+#, php-format
+msgid ""
+"This is a plugin for Responsi Framework from version 5.3.0 or higher, you "
+"need to upgrade to latest version of <a href=\"%s\" target=\"_blank"
+"\">Responsi Framework</a>."
+msgstr ""
+
+#: responsi-a3-shortcode.php:49
+#, php-format
+msgid ""
+"You need to install <a href=\"%s\" target=\"_blank\">Responsi Premium "
+"Package</a> plugin from <a href=\"%s\" target=\"_blank\">a3rev</a> first and "
+"activate it before can activate this plugin."
+msgstr ""
+
+#: shortcodes/js/open-dialog-button.php:61
+#: shortcodes/js/open-dialog-columns.php:45
+#: shortcodes/js/open-dialog-divider.php:60
+#: shortcodes/js/open-dialog-flipboxes.php:57
+#: shortcodes/js/open-dialog-fullwidth.php:53
+#: shortcodes/js/open-dialog-icons.php:60
+#: shortcodes/js/open-dialog-infobox.php:60
+#: shortcodes/js/open-dialog-list-generator.php:60
+#: shortcodes/js/open-dialog-social-links.php:60
+#: shortcodes/js/open-dialog-tabs.php:112
+#: shortcodes/js/open-dialog-toggles.php:45
+#: shortcodes/js/open-dialog-typography.php:60
+#: shortcodes/js/open-dialog.php:43
+#, php-format
+msgid ""
+"Customize the default <i class=\"mce-ico mce-i-awesome shortcode-icon-%s\"></"
+"i> Shortcode style [<a href=\"%s\" target=\"_blank\">create here</a>]"
+msgstr ""
+
+#: upgrade/plugin_upgrade.php:40
+msgid "Error: "
+msgstr ""

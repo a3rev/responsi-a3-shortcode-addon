@@ -1,0 +1,339 @@
+*** Responsi Shortcodes Changelog ***
+
+= 2.8.2 - 2017/05/31 =
+* Tweak - Luanched the plugin on its own Github private repo
+* Fix - Remove iPhone checkbox script that was loading inside plugins setting pages breaking the width of the options switcher
+
+= 2.8.1 - 2017/05/24 =
+* Tweak - Tested for compatibility with WordPress 4.7.5
+* Fix - Update shortcode Insert Button function for latest version of jQuery to solve insert shortcode failing
+
+= 2.8.0 - 2017/04/22 =
+* Tweak - Tested for full compatibility with WordPress 4.7.4
+* Tweak - Tested for full compatibility with WooCommerce 3.0.4
+* Fix - Remove get_users on filter-responsi-template-developer to remove duplicate queries when developer plugin admin menu is opened in browser
+
+= 2.7.9.1 - 2017/03/27 =
+* Fix - Button shortcode color conflicting with Responsi Header Extender Plugin Style
+
+= 2.7.9 - 2016/12/23 =
+* Tweak - Remove encryp.inc file – no longer required
+* Tweak – Activation permissions and auto updates now handled via the a3rev Dashboard plugin
+* Fix - Remove all Premium Pack License key code. Plugin could not be activated and used as it was checking for Premium Key that no longer exists.
+
+= 2.7.8 - 2016/12/06 =
+* Fix - Shortcode columns conflict with Developer plugin minify css. Shortcode columns where not breaking down in mobiles
+
+= 2.7.7 - 2016/12/01 =
+* Tweak - Update Google fonts lib to latest version for full compatibility with Responsi Framework version 6.5.9.6 
+* Tweak - Tested for full compatibility with Responsi Framework version 6.5.9.6
+* Tweak - Tested for full compatibility with WordPress major version 4.7.0 RC1
+
+= 2.7.6 - 2016/11/22 =
+* Tweak - Added responsi_remove_wpautop_shortcode() function , removed from framework and added here
+* Tweak - Added add_filter( 'widget_text', 'do_shortcode' ) , removed from framework and added here
+* Tweak - Compile less mincss to inline style compatibility with Responsi Framework version 6.5.9.4 
+* Tweak - Tested for full compatibility with Responsi Framework major version 6.5.9.4
+* Tweak - Tested for full compatibility with WordPress major version 4.7.0
+
+= 2.7.5 - 2016/11/08 =
+* Fix - Shortcode not getting attribute google fonts face and not showing the chosen font
+
+= 2.7.4 - 2016/10/27 =
+* Tweak - Remove query string css shortcode
+
+= 2.7.3 - 2016/10/26 =
+* Tweak - Function compatibility with Responsi Framework version 6.5.7
+* Tweak - Tested for full compatibility with Responsi Framework major version 6.5.7
+* Fix - PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP
+
+= 2.7.2 - 2016/10/19 =
+* Fix - Insert Shortcode from pop-up not adding the shortcode into content in Responsi version 6.5.6
+
+= 2.7.1 - 2016/10/11 =
+* Tweak – Change customize options from theme_mod type to option type
+* Tweak - Change all ID Class prefixing in structure html from a3rev- to responsi- 
+* Tweak - Tested for full compatibility with Responsi Framework major version 6.5.6
+* Tweak - Tested for full compatibility with WordPress version 4.6.1 with this version
+* Tweak - Tested for full compatibility with PHP 7.0 with this version
+
+= 2.7.0 - 2016/09/22 =
+* Tweak - Tested for full compatibility with WordPress Multi Site
+* Tweak - Version jumped to 2.7.0 but not a feature release version. Previous version was 2.6.9 so need to jump
+* Fix - Change ajax XMLHttpRequest from external too internal as it was being blocked and preventing the shortcode pop up from opening
+* Credit - Thanks to James Arkle for notifying us about the shortcode pop up bug
+
+= 2.6.9 - 2016/09/15 =
+* Tweak - Change custom options to theme_mods function of Responsi Framework version 6.5.5
+* Tweak - Change function general dynamic style from SASS and LESS less compiler to use minify CSS function released in Responis Framework version 6.5.5
+* Tweak - Tested for full compatibility with Responsi Framework major version 6.5.5
+* Tweak - Tested for full compatibility with WordPress version 4.6.1
+* Tweak - Tested for full compatibility with PHP 7.0
+
+= 2.6.8 - 2016/08/24 =
+* Tweak - Major code review and rewrite to improve Customizer menu and site preview load times
+* Tweak - Review and rewrite all Customizer Preview JavaScripts to make them smaller for faster load in customizer
+* Tweak - Review and tidy up customizer HTML. Removed unnecessary white space and some style inline in control for faster load
+* Tweak - Tested for full compatibility with Responsi Framework major version 6.5.3
+* Tweak - tested for full compatibility with WordPress version 4.6.0
+
+= 2.6.7 - 2016/08/16 =
+* Tweak - Full compatibility with Responsi Developer version 1.5.0 new features
+* Tweak - Tested for full compatibility with Responsi Framework major version 6.5.1
+* Tweak - Tested for full compatibility with upcoming Major WordPress version 4.6
+
+= 2.6.6 - 2016/04/29 =
+* Tweak - Tested for full compatibility with Responsi Framework version 6.3.1
+* Tweak - Tested for full compatibility with WordPress version 4.5.1
+* Tweak - Remove function to check for Responsi Framework version 5.3.0 or greater
+* Fix - add_addon_style_css() function add style compatibility CSS validate.
+
+= 2.6.5 - 2016/04/12 =
+* Tweak - Changes to the Term Edit Page work with WordPress 4.5
+* Tweak - Tested for full compatibility with WordPress version 4.5
+* Tweak - Tested for full compatibility with Responsi Framework major version 6.0.0
+
+= 2.6.4 - 2016/04/05 =
+* Fix - Shortcode Button Alignment, Wrap and No Wrap options
+
+= 2.6.3 - 2016/03/21 =
+* Fix - shortcode.css break line issue causing columns to show in 1 column
+
+= 2.6.2 - 2016/03/18 =
+* Tweak - Apply Dynamic Vertical Gutter width percentage feature from Responsi Framework Major v 5.7.0 to gutter between column shortcode
+* Tweak - Tested for full compatibility with Responsi major version 5.7.0
+
+= 2.6.1 - 2016/03/09 =
+* Tweak - Tested for full compatibility with Responsi Framework version 5.6.1
+* Fix -  Columns Shortcode container alignment breaking to a single column due to a conflict with Responsi Home Page Builder plugin
+
+= 2.6.0 - 2016/02/03 =
+* Feature - Add full support for font line height to all font editors. Set line height as em
+* Tweak - Remove fixed px font editor line height
+* Tweak - Add addon_save_options() function to support child theme overrides default options.
+* Tweak - Tested for full compatibility with Responsi Framework version 5.5.0
+* Tweak - Tested for full compatibility with WordPress version 4.4.2
+* Fix - Add responsi-clearfix {clear: both;} so that shortcode does not overlap page bottom borders
+
+= 2.5.1 - 2016/01/20 =
+* Fix - Background color not working on Flipbox.
+
+= 2.5.0 - 2016/01/05 =
+* Feature - Update all Background Color options to new ON | OFF control. This replaces user having to type transparent for no background colour which is a much better UX
+* Tweak - Tested for full compatibility with Responsi v5.3.6
+
+= 2.4.2 - 2015/12/21 =
+* Tweak - Tested for full compatibility with WordPress major version 4.4
+* Tweak - Tested for full compatibility with Responsi Framework version 5.3.4
+* Tweak - Removed force_ssl_login() deprecated in WordPress 4.4
+* Tweak - Update text or re-sort options on customizer menus
+* Fix - Default Tabs Options missing on Popup Shortcode
+
+= 2.4.1 - 2015/12/01 =
+* Tweak - Tested for full compatibility with Responsi v5.3.2
+* Fix - Change all customize default options to fix customizer loading the wrong default options
+
+= 2.4.0 - 2015/11/09 =
+* Feature - Added full integration of the plugins admin options with WordPress Version 4.3 Customizer
+* Feature - Add all Shortcode controls to WordPress customizer menu using js.underscore control templates
+* Feature - Added support for insert shortcode from button on text editor in the customizer
+* Feature - Plugin can now only be activated by installing the Responsi Premium Pack plugin.
+* Tweak - Removed Responsi shortcodes custom menu from Responsi Menu - shortcode options accessible from the WordPress Customizer menu
+* Tweak - Change plugin name from Responsi a3 Shortcode Addon to Responsi Shortcodes
+* Tweak - When install and activated the plugin redirects admin to the WordPress Customizer menu
+* Tweak - Change Text Domain of plugin to Plugin slug
+* Tweak - Added Text Domain and Domain Path to the plugin header
+* Tweak - Change file name of languages files inside /languages/ folder from 'responsi_a3_shortcode' to 'responsi-a3-shortcode-addon' 
+* Tweak - Upgraded for full compatibility with Responsi Framework Version 5.3.0
+* Tweak - Upgraded for full compatibility with Responsi Premium Pack Version 1.0.0
+
+= 2.3.8 - 2015/09/17 =
+* Tweak - Upgraded for full compatibility with Responsi Framework Version 5.2.2
+* Tweak - Tweak and tested for full compatibility with WordPress 4.3.1
+* Fix - Various bugs when switching theme in the WordPress Customizer
+* Fix - Added fallback cron job schedule to fix License Key deactivation bug that occurs when call to server returns null for server name when checking key status for auto Maintenance and Feature upgrades
+* Fix - Change timeout of call to a3API for updates from 45 seconds to 8 seconds to resolve the server PHP timeout 30 seconds default. Server timeout before call finish was causing the 24 hour cron call not to be set and causing the dashboard to load slowly if a3API is not reachable.
+* Fix - Set 24 hours cron before call to a3API so that if have fail to connection then it will call in 24 hours on Cron instead of continue call each time Dashboard is loaded
+* Fix - validate the response from called to resolve PHP notice 'Undefined offset: 1'
+
+= 2.3.7 - 2015/07/30 =
+* Fix - Button shortcode was breaking when make an icon for the button
+
+= 2.3.6 - 2015/06/30 =
+* Tweak - Added WordPress horizontal rule and Quotes dynamic CSS settings to plugin under General settings
+* Tweak - Changed the insert shortcode icon colour from green to orange colour
+* Tweak - Tested for full compatibility with Responsi Framework version 5.0.0
+
+= 2.3.5 - 2015/06/24 =
+* Tweak - Upgraded for full compatibility with Responsi Framework Version 4.9.0
+* Tweak - Moved logical js from framework to plugin.
+* Dev - Convert Sass Global .less to simplify compiling style sheet edits
+
+= 2.3.4 - 2015/06/11 =
+* Tweak - Tested for full compatibility with Responsi Version 4.8.0
+* Fix - Shortcode unordered list icon bug when used to create content inside of Tabs created by tab shortcode.
+
+= 2.3.3 - 2015/06/11 =
+* Tweak - Upgraded for full compatibility with Responsi Framework Version 4.7.0
+* Tweak - Security Hardening. Removed all php file_put_contents functions in the Framework and replace with the WP_Filesystem API
+* Tweak - Security Hardening. Removed all php file_get_contents functions in the Framework and replace with the WP_Filesystem API
+* Tweak - Moved PHP variable out of Translation
+* Tweak - Remove Unknown property '-moz-border-radius'. Declaration dropped in Firefox browser
+* Tweak - Remove Unknown property '-moz-box-shadow'. Declaration dropped in Firefox browser.
+
+= 2.3.2 - 2015/06/05 =
+* Fix - Added missing style shortcode-icon css when we removed shortcode on framework in version 4.6.3
+
+= 2.3.1 - 2015/06/02 =
+* Tweak - Add CSS for popup shortcode addon, was using CSS class from framework. All shortcode removed from framework in v 4.6.3
+
+= 2.3.0 - 2015/05/27 =
+* Feature - Added Social Links Shortcode
+* Feature - 121 Social font awesome icons to choose from
+* Feature - Set icon colour and size.
+* Feature - Add any URL link to the icon
+* Feature - Option to open link in same window or new window
+* Feature - Full icon background and border settings - create square or circle background or anything in between.
+
+= 2.2.0 - 2015/05/25 =
+* Feature - Added Tabs shortcode
+* Feature - Set default tabs style from Shortcodes Tabs admin panel.
+* Feature - Select Default style in pop up menu and just add content
+* Feature - Select Custom and Tweak any default tabs style setting.
+* Feature - Select Horizontal or Vertical tabs display.
+* Feature - Option for normal or Justified (full width of content) Tabs in horizontal layout
+* Feature - Vertical tabs support dynamic width setting - 15 to 30 percent of the content wide.
+* Feature - Option to add a font awesome icon to tab.
+* Feature - Added new accordion feature for pop up Section titles. Show and hide settings as required.
+
+= 2.1.0 - 2015/05/18 =
+* Feature - Added Toggles shortcode
+* Feature - Added Toggle Icon / Title Size, colour and active colour settings
+* Feature - Added ability to set margin above and below the toggle shortcode insert
+* Feature - Added Title, Content and Container margin and padding for advanced design layout of each toggle box.
+* Feature - Container background colour, border and border corner settings for each toggle box.
+
+= 2.0.1 - 2015/05/14 =
+* Tweak - Shortcode insert button now shows on the WordPress text editor on WordPress Category and Tag taxonomy and custom Taxonomies.
+
+= 2.0.0 - 2015/05/13 =
+* Feature - Added info Boxes shortcode.
+* Feature - Added option to use font awesome icons with the info box.
+* Feature - Added vertical icon alignment options, Top and Center
+* Feature - Added box border style, shadow, padding and margin settings
+* Tweak - Moved info Boxes shortcode from Framework to shortcode add-on in the info boxes menu section
+* Fix - Column shortcode CSS not applying resulting in columns breaking.
+* Fix - Topography - Quotes Text Colour not applying - was being over ridden by the icon colour.
+
+= 1.9.0 - 2015/05/11 =
+* Feature - Added Dividers shortcode.
+* Feature - Added option to use icons with Dividers
+* Tweak - Moved Dividers shortcode from Framework to shortcode add-on in the Dividers menu section.
+
+= 1.8.0 - 2015/05/09 =
+* Feature - Added Button shortcode.
+* Feature - Added button icon option.
+
+= 1.7.0 - 2015/05/06 =
+* Feature - Added Typography shortcode.
+* Feature - Added Section Heading to list of Topography shortcodes
+* Tweak - Moved Quotation shortcode from Framework to shortcode add-on in the topography section.
+* Fix - Shortcode CSS style and JavaScript not loading when using the Responsi Home Page Builder to create home page.
+
+= 1.6.1 - 2015/04/28 =
+* Tweak - Change Icon size style from Slider to select type on Icons admin panel
+* Tweak - Add icon px size for Small, Medium and Large settings for clarity
+* Fix - Icons shortcode OFF or value = 0px embed synching. No shortcode is embedded for any feature that is turned OFF
+* Fix - Top and bottom margin not being applied to icons.
+
+= 1.6.0 - 2015/04/27 =
+* Feature - Added List General. Ordered List & Unordered List Shortcode.
+* Feature - Added Static Rotate and Flip on Axis option for Unordered List icon and image.
+* Feature - Added CSS3 animations effects for Unordered List Icon and image.
+* Tweak - Upgraded Font Awesome to new version that has 592 icons. Old version support just 361 icons.
+* Tweak - Updated Shortcode Icons admin panel Conditionals text.
+
+= 1.5.0 - 2015/04/21 =
+* Feature - Full intergration into Shortcodes pop-up menu. Major overhaul of the pop-up UI with smart logic ON | OFF switches
+* Feature - Now supports option to use custom image icon instead of a font awesome icon.
+* Feature - Added Static Rotate and Flip on Axis option for icon and image.
+* Feature - Added CSS3 animations effects for Icon and image.
+* Feature - Icons shortcode ON | OFF embed synching. No shortcode is embedded for any feature that is turned OFF.
+* Feature - Added support for interface border corner style editor in pop-up, same as Framework
+* Tweak - Update awesome icons to the lastest version.
+* Tweak - Big UX improvement. Added ON | OFF settings throughout the pop-up menus. OFF and you don't see the settings.
+* Tweak - When a setting is OFF its shortcode is not embedded. Huge reduction in code that is embedded in the visual editor.
+* Tweak - Tested and Tweaked for full compatibility with WordPress Version 4.2.0
+* Tweak - Tested and Tweaked for full compatibility with Responsi Framework version 4.5.4
+* Fix - Flip Box images. Added image scaling so that images resize with the Flip box container in smaller screens.
+
+= 1.4.2 - 2015/04/16 =
+* Feature - Add Self Hosted Video as background. If add content it will show on top of the Video.
+* Tweak - Big UX improvement. Added ON | OFF settings throughout the pop-up menus. OFF and you don't see the settings.
+* Tweak - When a setting is OFF its shortcode is not embedded. Huge reduction in code that is embedded in the visual editor.
+* Tweak - Columns shortcode pop up - major overhaul of the pop-up UI with smart logic ON | OFF switches
+* Tweak - Full Width Section shortcode pop up - major overhaul of the pop-up UI with smart logic ON | OFF switches. Complete resort of menu.
+* Fix - js conflict causing Icon shortcode front end images not showing.
+* Fix - Full Width Section, Fading Animation fading background effect.
+* Fix - Full Width Section, Self-Hosted Video overlay colour background.
+
+= 1.4.1 - 2015/04/11 =
+* Feature - Flip Box shortcode ON | OFF embed synching. No shortcode is embedded for any feature that is turned OFF.
+* Tweak - Big UX improvement. Potentially huge reduction in code that is embedded in the visual editor.
+
+= 1.4.0 - 2015/04/10 =
+* Feature - Flip Box - Added option to set custom Icon sizes. Icon size was fixed size before.
+* Feature - Flip Box - Added option to set custom padding between icon and circle border. Padding was fixed amount before.
+* Feature - Flip Box - Added Spin Animation effect speed setting. Option to set a full revolution to take from 1 to 30 in 1 second increments.
+* Feature - Flip Box - Added option to display image with auto created circular border.
+* Tweak - Flip Box - Moved Flip and Rotate settings into new Axis Position (Static) section with ON | OFF smart logic switches.
+* Tweak - Flip Box - Moved Spin and Animation settings into new Dynamic Effect section with ON | OFF smart logic switches.
+* Tweak - Flip Box pop-up added Container Margin ON | OFF switch
+* Tweak - Flip Box pop-up added create HTML Wrapper section with ON | OFF switch
+* Tweak - Flip Box pop-up added create Icon Size and Style section
+* Tweak - Flip Box - lots of text changes on the pop-up
+* Fix - All Animations now work when applied to Icons and Image
+
+= 1.3.0 - 2015/04/07 =
+* Feature - Added support for interface fonts style editor in pop-up, same as framework
+* Feature - Added support for interface border style editor in pop-up, same as framework
+* Feature - Added support for ON | OFF switchers in pop-up, same as the framework
+* Feature - Added smart logic settings when an option is turned ON - hide when OFF settings for pop-up, same as framework
+* Tweak - Moved shortcode  js and css from loading in the header to footer. Only load page, post or widgets use shortcode.
+
+= 1.2.0 - 2015/03/31 =
+* Feature - Added new Columns shortcode
+* Feature - Column shortcode supports 1 to 6 column layout including staggered column layout (not all equal size)
+* Feature - Column shortcode Layout spacing option between columns and margin settings for above and below column row.
+* Feature - Column shortcode Container background colour settings plus container border size, style and colour options.
+* Feature - Column shortcode Container Background image ON | OFF option. ON to upload image, with repeat and position settings.
+* Feature - Column shortcode Container Content padding, top, bottom, left and right
+* Feature - Column shortcode Container Wrapping HTML Elements quick add options.
+
+= 1.1.1 - 2015/03/25 =
+* Tweak - Shortcode pop-up upload image change button text from Insert into page to Use this image
+* Fix - CSS stle for full width container not applying with apply max width setting
+* Fix - Call general options when updrade plugin version to fix Warning: Illegal string offset 'color' error
+
+= 1.1.0 - 2015/03/24 =
+* Feature - Major Shortcode Add-on feature release - Full Width Sections.
+* Feature - Use with Width 100% page template to create full width sections that span edge to edge of the browser window
+* Feature - Customize each sections background colour or upload a background image with Repeat, Position, Attachment and animation settings.
+* Feature - Section container border size, style, colour, padding and margin settings.
+* Feature - Set to display a custom wide content area in px within the Full Width section.
+* Feature - Use in Post, Pages or Text widgets to create a Full Width Section within the Content or widget.
+* Feature - Option to set shortcode columns at a fixed height.
+* Feature - Insert 100% width self-hosted mp4, WebM or OGV videos.
+* Feature - Self hosted video display settings, add Preview Image, Overlay Colour, Opacity, Mute and Loop settings
+* Fix - Fixed margin padding for Flip Boxes shortcode.
+
+= 1.0.1 - 2015/03/20 =
+* Fix - JavaScript media uploader conflict with WordPress media uploader that was blocking insert images into posts and pages.
+* Credit - Thanks to Kaitlyn from Wynnum Seagulls for reporting the issue.
+
+= 1.0.0 - 2015/03/16 =
+* Initial Release - Commit Plugins source code to a3rev Github repository.
+* Initial Release - Add Responsi License key and configure with Responsi License with a3API
+* Initial Release - Commit Plugin to Amazon Cloud storage for download.
+* Manual Install - Manually install on all existing sites to replace Responsi a3 Icons plugin that has been merged into this plugin.
+* Manual Install - Deactivate and Delete Responsi a3 Icon plugin from all existing sites.
