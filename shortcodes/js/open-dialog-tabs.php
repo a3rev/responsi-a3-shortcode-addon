@@ -102,7 +102,7 @@ if($default_options['responsi_sc_tab_backgroundcoloractive']['onoff'] == 'true')
 </head>
 <body>
 <div id="responsi-dialog">
-<input type="hidden" id="icon_type" name="icon_type" value="<?php echo $_GET['icon_type'];?>" >
+<input type="hidden" id="icon_type" name="icon_type" value="<?php echo $_REQUEST['icon_type'];?>" >
 <div id="responsi-options-buttons" class="clear_fix">
 	<div class="alignleft">
 	    <input type="button" id="responsi-btn-cancel" class="button" name="cancel" value="Cancel" accesskey="C" />
@@ -115,13 +115,13 @@ if($default_options['responsi_sc_tab_backgroundcoloractive']['onoff'] == 'true')
 
 <div id="responsi-options" class="shortcode-popup-container align_left">
 	<?php
-	if( 'false' != $_GET['icon_type']){
+	if( 'false' != $_REQUEST['icon_type']){
 	?>
-    	<h3><?php echo sprintf(__( 'Customize the default <i class="mce-ico mce-i-awesome shortcode-icon-%s"></i> Shortcode style [<a href="%s" target="_blank">create here</a>]', 'responsi_a3_shortcode' ), $_GET['icon_type'], admin_url( 'admin.php?page=responsithemes_a3_shortcode' )); ?></h3>
+    	<h3><?php echo sprintf(__( 'Customize the default <i class="mce-ico mce-i-awesome shortcode-icon-%s"></i> Shortcode style [<a href="%s" target="_blank">create here</a>]', 'responsi_a3_shortcode' ), $_REQUEST['icon_type'], admin_url( 'admin.php?page=responsithemes_a3_shortcode' )); ?></h3>
     <?php
     }else{
     	?>
-	    <h3><?php echo $_GET['title'];?> Shortcode</h3>
+	    <h3><?php echo $_REQUEST['title'];?> Shortcode</h3>
 	    <?php
     }
 	?>

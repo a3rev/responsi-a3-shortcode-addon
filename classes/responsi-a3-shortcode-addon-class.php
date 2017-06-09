@@ -360,7 +360,11 @@ class Responsi_A3_Shortcode_Addon {
 
 	public function customize_preview_inline_style(){
 		if ( is_customize_preview() ) {
-			wp_add_inline_style( 'customize-preview', $this->responsi_build_dynamic_css( true ) );
+			if( is_child_theme() ){
+				wp_add_inline_style( 'responsi-theme', $this->responsi_build_dynamic_css( true ) );
+			}else{
+				wp_add_inline_style( 'responsi-framework', $this->responsi_build_dynamic_css( true ) );
+			}
 		} else {
 			$a3_shortcode_custom_css = get_theme_mod( 'a3_shortcode_custom_css' );
 			if ( false === $a3_shortcode_custom_css ) {

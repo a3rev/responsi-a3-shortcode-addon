@@ -138,7 +138,7 @@ class Shortcode_Button_Class {
 			$float = 'float:right !important;';
 		}
 
-		$bt_style = 'style="display:inline-block;color:'.$font_color.' !important;'.$fonts.$bt_transform.$bt_background.$bt_border.$bt_border_radius.$bt_shadow.$bt_padding.$bt_margin.$float.'"';
+		$bt_style = 'style="display:inline-flex;color:'.$font_color.' !important;'.$fonts.$bt_transform.$bt_background.$bt_border.$bt_border_radius.$bt_shadow.$bt_padding.$bt_margin.$float.'"';
 
 		$class_output = '';
 		if( $class!= '' ) {

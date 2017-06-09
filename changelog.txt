@@ -1,5 +1,13 @@
 *** Responsi Shortcodes Changelog ***
 
+= 2.8.3 - 2017/06/09 =
+* Tweak - Tested for full compatibility with WordPress 4.8
+* Tweak - Tested for compatibility with Responsi Framework 6.5.9.12
+* Tweak - Tweak hook customize inline style on customize-preview to responsi-framework same order frontend load.
+* Tweak - Change editor_plugins.php to editor_plugins.js file
+* Tweak - Change open popup get content shortcode form url to ajax.
+* Fix - Shortcode button icon line wrap alignment with icon
+
 = 2.8.2 - 2017/05/31 =
 * Tweak - Luanched the plugin on its own Github private repo
 * Fix - Remove iPhone checkbox script that was loading inside plugins setting pages breaking the width of the options switcher

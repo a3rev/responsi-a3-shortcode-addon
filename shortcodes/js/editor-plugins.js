@@ -1,18 +1,3 @@
-<?php
-header( "Content-Type:text/javascript" );
-
-// Get the path to the root.
-$full_path = __FILE__;
-
-$path_bits = explode( 'wp-content', $full_path );
-
-$url = $path_bits[0];
-
-// Require WordPress bootstrap.
-require_once( $url . '/wp-load.php' );
-
-$sc_url = wp_make_link_relative(RESPONSI_A3_SC_SHORTCODES_JS_URL);
-?>
 (function () {
 	tinymce.create("tinymce.plugins.A3revShortcodesFontface", {
 		init: function (d, e) {
@@ -38,8 +23,9 @@ $sc_url = wp_make_link_relative(RESPONSI_A3_SC_SHORTCODES_JS_URL);
 					open_dialog += '-'+responsiSelectedShortcodeFontfaceType;
 				}
 				jQuery.ajax({
-				 	url: "<?php echo $sc_url;?>/"+open_dialog+".php",
-				  	data:  { icon_type: c.icon_type, title: c.title },
+				 	url: ajaxurl,
+				 	type: 'POST',
+				  	data:  { action : 'shortcode_open_dialog', open_dialog:open_dialog+".php",  icon_type: c.icon_type, title: c.title },
 				  	success: function( b ){
 						jQuery('#responsi-options').addClass('shortcode-' + responsiSelectedShortcodeFontfaceType);
 						switch (responsiSelectedShortcodeFontfaceType) {
