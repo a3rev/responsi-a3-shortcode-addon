@@ -16,6 +16,8 @@ class Responsi_A3_Shortcode_Class {
 		add_action( 'responsi_before_popup_shortcode', array( $this, 'add_responsi_before_popup_shortcode' ) );
 		add_action( 'responsi_after_popup_shortcode', array( $this, 'add_responsi_after_popup_shortcode' ) );
 		add_action( 'admin_head', array( $this, 'shortcode_extender_script' ) );
+		add_action( 'wp_enqueue_editor', array( $this, 'responsi_shortcode_dialog_script' ) );
+		
 		add_action( 'admin_head', array( $this, 'init' ) );
 		add_action( 'customize_controls_print_scripts', array( $this, 'init' ) );
 		if( !is_admin() ){
@@ -61,10 +63,18 @@ class Responsi_A3_Shortcode_Class {
 		if ( ! wp_script_is( 'jquery-ui-ioscheckbox', 'registered' ) ) {
 			wp_register_script( 'jquery-ui-ioscheckbox', esc_url( get_template_directory_uri() . '/functions/js/iphone-style-checkboxes'.$rtl.$suffix.'.js' ), array( 'jquery' ), $responsi_version, false );
 		}
-		
 		if ( ! wp_script_is( 'a3rev-style-checkboxes', 'enqueued' ) ) {
 			wp_enqueue_script( 'jquery-ui-ioscheckbox' );
 		}
+	}
+
+	public function responsi_shortcode_dialog_script () {
+		global $pagenow, $responsi_version;
+		$suffix = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
+		$rtl = is_rtl() ? '.rtl' : '';
+		$rtl = '';
+		wp_register_script( 'responsi-shortcode-dialog', esc_url( RESPONSI_A3_SC_SHORTCODES_URL . '/js/dialog-js.php'), array( 'jquery' ), $responsi_version, false );
+		wp_enqueue_script( 'responsi-shortcode-dialog' );
 
 	}
 
@@ -106,203 +116,15 @@ class Responsi_A3_Shortcode_Class {
 		$suffix = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
 		$rtl = is_rtl() ? '.rtl' : '';
 		$rtl = '';
-		echo '<script type="text/javascript">';
-		echo "jQuery(function($) { 'use strict';";
-			echo "jQuery('#responsi-options').css({opacity:0});";
-			echo 'jQuery.ajaxSetup({async:true});';
-			echo "jQuery.getScript('".esc_url( RESPONSI_A3_SC_SHORTCODES_URL . '/js/dialog-js.php' )."',function(){
-				jQuery('.thickbox-loading #responsi-options').css({opacity:1});
-			});";
-
-			echo "jQuery(document).on('click', '.screenshot .image_remove', function (e) {
-			    jQuery(this).parent('.screenshot').parent('.responsi-marker-upload-control').find('input').val('');
-			    jQuery(this).parent('.screenshot').html('');
-			});
-
-			jQuery(document).on( 'change','#responsi-options select.input-select', function (e) {
-			    var newText = jQuery(this).children( 'option:selected').text();
-			    jQuery(this).parents( '.select_wrapper').find( 'span').remove();
-			    jQuery(this).parents( '.select_wrapper').prepend('<span>' + newText + '</span>');
-			});
-
-			jQuery(document).on( 'click','h2.item-title i.click_toggle', function (e) {
-				if( jQuery(this).parent('h2.item-title').parent('.sort_table_item').hasClass('hidethis') ){
-					jQuery(this).parent('h2.item-title').parent('.sort_table_item').removeClass('hidethis');
-					jQuery(this).removeClass('shortcode-icon-plus').addClass('shortcode-icon-minus');
-				}else{
-					jQuery(this).parent('h2.item-title').parent('.sort_table_item').addClass('hidethis');
-					jQuery(this).removeClass('shortcode-icon-minus').addClass('shortcode-icon-plus');
-				}
-			});
-			jQuery(document).on( 'click','i.click_toggle_main', function (e) {
-				if( jQuery(this).parent().parent().parent().parent().siblings('.'+jQuery(this).data('hidden')).hasClass('hidethis') ){
-					jQuery(this).parent().parent().parent().parent().siblings('.'+jQuery(this).data('hidden')).removeClass('hidethis');
-					jQuery(this).removeClass('shortcode-icon-plus').addClass('shortcode-icon-minus');
-				}else{
-					jQuery(this).parent().parent().parent().parent().siblings('.'+jQuery(this).data('hidden')).addClass('hidethis');
-					jQuery(this).removeClass('shortcode-icon-minus').addClass('shortcode-icon-plus');
-				}
-			});
-			jQuery(document).on('click', 'h2.item-title i.click_remove', function (e) {
-			    var count_item = jQuery('.sort_table').find('.sort_table_item').length;
-			    if(count_item > 1 && confirm('Are you sure remove this item ?')){
-			        jQuery(this).parent('h2.item-title').parent('.sort_table_item').remove();
-			        var _items = jQuery('.sort_table').find('h2.item-title');
-			        jQuery.each( _items, function( key, value ) {
-			            jQuery(this).children('span').html('['+(key+1)+']');
-			            jQuery(this).parent('.sort_table_item').attr('id','sort_table_item-'+key);
-			        });
-			    }
-			});
-			jQuery(document).on('click', '.icon_picker i', function (e) {
-			    jQuery(this).parent().parent().parent('.responsi-marker-icon-control').find('input').val(jQuery(this).data('icon'));
-			    jQuery(this).parent('.icon_picker').find('i').removeClass('active');
-			    jQuery(this).addClass('active');
-			});
-
-			jQuery(document).on( 'responsi-ui-onoff_checkbox-switch', 'input.responsi-checkbox-iphone', function (event, elem , status) {
-				var hidden_class = '';
-				var hidden_off_class = '';
-			    if( jQuery(this).attr('hidden_class') != undefined ) hidden_class = jQuery(this).attr('hidden_class');
-			    if( jQuery(this).attr('hidden_off_class') != undefined ) hidden_off_class = jQuery(this).attr('hidden_off_class');
-				if ( status == 'true' && hidden_class != '' ) {
-			        jQuery(this).parent().parent().parent('td').parent('tr').parent().parent('table').find('.'+hidden_class).show();
-			    } else {
-			        if( hidden_class != '' ){
-			            jQuery(this).parent().parent().parent('td.section').parent('tr').parent().parent('table').find('.'+hidden_class).hide();
-			        }
-			    }
-
-			    if ( status == 'true' && hidden_off_class != '' ) {
-			        jQuery(this).parent().parent().parent('td').parent('tr').parent().parent('table').find('.'+hidden_off_class).hide();
-			    } else {
-			        if( hidden_off_class != '' ){
-			            jQuery(this).parent().parent().parent('td.section').parent('tr').parent().parent('table').find('.'+hidden_off_class).show();
-			        }
-			    }
-			});
-
-			jQuery(document).on( 'responsi-ui-onoff_checkbox-switch', 'input#responsi-value-fronticon', function (event, elem , status) {
-				if ( status == 'true' ) {
-					jQuery(this).parent().parent().parent('td.section').parent('tr.iconctrl').siblings('tr.imagectrl').find('input[name=\"responsi-value-frontimage\"]').removeAttr('checked').iphoneStyle('refresh');
-			        jQuery(this).parent().parent().parent('td.section').parent('tr').parent().parent('table').siblings('table.tbopicon').show();
-			        jQuery(this).parent().parent().parent().parent().parent().parent().siblings('table.tbeffect').show();
-			        jQuery(this).parent().parent().parent().parent().parent().parent().siblings('table.tbcontainer').show();
-			        //jQuery(this).parent().parent().parent().parent().parent().parent().siblings('table.tbcontainer').find('input#responsi-value-container').attr('checked','checked').iphoneStyle('refresh');
-			    } else {
-			        jQuery(this).parent().parent().parent('td.section').parent('tr').parent().parent('table').siblings('table.tbopicon').hide();
-			        if( jQuery(this).parent().parent().parent().parent().siblings('tr.imagectrl').find('input#responsi-value-frontimage').prop('checked') == false ){
-			            jQuery(this).parent().parent().parent().parent().parent().parent().siblings('table.tbeffect').hide();
-			            jQuery(this).parent().parent().parent().parent().parent().parent().siblings('table.tbcontainer').hide();
-			            jQuery(this).parent().parent().parent().parent().parent().parent().siblings('table.tbcontainer').find('input#responsi-value-container').removeAttr('checked').iphoneStyle('refresh');
-			        }
-			    }
-			});
-
-			jQuery(document).on( 'responsi-ui-onoff_checkbox-switch', 'input#responsi-value-frontimage', function (event, elem , status) {
-				if ( status == 'true' ) {
-					jQuery(this).parent().parent().parent('td.section').parent('tr.imagectrl').siblings('tr.iconctrl').find('input[name=\"responsi-value-fronticon\"]').removeAttr('checked').iphoneStyle('refresh');
-			        jQuery(this).parent().parent().parent('td.section').parent('tr').parent().parent('table').siblings('table.tbopimg').show();
-			        jQuery(this).parent().parent().parent().parent().parent().parent().siblings('table.tbeffect').show();
-			        jQuery(this).parent().parent().parent().parent().parent().parent().siblings('table.tbcontainer').show();
-			        //jQuery(this).parent().parent().parent().parent().parent().parent().siblings('table.tbcontainer').find('input#responsi-value-container').attr('checked','checked').iphoneStyle('refresh');
-			    } else {
-			    	jQuery(this).parent().parent().parent('td.section').parent('tr').parent().parent('table').siblings('table.tbopimg').hide();
-			    	if( jQuery(this).parent().parent().parent().parent().siblings('tr.iconctrl').find('input#responsi-value-fronticon').prop('checked') == false ){
-			            jQuery(this).parent().parent().parent().parent().parent().parent().siblings('table.tbeffect').hide();
-			            jQuery(this).parent().parent().parent().parent().parent().parent().siblings('table.tbcontainer').hide();
-			            jQuery(this).parent().parent().parent().parent().parent().parent().siblings('table.tbcontainer').find('input#responsi-value-container').removeAttr('checked').iphoneStyle('refresh');
-			        }
-			    }
-			});
-
-			jQuery(document).on( 'responsi-ui-onoff_checkbox-switch', 'input#responsi-value-spin', function (event, elem , status) {
-				if ( status == 'true' ) {
-					jQuery(this).parent().parent().parent().parent().siblings('tr.tr_noanimation').find('input#responsi-value-animation').removeAttr('checked').iphoneStyle('refresh');
-				}
-			});
-			jQuery(document).on( 'responsi-ui-onoff_checkbox-switch', 'input#responsi-value-animation', function (event, elem , status) {
-				if ( status == 'true' ) {
-					jQuery(this).parent().parent().parent().parent().siblings('tr.tr_nospin').find('input#responsi-value-spin').removeAttr('checked').iphoneStyle('refresh');
-				}
-			});
-
-			jQuery(document).on( 'responsi-ui-onoff_checkbox-switch', 'input#responsi-value-flip', function (event, elem , status) {
-				if ( status == 'true' ) {
-					jQuery(this).parent().parent().parent().parent().siblings('tr.tr_norotate').find('input#responsi-value-rotate').removeAttr('checked').iphoneStyle('refresh');
-				}
-			});
-			jQuery(document).on( 'responsi-ui-onoff_checkbox-switch', 'input#responsi-value-rotate', function (event, elem , status) {
-				if ( status == 'true' ) {
-					jQuery(this).parent().parent().parent().parent().siblings('tr.tr_noflip').find('input#responsi-value-flip').removeAttr('checked').iphoneStyle('refresh');
-				}
-			});
-
-			jQuery(document).on( 'responsi-ui-onoff_checkbox-switch', 'input#responsi-value-fade', function (event, elem , status) {
-				if ( status == 'true' ) {
-					jQuery(this).parent().parent().parent().parent().siblings('tr.tr_video_background').find('input#responsi-value-video_background').removeAttr('checked').iphoneStyle('refresh');
-				}
-			});
-			jQuery(document).on( 'responsi-ui-onoff_checkbox-switch', 'input#responsi-value-video_background', function (event, elem , status) {
-				if ( status == 'true' ) {
-					jQuery(this).parent().parent().parent().parent().siblings('tr.tr_fade').find('input#responsi-value-fade').removeAttr('checked').iphoneStyle('refresh');
-				}
-			});
-
-			jQuery(document).on( 'responsi-ui-onoff_checkbox-switch', 'input#responsi-value-container', function (event, elem , status) {
-				if ( status == 'true' ) {
-				}else{
-					jQuery(this).parent().parent().parent().parent().siblings('tr.tbshadow').find('input#responsi-value-shadow').removeAttr('checked').iphoneStyle('refresh');
-					jQuery(this).parent().parent().parent().parent().siblings('tr.tbcorner').find('input#responsi-value-corner').removeAttr('checked').iphoneStyle('refresh');
-				}
-			});
-
-			jQuery(document).on( 'responsi-ui-onoff_checkbox-switch', 'input#responsi-value-container', function (event, elem , status) {
-				if ( status == 'true' ) {
-			        jQuery('table.container').show();
-			    } else {
-			    	jQuery('table.container').hide();
-			    }
-			});
-
-			jQuery(document).on( 'responsi-ui-onoff_checkbox-switch', 'input#responsi-value-containers', function (event, elem , status) {
-				if ( status == 'true' ) {
-					jQuery(this).parent().parent().parent('td').parent('tr').parent().parent('table').siblings('table.'+jQuery(this).attr('hidden_class')).show();
-			    } else {
-			    	jQuery(this).parent().parent().parent('td.section').parent('tr').parent().parent('table').siblings('table.'+jQuery(this).attr('hidden_class')).hide();
-			    }
-			});
-
-			jQuery(document).on( 'responsi-ui-onoff_checkbox-switch', 'input.responsi-multi-logic', function (event, elem , status) {
-				if ( jQuery(this).prop('checked')) {
-			        jQuery('div.'+jQuery(this).attr('hidden_class')).show();
-			        jQuery(this).parent().parent().parent().parent().siblings('tr').find('input.responsi-multi-logic').removeAttr('checked').iphoneStyle('refresh');
-			    }else{
-			        jQuery('div.'+jQuery(this).attr('hidden_class')).hide();
-			    }
-			});
-
-			jQuery(document).on( 'change','#responsi-options select#responsi-value-design', function (e) {
-			    if( jQuery(this).val() == 'custom' ){
-					jQuery('tr.custom').show();
-			    }else{
-					jQuery('tr.custom').hide();
-			    }
-			});
-			jQuery(document).on( 'change','#responsi-options select#responsi-value-layout', function (e) {
-			    if( jQuery(this).val() == 'horizontal' ){
-					jQuery('tr.tab_horizontal').show();
-					jQuery('tr.tab_vertical').hide();
-			    }else{
-					jQuery('tr.tab_horizontal').hide();
-					jQuery('tr.tab_vertical').show();
-			    }
-			});";
-
-		echo '});';
-		echo '</script>';
-		//echo '<script type="text/javascript" src="'.esc_url( get_template_directory_uri() . '/functions/js/iphone-style-checkboxes'.$rtl.$suffix.'.js' ).'"></script>';
-		//echo '<script async="true" type="text/javascript" src="'.esc_url( RESPONSI_A3_SC_SHORTCODES_URL . '/js/dialog-js.php' ).'"></script>';
+		echo "
+		<script type=\"text/javascript\">
+		jQuery(function($) { 'use strict';
+			responsiDialogHelper.loadShortcodeDetails();
+			responsiDialogHelper.onOffCheckbox();
+			responsiDialogHelper.customLogicIconImage();
+			responsiDialogHelper.customLogicMultiCheck();
+		});
+		</script>";
 	}
 
 

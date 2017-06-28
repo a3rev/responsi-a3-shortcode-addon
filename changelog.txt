@@ -1,5 +1,10 @@
 *** Responsi Shortcodes Changelog ***
 
+= 2.8.4 - 2017/06/28 =
+* Tweak - Tested for full compatibility with WordPress 4.8
+* Tweak - Tested for compatibility with Responsi Framework 6.6.1
+* Fix - Popup shortcode js duplicate event when click insert button adding shortcode twice
+
 = 2.8.3 - 2017/06/09 =
 * Tweak - Tested for full compatibility with WordPress 4.8
 * Tweak - Tested for compatibility with Responsi Framework 6.5.9.12
