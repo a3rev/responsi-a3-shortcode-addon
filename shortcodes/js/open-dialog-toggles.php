@@ -72,7 +72,7 @@ global $ICONS;
 				<label for="responsi-value-color" class="">Title Color<span class="optional"></span></label>
 			</th>
 			<td class="responsi-marker-colourpicker-control">
-				<input type="text" value="#333333" data-default-color="#333333" id="responsi-value-color" name="responsi-value-color" class="responsi-color-picker" style="display:none" />
+				<input type="text" value="#333333" data-default-color="#333333" id="responsi-value-color" name="responsi-value-color" class="icolor-picker" style="display:none" />
 			</td>
 		</tr>
 		<tr>
@@ -80,7 +80,7 @@ global $ICONS;
 				<label for="responsi-value-activecolor" class="">Title Active Color<span class="optional"></span></label>
 			</th>
 			<td class="responsi-marker-colourpicker-control">
-				<input type="text" value="#a0ce4e" data-default-color="#a0ce4e" id="responsi-value-activecolor" name="responsi-value-activecolor" class="responsi-color-picker" style="display:none" />
+				<input type="text" value="#a0ce4e" data-default-color="#a0ce4e" id="responsi-value-activecolor" name="responsi-value-activecolor" class="icolor-picker" style="display:none" />
 			</td>
 		</tr>
 		<tr>
@@ -88,7 +88,7 @@ global $ICONS;
 				<label for="responsi-value-iconcolor" class="">Icon Color<span class="optional"></span></label>
 			</th>
 			<td class="responsi-marker-colourpicker-control">
-				<input type="text" value="#FFFFFF" data-default-color="#FFFFFF" id="responsi-value-iconcolor" name="responsi-value-iconcolor" class="responsi-color-picker" style="display:none" />
+				<input type="text" value="#FFFFFF" data-default-color="#FFFFFF" id="responsi-value-iconcolor" name="responsi-value-iconcolor" class="icolor-picker" style="display:none" />
 			</td>
 		</tr>
 		<tr>
@@ -96,7 +96,7 @@ global $ICONS;
 				<label for="responsi-value-iconactivecolor" class="">Icon Active Color<span class="optional"></span></label>
 			</th>
 			<td class="responsi-marker-colourpicker-control">
-				<input type="text" value="#FFFFFF" data-default-color="#FFFFFF" id="responsi-value-iconactivecolor" name="responsi-value-iconactivecolor" class="responsi-color-picker" style="display:none" />
+				<input type="text" value="#FFFFFF" data-default-color="#FFFFFF" id="responsi-value-iconactivecolor" name="responsi-value-iconactivecolor" class="icolor-picker" style="display:none" />
 			</td>
 		</tr>
 		<tr>
@@ -276,7 +276,7 @@ global $ICONS;
 					<label for="responsi-value-background" class="">Background<span class="optional"></span></label>
 				</th>
 				<td class="responsi-marker-colourpicker-control">
-					<input type="text" value="#ffffff" data-default-color="#ffffff" id="responsi-value-background" name="responsi-value-background" class="responsi-color-picker" style="display:none" />
+					<input type="text" value="#ffffff" data-default-color="#ffffff" id="responsi-value-background" name="responsi-value-background" class="icolor-picker" style="display:none" />
 				</td>
 			</tr>
 
@@ -417,7 +417,7 @@ global $ICONS;
 			jQuery(this).children('span').html('['+(key+1)+']');
 			jQuery(this).parent('.sort_table_item').attr('id','sort_table_item-'+key);
 		});
-		jQuery( '.responsi-marker-colourpicker-control .responsi-color-picker').each ( function () {
+		jQuery( '.responsi-marker-colourpicker-control .icolor-picker').each ( function () {
 			jQuery(this).wpColorPicker({
 				change: function( event, ui ) {
 					//bgImage.css('background-color', ui.color.toString());

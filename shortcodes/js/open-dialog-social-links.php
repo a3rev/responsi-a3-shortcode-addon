@@ -113,7 +113,7 @@ global $ICONS_SOCIAL;
 					<label for="responsi-value-color" class="">Colour<span class="optional"></span></label>
 				</th>
 				<td class="responsi-marker-colourpicker-control">
-					<input type="text" value="<?php echo $default_options['responsi_sc_icon_color'];?>" data-default-color="<?php echo $default_options['responsi_sc_icon_color'];?>" id="responsi-value-color" name="responsi-value-color" class="responsi-color-picker" style="display:none" />
+					<input type="text" value="<?php echo $default_options['responsi_sc_icon_color'];?>" data-default-color="<?php echo $default_options['responsi_sc_icon_color'];?>" id="responsi-value-color" name="responsi-value-color" class="icolor-picker" style="display:none" />
 				</td>
 			</tr>
 			<tr>
@@ -154,7 +154,7 @@ global $ICONS_SOCIAL;
 					<label for="responsi-value-background" class=""><span class="optional"></span></label>
 				</th>
 				<td class="responsi-marker-colourpicker-control">
-					<input type="text" value="<?php echo $default_options['responsi_sc_icon_background']['color'];?>" data-default-color="<?php echo $default_options['responsi_sc_icon_background']['color'];?>" id="responsi-value-background" name="responsi-value-background" class="responsi-color-picker" style="display:none" />
+					<input type="text" value="<?php echo $default_options['responsi_sc_icon_background']['color'];?>" data-default-color="<?php echo $default_options['responsi_sc_icon_background']['color'];?>" id="responsi-value-background" name="responsi-value-background" class="icolor-picker" style="display:none" />
 				</td>
 			</tr>
 			<tr>

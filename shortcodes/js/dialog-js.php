@@ -314,7 +314,7 @@ var responsiDialogHelper = {
     },
 
     setUpColourPicker: function () {
-    	jQuery( '.responsi-marker-colourpicker-control .responsi-color-picker').each ( function () {
+    	jQuery( '.responsi-marker-colourpicker-control .icolor-picker').each ( function () {
 
 			jQuery(this).wpColorPicker({
 				change: function( event, ui ) {
@@ -621,7 +621,7 @@ var responsiDialogHelper = {
 
 		jQuery( '<div></div>').appendTo(b);
 
-        jQuery( '<input type="text" data-default-color="'+defaultValue+'" value="'+defaultValue+'">').attr( "id", g).attr( "name", g).addClass(f).addClass(d).addClass( 'txt input-text responsi-color-picker').addClass(c ? "responsi-focus-here" : "").appendTo(b);
+        jQuery( '<input type="text" data-default-color="'+defaultValue+'" value="'+defaultValue+'">').attr( "id", g).attr( "name", g).addClass(f).addClass(d).addClass( 'txt input-text icolor-picker').addClass(c ? "responsi-focus-here" : "").appendTo(b);
 
         if (a = a.help) {
             //jQuery( "<br/>").appendTo(b);

@@ -113,7 +113,7 @@ global $ICONS;
 					<label for="responsi-value-color" class="">Divider Colour<span class="optional"></span></label>
 				</th>
 				<td class="responsi-marker-colourpicker-control">
-					<input type="text" value="#555555" data-default-color="#555555" id="responsi-value-color" name="responsi-value-color" class="responsi-color-picker" style="display:none" />
+					<input type="text" value="#555555" data-default-color="#555555" id="responsi-value-color" name="responsi-value-color" class="icolor-picker" style="display:none" />
 				</td>
 			</tr>
 			<tr>
@@ -157,7 +157,7 @@ global $ICONS;
 					<label for="responsi-value-iconcolor" class="">Colour<span class="optional"></span></label>
 				</th>
 				<td class="responsi-marker-colourpicker-control">
-					<input type="text" value="#e0dede" data-default-color="#e0dede" id="responsi-value-iconcolor" name="responsi-value-iconcolor" class="responsi-color-picker" style="display:none" />
+					<input type="text" value="#e0dede" data-default-color="#e0dede" id="responsi-value-iconcolor" name="responsi-value-iconcolor" class="icolor-picker" style="display:none" />
 				</td>
 			</tr>
 			<tr>
@@ -165,7 +165,7 @@ global $ICONS;
 					<label for="responsi-value-iconbackground" class="">Background<span class="optional"></span></label>
 				</th>
 				<td class="responsi-marker-colourpicker-control">
-					<input type="text" value="#ffffff" data-default-color="#ffffff" id="responsi-value-iconbackground" name="responsi-value-iconbackground" class="responsi-color-picker" style="display:none" />
+					<input type="text" value="#ffffff" data-default-color="#ffffff" id="responsi-value-iconbackground" name="responsi-value-iconbackground" class="icolor-picker" style="display:none" />
 				</td>
 			</tr>
 			<tr>
@@ -173,7 +173,7 @@ global $ICONS;
 					<label for="responsi-value-iconborder" class="">Border Color<span class="optional"></span></label>
 				</th>
 				<td class="responsi-marker-colourpicker-control">
-					<input type="text" value="#ffffff" data-default-color="#ffffff" id="responsi-value-iconborder" name="responsi-value-iconborder" class="responsi-color-picker" style="display:none" />
+					<input type="text" value="#ffffff" data-default-color="#ffffff" id="responsi-value-iconborder" name="responsi-value-iconborder" class="icolor-picker" style="display:none" />
 				</td>
 			</tr>
 		</table>

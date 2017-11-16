@@ -120,7 +120,7 @@ global $ICONS;
 					<label for="responsi-value-backgroundcolor" class="">Background Color<span class="optional"></span></label>
 				</th>
 				<td class="responsi-marker-colourpicker-control">
-					<input type="text" value="transparent" data-default-color="transparent" id="responsi-value-backgroundcolor" name="responsi-value-backgroundcolor" class="responsi-color-picker" style="display:none" />
+					<input type="text" value="transparent" data-default-color="transparent" id="responsi-value-backgroundcolor" name="responsi-value-backgroundcolor" class="icolor-picker" style="display:none" />
 				</td>
 			</tr>
 
@@ -273,7 +273,7 @@ global $ICONS;
 			jQuery(this).children('span').html('['+(key+1)+']');
 			jQuery(this).parent('.sort_table_item').attr('id','sort_table_item-'+key);
 		});
-		jQuery( '.responsi-marker-colourpicker-control .responsi-color-picker').each ( function () {
+		jQuery( '.responsi-marker-colourpicker-control .icolor-picker').each ( function () {
 			jQuery(this).wpColorPicker({
 				change: function( event, ui ) {
 					//bgImage.css('background-color', ui.color.toString());

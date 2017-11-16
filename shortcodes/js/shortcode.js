@@ -1214,7 +1214,7 @@ jQuery(document).ready(function($) {
 		});
 	});
 	
-	jQuery( window ).on( 'resize', function() {
+	jQuery( window ).on( 'resize lazyload', function() {
 
 		jQuery( '.responsi-fullwidth.equal-height-columns' ).each( function() {
 			jQuery( this ).find( '.responsi-layout-column .responsi-column-wrapper' ).equalHeights();

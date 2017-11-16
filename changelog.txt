@@ -1,5 +1,10 @@
 *** Responsi Shortcodes Changelog ***
 
+= 2.8.5 - 2017/11/16 =
+* Maintenance Upgrade. Please upgrade to WordPress 4.9.0 – then Responsi Framework to 6.8.0 and then this plugin
+* Tweak - Tested for compatibility with WordPress Major version 4.9
+* Tweak - Updated for full compatibility with Responsi Framework new feature version 6.8.0
+
 = 2.8.4 - 2017/06/28 =
 * Tweak - Tested for full compatibility with WordPress 4.8
 * Tweak - Tested for compatibility with Responsi Framework 6.6.1

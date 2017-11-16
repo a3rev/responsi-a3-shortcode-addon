@@ -443,7 +443,7 @@ class Responsi_A3_Shortcode_Class {
 		$html .= '</select>';
 
 		$html .= '<div class="responsi-marker-colourpicker-control">';
-		$html .= '<input type="text" id="responsi-value-'.$id.'color" name="responsi-value-'.$id.'color" class="responsi-color-picker" value="'.$color.'" data-default-color="'.$default_color.'" style="display:none" />';
+		$html .= '<input type="text" id="responsi-value-'.$id.'color" name="responsi-value-'.$id.'color" class="icolor-picker" value="'.$color.'" data-default-color="'.$default_color.'" style="display:none" />';
 		$html .= '</div>';
 
 		if( $echo ){
@@ -476,7 +476,7 @@ class Responsi_A3_Shortcode_Class {
 		$html .= '</select>';
 
 		$html .= '<div class="responsi-marker-colourpicker-control">';
-		$html .= '<input type="text" id="responsi-value-'.$id.'color" name="responsi-value-'.$id.'color" class="responsi-color-picker" value="'.$color.'" data-default-color="'.$default_color.'" style="display:none" />';
+		$html .= '<input type="text" id="responsi-value-'.$id.'color" name="responsi-value-'.$id.'color" class="icolor-picker" value="'.$color.'" data-default-color="'.$default_color.'" style="display:none" />';
 		$html .= '</div>';
 
 		if( $echo ){
@@ -584,7 +584,7 @@ class Responsi_A3_Shortcode_Class {
 		$html .= '</select>';
 
 		$html .= '<div class="responsi-marker-colourpicker-control">';
-		$html .= '<input type="text" id="responsi-value-'.$id.'_color" name="responsi-value-'.$id.'_color" class="responsi-color-picker" value="'.$color.'" data-default-color="'.$default_color.'" style="display:none" />';
+		$html .= '<input type="text" id="responsi-value-'.$id.'_color" name="responsi-value-'.$id.'_color" class="icolor-picker" value="'.$color.'" data-default-color="'.$default_color.'" style="display:none" />';
 		$html .= '</div>';
 
 		if( $echo ){

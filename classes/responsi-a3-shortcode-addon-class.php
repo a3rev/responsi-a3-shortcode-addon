@@ -30,6 +30,9 @@ class Responsi_A3_Shortcode_Addon {
 		if( isset($_POST['customized']) ){
 			$post_value = json_decode( wp_unslash( $_POST['customized'] ), true );
 			$post_value = apply_filters( 'responsi_customized_post_value', $post_value );
+		}else{
+			$post_value = $settings->changeset_data();
+			$post_value = apply_filters( 'responsi_customized_changeset_data_value', $post_value );
 		}
 
 		if( is_array( $responsi_options_a3_shortcode ) && count( $responsi_options_a3_shortcode ) > 0 && is_array( $post_value ) && count( $post_value ) > 0 ){

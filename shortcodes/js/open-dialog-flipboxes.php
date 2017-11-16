@@ -167,7 +167,7 @@ global $ICONS;
 					<label for="responsi-value-background_color_front" class=""><span class="optional"></span></label>
 				</th>
 				<td class="responsi-marker-colourpicker-control">
-					<input type="text" value="<?php echo $default_options['responsi_sc_flip_boxes_front_bg']['color'];?>" data-default-color="<?php echo $default_options['responsi_sc_flip_boxes_front_bg']['color'];?>" id="responsi-value-background_color_front" name="responsi-value-background_color_front" class="responsi-color-picker" style="display:none" />
+					<input type="text" value="<?php echo $default_options['responsi_sc_flip_boxes_front_bg']['color'];?>" data-default-color="<?php echo $default_options['responsi_sc_flip_boxes_front_bg']['color'];?>" id="responsi-value-background_color_front" name="responsi-value-background_color_front" class="icolor-picker" style="display:none" />
 				</td>
 			</tr>
 			<tr>
@@ -288,7 +288,7 @@ global $ICONS;
 					<label for="responsi-value-icon_color" class="">Icon Color<span class="optional"></span></label>
 				</th>
 				<td class="responsi-marker-colourpicker-control">
-					<input type="text" value="#ffffff" data-default-color="#ffffff" id="responsi-value-icon_color" name="responsi-value-icon_color" class="responsi-color-picker" style="display:none" />
+					<input type="text" value="#ffffff" data-default-color="#ffffff" id="responsi-value-icon_color" name="responsi-value-icon_color" class="icolor-picker" style="display:none" />
 				</td>
 			</tr>
 			<tr class="tr_icon">
@@ -303,7 +303,7 @@ global $ICONS;
 					<label for="responsi-value-circle_color" class="">Circle Background<span class="optional"></span></label>
 				</th>
 				<td class="responsi-marker-colourpicker-control">
-					<input type="text" value="#a0ce4e" data-default-color="#a0ce4e" id="responsi-value-circle_color" name="responsi-value-circle_color" class="responsi-color-picker" style="display:none" />
+					<input type="text" value="#a0ce4e" data-default-color="#a0ce4e" id="responsi-value-circle_color" name="responsi-value-circle_color" class="icolor-picker" style="display:none" />
 				</td>
 			</tr>
 
@@ -312,7 +312,7 @@ global $ICONS;
 					<label for="responsi-value-circle_border_color" class="">Circle Border<span class="optional"></span></label>
 				</th>
 				<td class="responsi-marker-colourpicker-control">
-					<input type="text" value="#a0ce4e" data-default-color="#a0ce4e" id="responsi-value-circle_border_color" name="responsi-value-circle_border_color" class="responsi-color-picker" style="display:none" />
+					<input type="text" value="#a0ce4e" data-default-color="#a0ce4e" id="responsi-value-circle_border_color" name="responsi-value-circle_border_color" class="icolor-picker" style="display:none" />
 				</td>
 			</tr>
 
@@ -517,7 +517,7 @@ global $ICONS;
 					<label for="responsi-value-background_color_back" class=""><span class="optional"></span></label>
 				</th>
 				<td class="responsi-marker-colourpicker-control">
-					<input type="text" value="<?php echo $default_options['responsi_sc_flip_boxes_back_bg']['color'];?>" data-default-color="<?php echo $default_options['responsi_sc_flip_boxes_back_bg']['color'];?>" id="responsi-value-background_color_back" name="responsi-value-background_color_back" class="responsi-color-picker" style="display:none" />
+					<input type="text" value="<?php echo $default_options['responsi_sc_flip_boxes_back_bg']['color'];?>" data-default-color="<?php echo $default_options['responsi_sc_flip_boxes_back_bg']['color'];?>" id="responsi-value-background_color_back" name="responsi-value-background_color_back" class="icolor-picker" style="display:none" />
 				</td>
 			</tr>
 
@@ -592,7 +592,7 @@ global $ICONS;
 			jQuery(this).children('span').html('['+(key+1)+']');
 			jQuery(this).parent('.sort_table_item').attr('id','sort_table_item-'+key);
 		});
-		jQuery( '.responsi-marker-colourpicker-control .responsi-color-picker').each ( function () {
+		jQuery( '.responsi-marker-colourpicker-control .icolor-picker').each ( function () {
 			jQuery(this).wpColorPicker({
 				change: function( event, ui ) {
 					//bgImage.css('background-color', ui.color.toString());
