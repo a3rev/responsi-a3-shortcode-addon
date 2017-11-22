@@ -120,7 +120,7 @@ global $ICONS;
 					<label for="responsi-value-backgroundcolor" class="">Background Color<span class="optional"></span></label>
 				</th>
 				<td class="responsi-marker-colourpicker-control">
-					<input type="text" value="transparent" data-default-color="transparent" id="responsi-value-backgroundcolor" name="responsi-value-backgroundcolor" class="icolor-picker" style="display:none" />
+					<input type="text" value="transparent" data-default-color="transparent" id="responsi-value-backgroundcolor" name="responsi-value-backgroundcolor" class="icolor-picker" />
 				</td>
 			</tr>
 
@@ -143,7 +143,7 @@ global $ICONS;
 				<td class="responsi-marker-upload-control">
 				    <div class="screenshot"></div>
 					<input type="text" value="" id="responsi-value-backgroundimage" name="responsi-value-backgroundimage" class="upload responsi-value-backgroundimage" />
-					<a title="Add Image" class="button upload_button_custom add_image" id="insert-media-button" href="#">Upload</a>
+					<a title="Add Image" class="button upload_button_custom button-small wp-picker-defaultadd_image" id="insert-media-button" href="#">Upload</a>
 				</td>
 			</tr>
 			<tr class="on_bg_image">

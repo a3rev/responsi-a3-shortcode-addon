@@ -580,7 +580,7 @@ var responsiDialogHelper = {
 
 			// Add additional wrappers, etc, to each select box.
 
-			jQuery( '#responsi-options select').wrap( '<div class="select_wrapper"></div>' ).before( '<span></span>' );
+			jQuery( '#responsi-options select').wrap( '<div class="select_wrapper"></div>' ).before( '<span class="code"></span>' );
 
 			jQuery( '#responsi-options select option:selected').each( function () {
 

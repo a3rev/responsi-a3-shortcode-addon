@@ -108,7 +108,7 @@ global $ICONS;
 					<label for="responsi-value-background" class="">Background<span class="optional"></span></label>
 				</th>
 				<td class="responsi-marker-colourpicker-control">
-					<input type="text" value="#000000" data-default-color="#000000" id="responsi-value-background" name="responsi-value-background" class="icolor-picker" style="display:none" />
+					<input type="text" value="#000000" data-default-color="#000000" id="responsi-value-background" name="responsi-value-background" class="icolor-picker" />
 				</td>
 			</tr>
 			<tr>
@@ -116,7 +116,7 @@ global $ICONS;
 					<label for="responsi-value-gradient_from" class="">Gradient from<span class="optional"></span></label>
 				</th>
 				<td class="responsi-marker-colourpicker-control">
-					<input type="text" value="#555555" data-default-color="#555555" id="responsi-value-gradient_from" name="responsi-value-gradient_from" class="icolor-picker" style="display:none" />
+					<input type="text" value="#555555" data-default-color="#555555" id="responsi-value-gradient_from" name="responsi-value-gradient_from" class="icolor-picker" />
 				</td>
 			</tr>
 			<tr>
@@ -124,7 +124,7 @@ global $ICONS;
 					<label for="responsi-value-gradient_to" class="">Gradient to<span class="optional"></span></label>
 				</th>
 				<td class="responsi-marker-colourpicker-control">
-					<input type="text" value="#000000" data-default-color="#000000" id="responsi-value-gradient_to" name="responsi-value-gradient_to" class="icolor-picker" style="display:none" />
+					<input type="text" value="#000000" data-default-color="#000000" id="responsi-value-gradient_to" name="responsi-value-gradient_to" class="icolor-picker" />
 				</td>
 			</tr>
 			<tr>
@@ -296,7 +296,7 @@ global $ICONS;
 					<label for="responsi-value-iconcolor" class="">Icon Colour<span class="optional"></span></label>
 				</th>
 				<td class="responsi-marker-colourpicker-control">
-					<input type="text" value="#FFFFFF" data-default-color="#FFFFFF" id="responsi-value-iconcolor" name="responsi-value-iconcolor" class="icolor-picker" style="display:none" />
+					<input type="text" value="#FFFFFF" data-default-color="#FFFFFF" id="responsi-value-iconcolor" name="responsi-value-iconcolor" class="icolor-picker" />
 				</td>
 			</tr>
 			<tr>
@@ -319,7 +319,7 @@ global $ICONS;
 					<label for="responsi-value-divider_color" class="">Divider Colour<span class="optional"></span></label>
 				</th>
 				<td class="responsi-marker-colourpicker-control">
-					<input type="text" value="#FFFFFF" data-default-color="#FFFFFF" id="responsi-value-divider_color" name="responsi-value-divider_color" class="icolor-picker" style="display:none" />
+					<input type="text" value="#FFFFFF" data-default-color="#FFFFFF" id="responsi-value-divider_color" name="responsi-value-divider_color" class="icolor-picker" />
 				</td>
 			</tr>
 		</table>

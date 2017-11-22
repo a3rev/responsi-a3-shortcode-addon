@@ -167,7 +167,7 @@ global $ICONS;
 					<label for="responsi-value-backgroundcolor" class=""><span class="optional"></span></label>
 				</th>
 				<td class="responsi-marker-colourpicker-control">
-					<input type="text" value="<?php echo $default_options['responsi_sc_fullwidth_bg']['color'];?>" data-default-color="<?php echo $default_options['responsi_sc_fullwidth_bg']['color'];?>" id="responsi-value-backgroundcolor" name="responsi-value-backgroundcolor" class="icolor-picker" style="display:none" />
+					<input type="text" value="<?php echo $default_options['responsi_sc_fullwidth_bg']['color'];?>" data-default-color="<?php echo $default_options['responsi_sc_fullwidth_bg']['color'];?>" id="responsi-value-backgroundcolor" name="responsi-value-backgroundcolor" class="icolor-picker" />
 				</td>
 			</tr>
 
@@ -183,7 +183,7 @@ global $ICONS;
 				<td class="responsi-marker-upload-control">
 				    <div class="screenshot"></div>
 					<input type="text" value="" id="responsi-value-backgroundimage" name="responsi-value-backgroundimage" class="upload responsi-value-backgroundimage" />
-					<a title="Add Image" class="button upload_button_custom add_image" id="insert-media-button" href="#">Upload</a>
+					<a title="Add Image" class="button upload_button_custom button-small wp-picker-defaultadd_image" id="insert-media-button" href="#">Upload</a>
 				</td>
 			</tr>
 			<tr class="on_bg_image">
@@ -381,7 +381,7 @@ global $ICONS;
 				<td class="responsi-marker-upload-control">
 				    <div class="screenshot"></div>
 					<input type="text" value="" id="responsi-value-video_preview_image" name="responsi-value-video_preview_image" class="upload responsi-value-preview_image" />
-					<a title="Add Image" class="button upload_button_custom add_image" id="insert-media-button" href="#">Upload</a><span class="responsi-input-help">IMPORTANT: This field must be used for self hosted videos. Self hosted videos do not work correctly on mobile devices. The preview image will be seen in place of your video on older browsers or mobile devices.</span>
+					<a title="Add Image" class="button upload_button_custom button-small wp-picker-defaultadd_image" id="insert-media-button" href="#">Upload</a><span class="responsi-input-help">IMPORTANT: This field must be used for self hosted videos. Self hosted videos do not work correctly on mobile devices. The preview image will be seen in place of your video on older browsers or mobile devices.</span>
 				</td>
 			</tr>
 			<tr class="video">
@@ -389,7 +389,7 @@ global $ICONS;
 					<label for="responsi-value-overlay_color" class="">Video Overlay Color<span class="optional"></span></label>
 				</th>
 				<td class="responsi-marker-colourpicker-control">
-					<input type="text" value="transparent" data-default-color="transparent" id="responsi-value-overlay_color" name="responsi-value-overlay_color" class="icolor-picker" style="display:none" />
+					<input type="text" value="transparent" data-default-color="transparent" id="responsi-value-overlay_color" name="responsi-value-overlay_color" class="icolor-picker" />
 				</td>
 			</tr>
 			<tr class="video">

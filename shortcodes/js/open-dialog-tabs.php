@@ -240,7 +240,7 @@ if($default_options['responsi_sc_tab_backgroundcoloractive']['onoff'] == 'true')
 										<label for="responsi-value-backgroundcolor" class=""><span class="optional"></span></label>
 									</th>
 									<td class="responsi-marker-colourpicker-control">
-										<input type="text" value="<?php echo $default_options['responsi_sc_tab_backgroundcolor']['color'];?>" data-default-color="<?php echo $default_options['responsi_sc_tab_backgroundcolor']['color'];?>" id="responsi-value-backgroundcolor" name="responsi-value-backgroundcolor" class="icolor-picker" style="display:none" />
+										<input type="text" value="<?php echo $default_options['responsi_sc_tab_backgroundcolor']['color'];?>" data-default-color="<?php echo $default_options['responsi_sc_tab_backgroundcolor']['color'];?>" id="responsi-value-backgroundcolor" name="responsi-value-backgroundcolor" class="icolor-picker" />
 									</td>
 								</tr>
 
@@ -441,7 +441,7 @@ if($default_options['responsi_sc_tab_backgroundcoloractive']['onoff'] == 'true')
 										<label for="responsi-value-backgroundcoloractive" class=""><span class="optional"></span></label>
 									</th>
 									<td class="responsi-marker-colourpicker-control">
-										<input type="text" value="<?php echo $default_options['responsi_sc_tab_backgroundcoloractive']['color'];?>" data-default-color="<?php echo $default_options['responsi_sc_tab_backgroundcoloractive']['color'];?>" id="responsi-value-backgroundcoloractive" name="responsi-value-backgroundcoloractive" class="icolor-picker" style="display:none" />
+										<input type="text" value="<?php echo $default_options['responsi_sc_tab_backgroundcoloractive']['color'];?>" data-default-color="<?php echo $default_options['responsi_sc_tab_backgroundcoloractive']['color'];?>" id="responsi-value-backgroundcoloractive" name="responsi-value-backgroundcoloractive" class="icolor-picker" />
 									</td>
 								</tr>
 								<tr>
@@ -449,7 +449,7 @@ if($default_options['responsi_sc_tab_backgroundcoloractive']['onoff'] == 'true')
 										<label for="responsi-value-bordertopcolor" class="">Border Top Colour<span class="optional"></span></label>
 									</th>
 									<td class="responsi-marker-colourpicker-control">
-										<input type="text" value="<?php echo $default_options['responsi_sc_tab_bordertopactive'];?>" data-default-color="<?php echo $default_options['responsi_sc_tab_bordertopactive'];?>" id="responsi-value-bordertopactive" name="responsi-value-bordertopactive" class="icolor-picker" style="display:none" />
+										<input type="text" value="<?php echo $default_options['responsi_sc_tab_bordertopactive'];?>" data-default-color="<?php echo $default_options['responsi_sc_tab_bordertopactive'];?>" id="responsi-value-bordertopactive" name="responsi-value-bordertopactive" class="icolor-picker" />
 									</td>
 								</tr>
 								<tr>
@@ -457,7 +457,7 @@ if($default_options['responsi_sc_tab_backgroundcoloractive']['onoff'] == 'true')
 										<label for="responsi-value-borderbottomcolor" class="">Border Bottom Colour<span class="optional"></span></label>
 									</th>
 									<td class="responsi-marker-colourpicker-control">
-										<input type="text" value="<?php echo $default_options['responsi_sc_tab_borderbottomactive'];?>" data-default-color="<?php echo $default_options['responsi_sc_tab_borderbottomactive'];?>" id="responsi-value-borderbottomactive" name="responsi-value-borderbottomactive" class="icolor-picker" style="display:none" />
+										<input type="text" value="<?php echo $default_options['responsi_sc_tab_borderbottomactive'];?>" data-default-color="<?php echo $default_options['responsi_sc_tab_borderbottomactive'];?>" id="responsi-value-borderbottomactive" name="responsi-value-borderbottomactive" class="icolor-picker" />
 									</td>
 								</tr>
 								<tr>
@@ -465,7 +465,7 @@ if($default_options['responsi_sc_tab_backgroundcoloractive']['onoff'] == 'true')
 										<label for="responsi-value-borderleftcolor" class="">Border Left Colour<span class="optional"></span></label>
 									</th>
 									<td class="responsi-marker-colourpicker-control">
-										<input type="text" value="<?php echo $default_options['responsi_sc_tab_borderleftactive'];?>" data-default-color="<?php echo $default_options['responsi_sc_tab_borderleftactive'];?>" id="responsi-value-borderleftactive" name="responsi-value-borderleftactive" class="icolor-picker" style="display:none" />
+										<input type="text" value="<?php echo $default_options['responsi_sc_tab_borderleftactive'];?>" data-default-color="<?php echo $default_options['responsi_sc_tab_borderleftactive'];?>" id="responsi-value-borderleftactive" name="responsi-value-borderleftactive" class="icolor-picker" />
 									</td>
 								</tr>
 								<tr>
@@ -473,7 +473,7 @@ if($default_options['responsi_sc_tab_backgroundcoloractive']['onoff'] == 'true')
 										<label for="responsi-value-borderrightcolor" class="">Border Right Colour<span class="optional"></span></label>
 									</th>
 									<td class="responsi-marker-colourpicker-control">
-										<input type="text" value="<?php echo $default_options['responsi_sc_tab_borderrightactive'];?>" data-default-color="<?php echo $default_options['responsi_sc_tab_borderrightactive'];?>" id="responsi-value-borderrightactive" name="responsi-value-borderrightactive" class="icolor-picker" style="display:none" />
+										<input type="text" value="<?php echo $default_options['responsi_sc_tab_borderrightactive'];?>" data-default-color="<?php echo $default_options['responsi_sc_tab_borderrightactive'];?>" id="responsi-value-borderrightactive" name="responsi-value-borderrightactive" class="icolor-picker" />
 									</td>
 								</tr>
 							</table>
@@ -740,7 +740,7 @@ if($default_options['responsi_sc_tab_backgroundcoloractive']['onoff'] == 'true')
 					<label for="responsi-value-icon_color" class="">Icon Colour<span class="optional"></span></label>
 				</th>
 				<td class="responsi-marker-colourpicker-control">
-					<input type="text" value="<?php echo $default_options['responsi_sc_tab_icon_color'];?>" data-default-color="<?php echo $default_options['responsi_sc_tab_icon_color'];?>" id="responsi-value-icon_color" name="responsi-value-icon_color" class="icolor-picker" style="display:none" />
+					<input type="text" value="<?php echo $default_options['responsi_sc_tab_icon_color'];?>" data-default-color="<?php echo $default_options['responsi_sc_tab_icon_color'];?>" id="responsi-value-icon_color" name="responsi-value-icon_color" class="icolor-picker" />
 				</td>
 			</tr>
 			<tr>

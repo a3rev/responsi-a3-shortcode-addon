@@ -164,7 +164,7 @@ global $ICONS;
 					<label for="responsi-value-color" class="">Colour<span class="optional"></span></label>
 				</th>
 				<td class="responsi-marker-colourpicker-control">
-					<input type="text" value="<?php echo $default_options['responsi_sc_icon_color'];?>" data-default-color="<?php echo $default_options['responsi_sc_icon_color'];?>" id="responsi-value-color" name="responsi-value-color" class="icolor-picker" style="display:none" />
+					<input type="text" value="<?php echo $default_options['responsi_sc_icon_color'];?>" data-default-color="<?php echo $default_options['responsi_sc_icon_color'];?>" id="responsi-value-color" name="responsi-value-color" class="icolor-picker" />
 				</td>
 			</tr>
 		</table>
@@ -174,7 +174,7 @@ global $ICONS;
 				<td class="responsi-marker-upload-control">
 				    <div class="screenshot"></div>
 					<input type="text" value="" id="responsi-value-image" name="responsi-value-image" class="upload responsi-value-image" />
-					<a title="Add Image" class="button upload_button_custom add_image" id="insert-media-button" href="#">Upload</a>
+					<a title="Add Image" class="button upload_button_custom button-small wp-picker-defaultadd_image" id="insert-media-button" href="#">Upload</a>
 				</td>
 			</tr>
 
@@ -219,7 +219,7 @@ global $ICONS;
 					<label for="responsi-value-background" class=""><span class="optional"></span></label>
 				</th>
 				<td class="responsi-marker-colourpicker-control">
-					<input type="text" value="<?php echo $default_options['responsi_sc_icon_background']['color'];?>" data-default-color="<?php echo $default_options['responsi_sc_icon_background']['color'];?>" id="responsi-value-background" name="responsi-value-background" class="icolor-picker" style="display:none" />
+					<input type="text" value="<?php echo $default_options['responsi_sc_icon_background']['color'];?>" data-default-color="<?php echo $default_options['responsi_sc_icon_background']['color'];?>" id="responsi-value-background" name="responsi-value-background" class="icolor-picker" />
 				</td>
 			</tr>
 			<tr>

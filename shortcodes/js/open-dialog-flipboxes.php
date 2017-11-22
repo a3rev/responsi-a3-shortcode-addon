@@ -167,7 +167,7 @@ global $ICONS;
 					<label for="responsi-value-background_color_front" class=""><span class="optional"></span></label>
 				</th>
 				<td class="responsi-marker-colourpicker-control">
-					<input type="text" value="<?php echo $default_options['responsi_sc_flip_boxes_front_bg']['color'];?>" data-default-color="<?php echo $default_options['responsi_sc_flip_boxes_front_bg']['color'];?>" id="responsi-value-background_color_front" name="responsi-value-background_color_front" class="icolor-picker" style="display:none" />
+					<input type="text" value="<?php echo $default_options['responsi_sc_flip_boxes_front_bg']['color'];?>" data-default-color="<?php echo $default_options['responsi_sc_flip_boxes_front_bg']['color'];?>" id="responsi-value-background_color_front" name="responsi-value-background_color_front" class="icolor-picker" />
 				</td>
 			</tr>
 			<tr>
@@ -288,7 +288,7 @@ global $ICONS;
 					<label for="responsi-value-icon_color" class="">Icon Color<span class="optional"></span></label>
 				</th>
 				<td class="responsi-marker-colourpicker-control">
-					<input type="text" value="#ffffff" data-default-color="#ffffff" id="responsi-value-icon_color" name="responsi-value-icon_color" class="icolor-picker" style="display:none" />
+					<input type="text" value="#ffffff" data-default-color="#ffffff" id="responsi-value-icon_color" name="responsi-value-icon_color" class="icolor-picker" />
 				</td>
 			</tr>
 			<tr class="tr_icon">
@@ -303,7 +303,7 @@ global $ICONS;
 					<label for="responsi-value-circle_color" class="">Circle Background<span class="optional"></span></label>
 				</th>
 				<td class="responsi-marker-colourpicker-control">
-					<input type="text" value="#a0ce4e" data-default-color="#a0ce4e" id="responsi-value-circle_color" name="responsi-value-circle_color" class="icolor-picker" style="display:none" />
+					<input type="text" value="#a0ce4e" data-default-color="#a0ce4e" id="responsi-value-circle_color" name="responsi-value-circle_color" class="icolor-picker" />
 				</td>
 			</tr>
 
@@ -312,7 +312,7 @@ global $ICONS;
 					<label for="responsi-value-circle_border_color" class="">Circle Border<span class="optional"></span></label>
 				</th>
 				<td class="responsi-marker-colourpicker-control">
-					<input type="text" value="#a0ce4e" data-default-color="#a0ce4e" id="responsi-value-circle_border_color" name="responsi-value-circle_border_color" class="icolor-picker" style="display:none" />
+					<input type="text" value="#a0ce4e" data-default-color="#a0ce4e" id="responsi-value-circle_border_color" name="responsi-value-circle_border_color" class="icolor-picker" />
 				</td>
 			</tr>
 
@@ -356,7 +356,7 @@ global $ICONS;
 				<td class="responsi-marker-upload-control">
 				    <div class="screenshot"></div>
 					<input type="text" value="" id="responsi-value-image" name="responsi-value-image" class="upload responsi-value-image" />
-					<a title="Add Image" class="button upload_button_custom add_image" id="insert-media-button" href="#">Upload</a>
+					<a title="Add Image" class="button upload_button_custom button-small wp-picker-defaultadd_image" id="insert-media-button" href="#">Upload</a>
 				</td>
 			</tr>
 
@@ -517,7 +517,7 @@ global $ICONS;
 					<label for="responsi-value-background_color_back" class=""><span class="optional"></span></label>
 				</th>
 				<td class="responsi-marker-colourpicker-control">
-					<input type="text" value="<?php echo $default_options['responsi_sc_flip_boxes_back_bg']['color'];?>" data-default-color="<?php echo $default_options['responsi_sc_flip_boxes_back_bg']['color'];?>" id="responsi-value-background_color_back" name="responsi-value-background_color_back" class="icolor-picker" style="display:none" />
+					<input type="text" value="<?php echo $default_options['responsi_sc_flip_boxes_back_bg']['color'];?>" data-default-color="<?php echo $default_options['responsi_sc_flip_boxes_back_bg']['color'];?>" id="responsi-value-background_color_back" name="responsi-value-background_color_back" class="icolor-picker" />
 				</td>
 			</tr>
 

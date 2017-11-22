@@ -1,5 +1,12 @@
 *** Responsi Shortcodes Changelog ***
 
+= 2.8.6 - 2017/11/22 =
+* Maintenance Update includes 3 code tweaks as compatibility upgrades with WordPress 4.9 plus added support for RTL display in pop up
+* Tweak - Upgrade Shortcode pop up template to use WordPress core input fields
+* Tweak - Update Color picker to use default style of WordPress color picker
+* Tweak - Update style for iphone checker js to the same as Responsi Framework
+* Tweak - Added support for RLT display in the pop up
+
 = 2.8.5 - 2017/11/16 =
 * Maintenance Upgrade. Please upgrade to WordPress 4.9.0 – then Responsi Framework to 6.8.0 and then this plugin
 * Tweak - Tested for compatibility with WordPress Major version 4.9

@@ -36,7 +36,7 @@ class Responsi_A3_Shortcode_Class {
 		if ( in_array( $pagenow, array( 'customize.php' ) ) || ( in_array( $pagenow, array( 'admin.php') ) && isset( $_GET['page'] ) ) || ( ( current_user_can( 'edit_posts' ) || current_user_can( 'edit_pages' ) ) && get_user_option( 'rich_editing' ) == 'true' && ( in_array( $pagenow, array('edit-tags.php','term.php', 'post.php', 'post-new.php', 'page-new.php', 'page.php' ) ) ) ) )  {
 			$suffix = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
 			$rtl = is_rtl() ? '.rtl' : '';
-			$rtl = '';
+			//$rtl = '';
 		  	// Add the tinyMCE buttons and plugins.
 			add_filter( 'mce_buttons', array( $this, 'filter_mce_buttons' ) );
 			add_filter( 'mce_external_plugins', array( $this, 'filter_mce_external_plugins' ) );
@@ -58,7 +58,7 @@ class Responsi_A3_Shortcode_Class {
 		global $pagenow, $responsi_version;
 		$suffix = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
 		$rtl = is_rtl() ? '.rtl' : '';
-		$rtl = '';
+		//$rtl = '';
 		
 		if ( ! wp_script_is( 'jquery-ui-ioscheckbox', 'registered' ) ) {
 			wp_register_script( 'jquery-ui-ioscheckbox', esc_url( get_template_directory_uri() . '/functions/js/iphone-style-checkboxes'.$rtl.$suffix.'.js' ), array( 'jquery' ), $responsi_version, false );
@@ -72,7 +72,7 @@ class Responsi_A3_Shortcode_Class {
 		global $pagenow, $responsi_version;
 		$suffix = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
 		$rtl = is_rtl() ? '.rtl' : '';
-		$rtl = '';
+		//$rtl = '';
 		wp_register_script( 'responsi-shortcode-dialog', esc_url( RESPONSI_A3_SC_SHORTCODES_URL . '/js/dialog-js.php'), array( 'jquery' ), $responsi_version, false );
 		wp_enqueue_script( 'responsi-shortcode-dialog' );
 
@@ -81,7 +81,7 @@ class Responsi_A3_Shortcode_Class {
 	public static function _front_register_css_and_js () {
 		$suffix = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
 		$rtl = is_rtl() ? '.rtl' : '';
-		$rtl = '';
+		//$rtl = '';
 		wp_register_style( 'responsi-shortcode-fontawesome', esc_url( RESPONSI_A3_SC_SHORTCODES_URL . '/css/font-awesome'.$suffix.'.css' ),array(), '', 'screen' );
 		wp_register_style( 'responsi-shortcode-fonticomoon', esc_url( RESPONSI_A3_SC_SHORTCODES_URL . '/css/font-icomoon'.$suffix.'.css' ),array(), '', 'screen' );
 		wp_register_style( 'responsi-shortcode-css', esc_url( RESPONSI_A3_SC_SHORTCODES_URL . '/css/shortcode'.$suffix.'.css' ),array(), '', 'screen');
@@ -100,7 +100,7 @@ class Responsi_A3_Shortcode_Class {
 	public static function add_responsi_before_popup_shortcode() {
 		$suffix = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
 		$rtl = is_rtl() ? '.rtl' : '';
-		$rtl = '';
+		//$rtl = '';
 	}
 
 	public function shortcode_open_dialog() {
@@ -115,7 +115,7 @@ class Responsi_A3_Shortcode_Class {
 	public static function add_responsi_after_popup_shortcode() {
 		$suffix = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
 		$rtl = is_rtl() ? '.rtl' : '';
-		$rtl = '';
+		//$rtl = '';
 		echo "
 		<script type=\"text/javascript\">
 		jQuery(function($) { 'use strict';
@@ -432,7 +432,7 @@ class Responsi_A3_Shortcode_Class {
 		}
 		$html .= '</select>';
 
-		$html .= '<div style="clear:both;height:1px;"></div>';
+		//$html .= '<div style="clear:both;height:1px;"></div>';
 
 		$insets = array( 'inset' => 'Inset', 'outset' => 'Outset');
 
@@ -443,7 +443,7 @@ class Responsi_A3_Shortcode_Class {
 		$html .= '</select>';
 
 		$html .= '<div class="responsi-marker-colourpicker-control">';
-		$html .= '<input type="text" id="responsi-value-'.$id.'color" name="responsi-value-'.$id.'color" class="icolor-picker" value="'.$color.'" data-default-color="'.$default_color.'" style="display:none" />';
+		$html .= '<input type="text" id="responsi-value-'.$id.'color" name="responsi-value-'.$id.'color" class="icolor-picker" value="'.$color.'" data-default-color="'.$default_color.'" />';
 		$html .= '</div>';
 
 		if( $echo ){
@@ -476,7 +476,7 @@ class Responsi_A3_Shortcode_Class {
 		$html .= '</select>';
 
 		$html .= '<div class="responsi-marker-colourpicker-control">';
-		$html .= '<input type="text" id="responsi-value-'.$id.'color" name="responsi-value-'.$id.'color" class="icolor-picker" value="'.$color.'" data-default-color="'.$default_color.'" style="display:none" />';
+		$html .= '<input type="text" id="responsi-value-'.$id.'color" name="responsi-value-'.$id.'color" class="icolor-picker" value="'.$color.'" data-default-color="'.$default_color.'" />';
 		$html .= '</div>';
 
 		if( $echo ){
@@ -584,7 +584,7 @@ class Responsi_A3_Shortcode_Class {
 		$html .= '</select>';
 
 		$html .= '<div class="responsi-marker-colourpicker-control">';
-		$html .= '<input type="text" id="responsi-value-'.$id.'_color" name="responsi-value-'.$id.'_color" class="icolor-picker" value="'.$color.'" data-default-color="'.$default_color.'" style="display:none" />';
+		$html .= '<input type="text" id="responsi-value-'.$id.'_color" name="responsi-value-'.$id.'_color" class="icolor-picker" value="'.$color.'" data-default-color="'.$default_color.'" />';
 		$html .= '</div>';
 
 		if( $echo ){

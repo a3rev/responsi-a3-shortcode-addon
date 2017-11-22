@@ -141,7 +141,7 @@ global $ICONS;
 					<label for="responsi-value-hbackground" class="">Background Colour<span class="optional"></span></label>
 				</th>
 				<td class="responsi-marker-colourpicker-control">
-					<input type="text" value="#ffa" data-default-color="#ffa" id="responsi-value-hbackground" name="responsi-value-hbackground" class="icolor-picker" style="display:none" />
+					<input type="text" value="#ffa" data-default-color="#ffa" id="responsi-value-hbackground" name="responsi-value-hbackground" class="icolor-picker" />
 				</td>
 			</tr>
 			<tr>
@@ -263,7 +263,7 @@ global $ICONS;
 					<label for="responsi-value-qcolor" class="">Icon Colour<span class="optional"></span></label>
 				</th>
 				<td class="responsi-marker-colourpicker-control">
-					<input type="text" value="#cccccc" data-default-color="#cccccc" id="responsi-value-qcolor" name="responsi-value-qcolor" class="icolor-picker" style="display:none" />
+					<input type="text" value="#cccccc" data-default-color="#cccccc" id="responsi-value-qcolor" name="responsi-value-qcolor" class="icolor-picker" />
 				</td>
 			</tr>
 			<tr>
@@ -271,7 +271,7 @@ global $ICONS;
 					<label for="responsi-value-qtextcolor" class="">Text Colour<span class="optional"></span></label>
 				</th>
 				<td class="responsi-marker-colourpicker-control">
-					<input type="text" value="#000000" data-default-color="#000000" id="responsi-value-qtextcolor" name="responsi-value-qtextcolor" class="icolor-picker" style="display:none" />
+					<input type="text" value="#000000" data-default-color="#000000" id="responsi-value-qtextcolor" name="responsi-value-qtextcolor" class="icolor-picker" />
 				</td>
 			</tr>
 			<tr>
@@ -308,7 +308,7 @@ global $ICONS;
 					<label for="responsi-value-qbackground" class="">Background Colour<span class="optional"></span></label>
 				</th>
 				<td class="responsi-marker-colourpicker-control">
-					<input type="text" value="#fafafa" data-default-color="#fafafa" id="responsi-value-qbackground" name="responsi-value-qbackground" class="icolor-picker" style="display:none" />
+					<input type="text" value="#fafafa" data-default-color="#fafafa" id="responsi-value-qbackground" name="responsi-value-qbackground" class="icolor-picker" />
 				</td>
 			</tr>
 			<tr>
@@ -417,7 +417,7 @@ global $ICONS;
 					<label for="responsi-value-tseparatorcolor" class="">Separator Colour<span class="optional"></span></label>
 				</th>
 				<td class="responsi-marker-colourpicker-control">
-					<input type="text" value="#dbdbdb" data-default-color="#dbdbdb" id="responsi-value-tseparatorcolor" name="responsi-value-tseparatorcolor" class="icolor-picker" style="display:none" />
+					<input type="text" value="#dbdbdb" data-default-color="#dbdbdb" id="responsi-value-tseparatorcolor" name="responsi-value-tseparatorcolor" class="icolor-picker" />
 				</td>
 			</tr>
 			<tr>
