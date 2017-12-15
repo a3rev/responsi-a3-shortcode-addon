@@ -41,7 +41,7 @@ class Shortcode_Responsi_Customize
         wp_enqueue_script('customize-a3-shortcode-preview', RESPONSI_A3_SC_URL . '/customize/js/customize.preview' . $suffix . '.js', array(
             'jquery',
             'customize-preview',
-            'responsi-customize-function-preview'
+            'responsi-customize-function'
         ), '5.3.0', 1);
     }
 
@@ -57,7 +57,6 @@ class Shortcode_Responsi_Customize
         $_panels                             = array();
         $_panels['responsi_shortcode_panel'] = array(
             'title' => __('Responsi Shortcode', 'responsi-a3-shortcode-addon'),
-            'description' => '',
             'priority' => 29,
             'active_callback' => '_customize_menu_a3_shortcode'
         );
@@ -119,12 +118,10 @@ class Shortcode_Responsi_Customize
 
         $_controls_settings = array();
 
-        $_controls_settings['lb_a3_shortcode_2'] = array(
+        $_controls_settings['lbsc1'] = array(
             'control' => array(
                 'label' => __('WordPress [HR] Tags', 'responsi-a3-shortcode-addon'),
-                'description' => "",
                 'section' => 'responsi_shortcode_settings_section',
-                'settings' => 'lb_a3_shortcode_2',
                 'type' => 'ilabel',
                 'input_attrs' => array(
                     'class' => ''
@@ -138,7 +135,6 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_style_border'] = array(
             'control' => array(
                 'label' => __('HR Line Colour', 'responsi-a3-shortcode-addon'),
-                'description' => "",
                 'section' => 'responsi_shortcode_settings_section',
                 'settings' => 'responsi_style_border',
                 'type' => 'icolor',
@@ -153,12 +149,11 @@ class Shortcode_Responsi_Customize
             )
         );
 
-        $_controls_settings['lb_a3_shortcode_4'] = array(
+        $_controls_settings['lbsc2'] = array(
             'control' => array(
                 'label' => __('WordPress Quote Tags', 'responsi-a3-shortcode-addon'),
                 'description' => __("WordPress Blockquote and Shortcode Quote Icon", 'responsi-a3-shortcode-addon'),
                 'section' => 'responsi_shortcode_settings_section',
-                'settings' => 'lb_a3_shortcode_4',
                 'type' => 'ilabel',
                 'input_attrs' => array(
                     'class' => ''
@@ -172,7 +167,6 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_blockquote_icon'] = array(
             'control' => array(
                 'label' => __('Quotation Icon', 'responsi-a3-shortcode-addon'),
-                'description' => "",
                 'section' => 'responsi_shortcode_settings_section',
                 'settings' => 'responsi_blockquote_icon',
                 'type' => 'icheckbox',
@@ -190,7 +184,6 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_blockquote_icon_color'] = array(
             'control' => array(
                 'label' => __('Quote Icon Colour', 'responsi-a3-shortcode-addon'),
-                'description' => "",
                 'section' => 'responsi_shortcode_settings_section',
                 'settings' => 'responsi_blockquote_icon_color',
                 'type' => 'icolor',
@@ -205,12 +198,10 @@ class Shortcode_Responsi_Customize
             )
         );
 
-        $_controls_settings['lb_a3_shortcode_7'] = array(
+        $_controls_settings['lbsc3'] = array(
             'control' => array(
                 'label' => __('Shortcode Quote Boxed Background', 'responsi-a3-shortcode-addon'),
-                'description' => "",
                 'section' => 'responsi_shortcode_settings_section',
-                'settings' => 'lb_a3_shortcode_7',
                 'type' => 'ilabel',
                 'input_attrs' => array(
                     'class' => 'hide-custom'
@@ -224,7 +215,6 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_blockquote_boxed'] = array(
             'control' => array(
                 'label' => __('Shortcode Quote Boxed Display', 'responsi-a3-shortcode-addon'),
-                'description' => "",
                 'section' => 'responsi_shortcode_settings_section',
                 'settings' => 'responsi_blockquote_boxed',
                 'type' => 'icheckbox',
@@ -242,7 +232,6 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_blockquote_boxed_bg'] = array(
             'control' => array(
                 'label' => __('Quote Background Colour', 'responsi-a3-shortcode-addon'),
-                'description' => "",
                 'section' => 'responsi_shortcode_settings_section',
                 'settings' => 'multiple',
                 'type' => 'ibackground',
@@ -260,7 +249,7 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_blockquote_boxed_border_top'] = array(
             'control' => array(
                 'label' => __('Quote Border - Top', 'responsi-a3-shortcode-addon'),
-                'description' => __("No Border = 0px.", 'responsi-a3-shortcode-addon'),
+                //'description' => __("No Border = 0px.", 'responsi-a3-shortcode-addon'),
                 'section' => 'responsi_shortcode_settings_section',
                 'settings' => 'multiple',
                 'type' => 'border',
@@ -282,7 +271,7 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_blockquote_boxed_border_bottom'] = array(
             'control' => array(
                 'label' => __('Quote Border - Bottom', 'responsi-a3-shortcode-addon'),
-                'description' => __("No Border = 0px.", 'responsi-a3-shortcode-addon'),
+                //'description' => __("No Border = 0px.", 'responsi-a3-shortcode-addon'),
                 'section' => 'responsi_shortcode_settings_section',
                 'settings' => 'multiple',
                 'type' => 'border',
@@ -304,7 +293,7 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_blockquote_boxed_border_lr'] = array(
             'control' => array(
                 'label' => __('Quote Border - Left and Right', 'responsi-a3-shortcode-addon'),
-                'description' => __("No Border = 0px.", 'responsi-a3-shortcode-addon'),
+                //'description' => __("No Border = 0px.", 'responsi-a3-shortcode-addon'),
                 'section' => 'responsi_shortcode_settings_section',
                 'settings' => 'multiple',
                 'type' => 'border',
@@ -326,7 +315,7 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_blockquote_boxed_border_radius'] = array(
             'control' => array(
                 'label' => __('Quote Border Corner Style', 'responsi-a3-shortcode-addon'),
-                'description' => __("Rounded - Move slider right to increase the px value (rounded corner effect), left to decrease. Applies to all 4 corners.", 'responsi-a3-shortcode-addon'),
+                //'description' => __("Rounded - Move slider right to increase the px value (rounded corner effect), left to decrease. Applies to all 4 corners.", 'responsi-a3-shortcode-addon'),
                 'section' => 'responsi_shortcode_settings_section',
                 'settings' => 'multiple',
                 'type' => 'border_radius',
@@ -347,7 +336,6 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_blockquote_boxed_box_shadow'] = array(
             'control' => array(
                 'label' => __('Quote Border Shadow  ', 'responsi-a3-shortcode-addon'),
-                'description' => "",
                 'section' => 'responsi_shortcode_settings_section',
                 'settings' => 'multiple',
                 'type' => 'box_shadow',
@@ -370,12 +358,11 @@ class Shortcode_Responsi_Customize
             )
         );
 
-        $_controls_settings['lb_a3_shortcode_16'] = array(
+        $_controls_settings['lbsc4'] = array(
             'control' => array(
                 'label' => __('Shortcode Icons Default Style', 'responsi-a3-shortcode-addon'),
                 'description' => __("<strong>Conditionals:</strong><br/>1. Set a Default style for the 592 Font Awesome icons that can be inserted by shortcode.<br/>2. Default style can be customized for each individual icon when inserting it by shortcode.<br/>3. Changing the Font Awesome default style updates all icons that have been embedded using the default style.<br/>4. Changing the Font Awesome default style does not affect icons inserted with a custom style.<br/>5. Default style created here applies to Unorder List Icons shortcode.", 'responsi-a3-shortcode-addon'),
                 'section' => 'responsi_shortcode_icons_section',
-                'settings' => 'lb_a3_shortcode_16',
                 'type' => 'ilabel',
                 'input_attrs' => array(
                     'class' => ''
@@ -389,7 +376,6 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_icon_size'] = array(
             'control' => array(
                 'label' => __('Default Size', 'responsi-a3-shortcode-addon'),
-                'description' => "",
                 'section' => 'responsi_shortcode_icons_section',
                 'settings' => 'responsi_sc_icon_size',
                 'type' => 'iselect',
@@ -408,7 +394,6 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_icon_color'] = array(
             'control' => array(
                 'label' => __('Default Colour', 'responsi-a3-shortcode-addon'),
-                'description' => "",
                 'section' => 'responsi_shortcode_icons_section',
                 'settings' => 'responsi_sc_icon_color',
                 'type' => 'icolor',
@@ -444,7 +429,7 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_icon_border'] = array(
             'control' => array(
                 'label' => __('Border', 'responsi-a3-shortcode-addon'),
-                'description' => __("No Border = 0px.", 'responsi-a3-shortcode-addon'),
+                //'description' => __("No Border = 0px.", 'responsi-a3-shortcode-addon'),
                 'section' => 'responsi_shortcode_icons_section',
                 'settings' => 'multiple',
                 'type' => 'border',
@@ -487,7 +472,6 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_icon_shadow'] = array(
             'control' => array(
                 'label' => __('Border Shadow', 'responsi-a3-shortcode-addon'),
-                'description' => "",
                 'section' => 'responsi_shortcode_icons_section',
                 'settings' => 'multiple',
                 'type' => 'box_shadow',
@@ -513,7 +497,7 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_icon_margin'] = array(
             'control' => array(
                 'label' => __('Margin', 'responsi-a3-shortcode-addon'),
-                'description' => __("Numeric px vales ex. 10 = 10px.", 'responsi-a3-shortcode-addon'),
+                //'description' => __("Numeric px vales ex. 10 = 10px.", 'responsi-a3-shortcode-addon'),
                 'section' => 'responsi_shortcode_icons_section',
                 'settings' => 'multitext',
                 'type' => 'multitext',
@@ -542,7 +526,7 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_icon_padding'] = array(
             'control' => array(
                 'label' => __('Padding', 'responsi-a3-shortcode-addon'),
-                'description' => __("Numeric px vales ex. 10 = 10px.", 'responsi-a3-shortcode-addon'),
+                //'description' => __("Numeric px vales ex. 10 = 10px.", 'responsi-a3-shortcode-addon'),
                 'section' => 'responsi_shortcode_icons_section',
                 'settings' => 'multitext',
                 'type' => 'multitext',
@@ -568,12 +552,10 @@ class Shortcode_Responsi_Customize
             )
         );
 
-        $_controls_settings['lb_a3_shortcode_26'] = array(
+        $_controls_settings['lbsc5'] = array(
             'control' => array(
                 'label' => __('Shortcode Flip Boxes Front Side Default Style', 'responsi-a3-shortcode-addon'),
-                'description' => "",
                 'section' => 'responsi_shortcode_flipboxes_section',
-                'settings' => 'lb_a3_shortcode_26',
                 'type' => 'ilabel',
                 'input_attrs' => array(
                     'class' => ''
@@ -587,7 +569,6 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_flip_boxes_front_heading'] = array(
             'control' => array(
                 'label' => __('Heading Font', 'responsi-a3-shortcode-addon'),
-                'description' => "",
                 'section' => 'responsi_shortcode_flipboxes_section',
                 'settings' => 'multiple',
                 'type' => 'typography',
@@ -611,7 +592,6 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_flip_boxes_front_text'] = array(
             'control' => array(
                 'label' => __('Content Font', 'responsi-a3-shortcode-addon'),
-                'description' => "",
                 'section' => 'responsi_shortcode_flipboxes_section',
                 'settings' => 'multiple',
                 'type' => 'typography',
@@ -653,7 +633,7 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_flip_boxes_front_border'] = array(
             'control' => array(
                 'label' => __('Border', 'responsi-a3-shortcode-addon'),
-                'description' => __("No Border = 0px.", 'responsi-a3-shortcode-addon'),
+                //'description' => __("No Border = 0px.", 'responsi-a3-shortcode-addon'),
                 'section' => 'responsi_shortcode_flipboxes_section',
                 'settings' => 'multiple',
                 'type' => 'border',
@@ -693,12 +673,10 @@ class Shortcode_Responsi_Customize
             )
         );
 
-        $_controls_settings['lb_a3_shortcode_32'] = array(
+        $_controls_settings['lbsc6'] = array(
             'control' => array(
                 'label' => __('Shortcode Flip Boxes Back Side Default Style', 'responsi-a3-shortcode-addon'),
-                'description' => "",
                 'section' => 'responsi_shortcode_flipboxes_section',
-                'settings' => 'lb_a3_shortcode_32',
                 'type' => 'ilabel',
                 'input_attrs' => array(
                     'class' => ''
@@ -712,7 +690,6 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_flip_boxes_back_heading'] = array(
             'control' => array(
                 'label' => __('Heading Font', 'responsi-a3-shortcode-addon'),
-                'description' => "",
                 'section' => 'responsi_shortcode_flipboxes_section',
                 'settings' => 'multiple',
                 'type' => 'typography',
@@ -736,7 +713,6 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_flip_boxes_back_text'] = array(
             'control' => array(
                 'label' => __('Content Font', 'responsi-a3-shortcode-addon'),
-                'description' => "",
                 'section' => 'responsi_shortcode_flipboxes_section',
                 'settings' => 'multiple',
                 'type' => 'typography',
@@ -778,7 +754,7 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_flip_boxes_back_border'] = array(
             'control' => array(
                 'label' => __('Border', 'responsi-a3-shortcode-addon'),
-                'description' => __("No Border = 0px.", 'responsi-a3-shortcode-addon'),
+                //'description' => __("No Border = 0px.", 'responsi-a3-shortcode-addon'),
                 'section' => 'responsi_shortcode_flipboxes_section',
                 'settings' => 'multiple',
                 'type' => 'border',
@@ -818,12 +794,11 @@ class Shortcode_Responsi_Customize
             )
         );
 
-        $_controls_settings['lb_a3_shortcode_39'] = array(
+        $_controls_settings['lbsc7'] = array(
             'control' => array(
                 'label' => __('Shortcode Full Width Section Default Style', 'responsi-a3-shortcode-addon'),
                 'description' => __("Conditionals:<br>1. Use with Full Width 100% page template to create full width sections that span the entire width of your browser window, or keep content contained inside a set px width. Add section background images, borders, colours, padding, positioning and content with the shortcode<br>2. Use with Posts and Pages to create custom full content width sections (not edge to edge of the browser screen)<br>3. The settings below are default settings. All can be edited from the Full Content Section insert shortcode pop-up settings.", 'responsi-a3-shortcode-addon'),
                 'section' => 'responsi_shortcode_fullwidth_section',
-                'settings' => 'lb_a3_shortcode_39',
                 'type' => 'ilabel',
                 'input_attrs' => array(
                     'class' => ''
@@ -855,7 +830,7 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_fullwidth_border'] = array(
             'control' => array(
                 'label' => __('Full Width Section Top and Bottom Borders', 'responsi-a3-shortcode-addon'),
-                'description' => __("No Border = 0px.", 'responsi-a3-shortcode-addon'),
+                //'description' => __("No Border = 0px.", 'responsi-a3-shortcode-addon'),
                 'section' => 'responsi_shortcode_fullwidth_section',
                 'settings' => 'multiple',
                 'type' => 'border',
@@ -895,12 +870,10 @@ class Shortcode_Responsi_Customize
             )
         );
 
-        $_controls_settings['lb_a3_shortcode_44'] = array(
+        $_controls_settings['lbsc8'] = array(
             'control' => array(
                 'label' => __('Tabs Container Style', 'responsi-a3-shortcode-addon'),
-                'description' => "",
                 'section' => 'responsi_shortcode_tabs_section',
-                'settings' => 'lb_a3_shortcode_44',
                 'type' => 'ilabel',
                 'input_attrs' => array(
                     'class' => ''
@@ -914,7 +887,7 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_tab_border'] = array(
             'control' => array(
                 'label' => __('Border', 'responsi-a3-shortcode-addon'),
-                'description' => __("No Border = 0px.", 'responsi-a3-shortcode-addon'),
+                //'description' => __("No Border = 0px.", 'responsi-a3-shortcode-addon'),
                 'section' => 'responsi_shortcode_tabs_section',
                 'settings' => 'multiple',
                 'type' => 'border',
@@ -936,7 +909,6 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_tab_corner'] = array(
             'control' => array(
                 'label' => __('Border Corner', 'responsi-a3-shortcode-addon'),
-                'description' => "",
                 'section' => 'responsi_shortcode_tabs_section',
                 'settings' => 'multiple',
                 'type' => 'border_radius',
@@ -957,7 +929,6 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_tab_ctmargin_on'] = array(
             'control' => array(
                 'label' => __('Margin', 'responsi-a3-shortcode-addon'),
-                'description' => "",
                 'section' => 'responsi_shortcode_tabs_section',
                 'settings' => 'responsi_sc_tab_ctmargin_on',
                 'type' => 'icheckbox',
@@ -975,7 +946,7 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_tab_ctmargin'] = array(
             'control' => array(
                 'label' => "",
-                'description' => __("Numeric px vales ex. 10 = 10px.", 'responsi-a3-shortcode-addon'),
+                //'description' => __("Numeric px vales ex. 10 = 10px.", 'responsi-a3-shortcode-addon'),
                 'section' => 'responsi_shortcode_tabs_section',
                 'settings' => 'multitext',
                 'type' => 'multitext',
@@ -997,12 +968,10 @@ class Shortcode_Responsi_Customize
             )
         );
 
-        $_controls_settings['lb_a3_shortcode_441'] = array(
+        $_controls_settings['lbsc9'] = array(
             'control' => array(
                 'label' => __('Tabs Style', 'responsi-a3-shortcode-addon'),
-                'description' => "",
                 'section' => 'responsi_shortcode_tabs_section',
-                'settings' => 'lb_a3_shortcode_441',
                 'type' => 'ilabel',
                 'input_attrs' => array(
                     'class' => ''
@@ -1016,7 +985,6 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_tab_font'] = array(
             'control' => array(
                 'label' => __('Font', 'responsi-a3-shortcode-addon'),
-                'description' => "",
                 'section' => 'responsi_shortcode_tabs_section',
                 'settings' => 'multiple',
                 'type' => 'typography',
@@ -1040,7 +1008,6 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_tab_icon_color'] = array(
             'control' => array(
                 'label' => __('Icon Colour', 'responsi-a3-shortcode-addon'),
-                'description' => "",
                 'section' => 'responsi_shortcode_tabs_section',
                 'settings' => 'responsi_sc_tab_icon_color',
                 'type' => 'icolor',
@@ -1058,7 +1025,6 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_tab_backgroundcolor'] = array(
             'control' => array(
                 'label' => __('Background Colour', 'responsi-a3-shortcode-addon'),
-                'description' => "",
                 'section' => 'responsi_shortcode_tabs_section',
                 'settings' => 'multiple',
                 'type' => 'ibackground',
@@ -1076,7 +1042,7 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_tab_bordertop'] = array(
             'control' => array(
                 'label' => __('Border - Top', 'responsi-a3-shortcode-addon'),
-                'description' => __("No Border = 0px.", 'responsi-a3-shortcode-addon'),
+                //'description' => __("No Border = 0px.", 'responsi-a3-shortcode-addon'),
                 'section' => 'responsi_shortcode_tabs_section',
                 'settings' => 'multiple',
                 'type' => 'border',
@@ -1098,7 +1064,7 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_tab_borderbottom'] = array(
             'control' => array(
                 'label' => __('Border - Bottom', 'responsi-a3-shortcode-addon'),
-                'description' => __("No Border = 0px.", 'responsi-a3-shortcode-addon'),
+                //'description' => __("No Border = 0px.", 'responsi-a3-shortcode-addon'),
                 'section' => 'responsi_shortcode_tabs_section',
                 'settings' => 'multiple',
                 'type' => 'border',
@@ -1120,7 +1086,7 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_tab_borderleft'] = array(
             'control' => array(
                 'label' => __('Border - Left', 'responsi-a3-shortcode-addon'),
-                'description' => __("No Border = 0px.", 'responsi-a3-shortcode-addon'),
+                //'description' => __("No Border = 0px.", 'responsi-a3-shortcode-addon'),
                 'section' => 'responsi_shortcode_tabs_section',
                 'settings' => 'multiple',
                 'type' => 'border',
@@ -1142,7 +1108,7 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_tab_borderright'] = array(
             'control' => array(
                 'label' => __('Border - Right', 'responsi-a3-shortcode-addon'),
-                'description' => __("No Border = 0px.", 'responsi-a3-shortcode-addon'),
+                //'description' => __("No Border = 0px.", 'responsi-a3-shortcode-addon'),
                 'section' => 'responsi_shortcode_tabs_section',
                 'settings' => 'multiple',
                 'type' => 'border',
@@ -1164,7 +1130,6 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_tab_cornertopleft'] = array(
             'control' => array(
                 'label' => __('Border Corner - Top Left', 'responsi-a3-shortcode-addon'),
-                'description' => "",
                 'section' => 'responsi_shortcode_tabs_section',
                 'settings' => 'multiple',
                 'type' => 'border_radius',
@@ -1185,7 +1150,6 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_tab_cornertopright'] = array(
             'control' => array(
                 'label' => __('Border Corner - Top Right', 'responsi-a3-shortcode-addon'),
-                'description' => "",
                 'section' => 'responsi_shortcode_tabs_section',
                 'settings' => 'multiple',
                 'type' => 'border_radius',
@@ -1206,7 +1170,6 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_tab_cornerbottomleft'] = array(
             'control' => array(
                 'label' => __('Border Corner - Bottom Left', 'responsi-a3-shortcode-addon'),
-                'description' => "",
                 'section' => 'responsi_shortcode_tabs_section',
                 'settings' => 'multiple',
                 'type' => 'border_radius',
@@ -1227,7 +1190,6 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_tab_cornerbottomright'] = array(
             'control' => array(
                 'label' => __('Border Corner - Bottom Right', 'responsi-a3-shortcode-addon'),
-                'description' => "",
                 'section' => 'responsi_shortcode_tabs_section',
                 'settings' => 'multiple',
                 'type' => 'border_radius',
@@ -1248,7 +1210,6 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_tab_margin_on'] = array(
             'control' => array(
                 'label' => __('Margin', 'responsi-a3-shortcode-addon'),
-                'description' => "",
                 'section' => 'responsi_shortcode_tabs_section',
                 'settings' => 'responsi_sc_tab_margin_on',
                 'type' => 'icheckbox',
@@ -1266,7 +1227,7 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_tab_margin'] = array(
             'control' => array(
                 'label' => "",
-                'description' => __("Numeric px vales ex. 10 = 10px.", 'responsi-a3-shortcode-addon'),
+                //'description' => __("Numeric px vales ex. 10 = 10px.", 'responsi-a3-shortcode-addon'),
                 'section' => 'responsi_shortcode_tabs_section',
                 'settings' => 'multitext',
                 'type' => 'multitext',
@@ -1295,7 +1256,6 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_tab_padding_on'] = array(
             'control' => array(
                 'label' => __('Padding', 'responsi-a3-shortcode-addon'),
-                'description' => "",
                 'section' => 'responsi_shortcode_tabs_section',
                 'settings' => 'responsi_sc_tab_padding_on',
                 'type' => 'icheckbox',
@@ -1313,7 +1273,7 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_tab_padding'] = array(
             'control' => array(
                 'label' => "",
-                'description' => __("Numeric px vales ex. 10 = 10px.", 'responsi-a3-shortcode-addon'),
+                //'description' => __("Numeric px vales ex. 10 = 10px.", 'responsi-a3-shortcode-addon'),
                 'section' => 'responsi_shortcode_tabs_section',
                 'settings' => 'multitext',
                 'type' => 'multitext',
@@ -1339,12 +1299,10 @@ class Shortcode_Responsi_Customize
             )
         );
 
-        $_controls_settings['lb_a3_shortcode_64'] = array(
+        $_controls_settings['lbsc10'] = array(
             'control' => array(
                 'label' => __('Tabs Inactive Style', 'responsi-a3-shortcode-addon'),
-                'description' => "",
                 'section' => 'responsi_shortcode_tabs_section',
-                'settings' => 'lb_a3_shortcode_64',
                 'type' => 'ilabel',
                 'input_attrs' => array(
                     'class' => ''
@@ -1358,7 +1316,6 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_tab_coloractive'] = array(
             'control' => array(
                 'label' => __('Font Colour', 'responsi-a3-shortcode-addon'),
-                'description' => "",
                 'section' => 'responsi_shortcode_tabs_section',
                 'settings' => 'responsi_sc_tab_coloractive',
                 'type' => 'icolor',
@@ -1376,7 +1333,6 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_tab_backgroundcoloractive'] = array(
             'control' => array(
                 'label' => __('Background Colour', 'responsi-a3-shortcode-addon'),
-                'description' => "",
                 'section' => 'responsi_shortcode_tabs_section',
                 'settings' => 'multiple',
                 'type' => 'ibackground',
@@ -1394,7 +1350,6 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_tab_bordertopactive'] = array(
             'control' => array(
                 'label' => __('Border Top Colour', 'responsi-a3-shortcode-addon'),
-                'description' => "",
                 'section' => 'responsi_shortcode_tabs_section',
                 'settings' => 'responsi_sc_tab_bordertopactive',
                 'type' => 'icolor',
@@ -1412,7 +1367,6 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_tab_borderbottomactive'] = array(
             'control' => array(
                 'label' => __('Border Bottom Colour', 'responsi-a3-shortcode-addon'),
-                'description' => "",
                 'section' => 'responsi_shortcode_tabs_section',
                 'settings' => 'responsi_sc_tab_borderbottomactive',
                 'type' => 'icolor',
@@ -1430,7 +1384,6 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_tab_borderleftactive'] = array(
             'control' => array(
                 'label' => __('Border Left Colour', 'responsi-a3-shortcode-addon'),
-                'description' => "",
                 'section' => 'responsi_shortcode_tabs_section',
                 'settings' => 'responsi_sc_tab_borderleftactive',
                 'type' => 'icolor',
@@ -1448,7 +1401,6 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_tab_borderrightactive'] = array(
             'control' => array(
                 'label' => __('Border Right Colour', 'responsi-a3-shortcode-addon'),
-                'description' => "",
                 'section' => 'responsi_shortcode_tabs_section',
                 'settings' => 'responsi_sc_tab_borderrightactive',
                 'type' => 'icolor',
@@ -1463,12 +1415,10 @@ class Shortcode_Responsi_Customize
             )
         );
 
-        $_controls_settings['lb_a3_shortcode_71'] = array(
+        $_controls_settings['lbsc11'] = array(
             'control' => array(
                 'label' => __('Content Tabs Style', 'responsi-a3-shortcode-addon'),
-                'description' => "",
                 'section' => 'responsi_shortcode_tabs_section',
-                'settings' => 'lb_a3_shortcode_71',
                 'type' => 'ilabel',
                 'input_attrs' => array(
                     'class' => ''
@@ -1482,7 +1432,6 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_tab_fontcontent'] = array(
             'control' => array(
                 'label' => __('Font', 'responsi-a3-shortcode-addon'),
-                'description' => "",
                 'section' => 'responsi_shortcode_tabs_section',
                 'settings' => 'multiple',
                 'type' => 'typography',
@@ -1506,7 +1455,7 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_tab_cbordertop'] = array(
             'control' => array(
                 'label' => __('Border - Top', 'responsi-a3-shortcode-addon'),
-                'description' => __("No Border = 0px.", 'responsi-a3-shortcode-addon'),
+                //'description' => __("No Border = 0px.", 'responsi-a3-shortcode-addon'),
                 'section' => 'responsi_shortcode_tabs_section',
                 'settings' => 'multiple',
                 'type' => 'border',
@@ -1528,7 +1477,7 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_tab_cborderbottom'] = array(
             'control' => array(
                 'label' => __('Border - Bottom', 'responsi-a3-shortcode-addon'),
-                'description' => __("No Border = 0px.", 'responsi-a3-shortcode-addon'),
+                //'description' => __("No Border = 0px.", 'responsi-a3-shortcode-addon'),
                 'section' => 'responsi_shortcode_tabs_section',
                 'settings' => 'multiple',
                 'type' => 'border',
@@ -1550,7 +1499,7 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_tab_cborderleft'] = array(
             'control' => array(
                 'label' => __('Border - Left', 'responsi-a3-shortcode-addon'),
-                'description' => __("No Border = 0px.", 'responsi-a3-shortcode-addon'),
+                //'description' => __("No Border = 0px.", 'responsi-a3-shortcode-addon'),
                 'section' => 'responsi_shortcode_tabs_section',
                 'settings' => 'multiple',
                 'type' => 'border',
@@ -1572,7 +1521,7 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_tab_cborderright'] = array(
             'control' => array(
                 'label' => __('Border - Right', 'responsi-a3-shortcode-addon'),
-                'description' => __("No Border = 0px.", 'responsi-a3-shortcode-addon'),
+                //'description' => __("No Border = 0px.", 'responsi-a3-shortcode-addon'),
                 'section' => 'responsi_shortcode_tabs_section',
                 'settings' => 'multiple',
                 'type' => 'border',
@@ -1594,7 +1543,6 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_tab_ccornertopleft'] = array(
             'control' => array(
                 'label' => __('Border Corner - Top Left', 'responsi-a3-shortcode-addon'),
-                'description' => "",
                 'section' => 'responsi_shortcode_tabs_section',
                 'settings' => 'multiple',
                 'type' => 'border_radius',
@@ -1615,7 +1563,6 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_tab_ccornertopright'] = array(
             'control' => array(
                 'label' => __('Border Corner - Top Right', 'responsi-a3-shortcode-addon'),
-                'description' => "",
                 'section' => 'responsi_shortcode_tabs_section',
                 'settings' => 'multiple',
                 'type' => 'border_radius',
@@ -1636,7 +1583,6 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_tab_ccornerbottomleft'] = array(
             'control' => array(
                 'label' => __('Border Corner - Bottom Left', 'responsi-a3-shortcode-addon'),
-                'description' => "",
                 'section' => 'responsi_shortcode_tabs_section',
                 'settings' => 'multiple',
                 'type' => 'border_radius',
@@ -1657,7 +1603,6 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_tab_ccornerbottomright'] = array(
             'control' => array(
                 'label' => __('Border Corner - Bottom Right', 'responsi-a3-shortcode-addon'),
-                'description' => "",
                 'section' => 'responsi_shortcode_tabs_section',
                 'settings' => 'multiple',
                 'type' => 'border_radius',
@@ -1678,7 +1623,6 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_tab_cmargin_on'] = array(
             'control' => array(
                 'label' => __('Content Margin', 'responsi-a3-shortcode-addon'),
-                'description' => "",
                 'section' => 'responsi_shortcode_tabs_section',
                 'settings' => 'responsi_sc_tab_cmargin_on',
                 'type' => 'icheckbox',
@@ -1696,7 +1640,7 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_tab_cmargin'] = array(
             'control' => array(
                 'label' => "",
-                'description' => __("Numeric px vales ex. 10 = 10px.", 'responsi-a3-shortcode-addon'),
+                //'description' => __("Numeric px vales ex. 10 = 10px.", 'responsi-a3-shortcode-addon'),
                 'section' => 'responsi_shortcode_tabs_section',
                 'settings' => 'multitext',
                 'type' => 'multitext',
@@ -1725,7 +1669,6 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_tab_cpadding_on'] = array(
             'control' => array(
                 'label' => __('Content Padding', 'responsi-a3-shortcode-addon'),
-                'description' => "",
                 'section' => 'responsi_shortcode_tabs_section',
                 'settings' => 'responsi_sc_tab_cpadding_on',
                 'type' => 'icheckbox',
@@ -1743,7 +1686,7 @@ class Shortcode_Responsi_Customize
         $_controls_settings['responsi_sc_tab_cpadding'] = array(
             'control' => array(
                 'label' => "",
-                'description' => __("Numeric px vales ex. 10 = 10px.", 'responsi-a3-shortcode-addon'),
+                //'description' => __("Numeric px vales ex. 10 = 10px.", 'responsi-a3-shortcode-addon'),
                 'section' => 'responsi_shortcode_tabs_section',
                 'settings' => 'multitext',
                 'type' => 'multitext',
