@@ -1289,6 +1289,7 @@ body .responsi-column.last { margin-right: 0 !important; }
 }
 
 /*Unordered List*/
+.shortcode-unorderedlist ul,.shortcode-unorderedlisticon ul{clear: both;}
 body .entry .shortcode-unorderedlisticon ul li,
 .entry .shortcode-unorderedlisticon ul li,
 .shortcode-unorderedlisticon ul li { margin-left: 0 !important; padding-left: 0 !important; position: relative; box-sizing: border-box; }
