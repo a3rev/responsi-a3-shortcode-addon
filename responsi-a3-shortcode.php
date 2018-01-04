@@ -2,7 +2,7 @@
 /*
 Plugin Name: Responsi Shortcodes
 Description: Responsi Shortcodes extends the existing Responsi Framework shortcodes and is an essential tool for creating stunning content without writing code. Includes 360+ fontface Icon shortcodes and Flip Box shortcode. More coming soon.
-Version: 2.8.7
+Version: 2.8.8
 Author: a3THEMES
 Author URI: http://a3rev.com/
 Text Domain: responsi-a3-shortcode-addon
@@ -43,7 +43,7 @@ function responsi_a3_shortcode_addon_activate_validate(){
         echo sprintf( __( 'This is a plugin for Responsi Framework, you need to install <a href="%s" target="_blank">Responsi Framework</a> theme from WordPress first before can activate this.', 'responsi-a3-shortcode-addon' ), 'https://wordpress.org/themes/responsi-framework/' );
         die();
     }
-    update_option('a3rev_responsi_a3_shortcode_addon_version', '2.8.7');
+    update_option('a3rev_responsi_a3_shortcode_addon_version', '2.8.8');
     update_option('responsi_a3_shortcode_addon_installed', true);
 }
 
@@ -54,14 +54,14 @@ if ( !isset( $_POST['wp_customize'] ) && get_option('template') != 'responsi' ) 
 if ( isset( $_POST['wp_customize'] ) && $_POST['wp_customize'] == 'on' && isset( $_POST['theme'] ) && stristr( $_POST['theme'], 'responsi' ) === FALSE ) return;
 
 function responsi_addon_shortcode_upgrade_version () {
-	if( version_compare(get_option('a3rev_responsi_a3_shortcode_addon_version'), '2.8.7') === -1 ){
+	if( version_compare(get_option('a3rev_responsi_a3_shortcode_addon_version'), '2.8.8') === -1 ){
         global $responsi_a3_shortcode_addon;
         //$theme = get_option( 'stylesheet' );
-        //$version = str_replace('.', '_', '2.8.7');
+        //$version = str_replace('.', '_', '2.8.8');
         //update_option( 'theme_mods_'.$theme.'_a3_shortcode_'.$version, $responsi_a3_shortcode_addon->global_responsi_options_a3_shortcode() );
         $responsi_a3_shortcode_addon->build_css_after_addon_updated();
 	}
-	update_option('a3rev_responsi_a3_shortcode_addon_version', '2.8.7');
+	update_option('a3rev_responsi_a3_shortcode_addon_version', '2.8.8');
 }
 
 add_action( 'after_setup_theme', 'responsi_addon_shortcode_upgrade_version' );

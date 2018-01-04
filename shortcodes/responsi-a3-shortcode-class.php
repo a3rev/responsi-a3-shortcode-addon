@@ -21,7 +21,7 @@ class Responsi_A3_Shortcode_Class {
 		add_action( 'admin_head', array( $this, 'init' ) );
 		add_action( 'customize_controls_print_scripts', array( $this, 'init' ) );
 		if( !is_admin() ){
-			add_action( 'wp_head', array( $this, '_front_register_css_and_js' ) );
+			add_action( 'wp_head', array( $this, '_front_register_css_and_js' ), 1 );
 			add_filter( 'the_content', array($this,'cleanup_shortcode_fix'));
 			add_action( 'wp_footer', array( $this, '_google_webfonts' ) );
 			add_action( '_front_enqueue_css_and_js', array( $this, '_action_enqueue_css_and_js' ) );

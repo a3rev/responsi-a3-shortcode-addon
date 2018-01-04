@@ -13,7 +13,7 @@ class Responsi_A3_Shortcode_Addon {
 	public function init () {
 		if ( $this->_is_active() ) {
 			add_filter( 'responsi_google_webfonts', array( $this,'responsi_addon_google_webfonts'));
-			add_action( 'wp_enqueue_scripts',  array( $this, 'customize_preview_inline_style'), 11 );
+			add_action( 'wp_head',  array( $this, 'customize_preview_inline_style'), 11 );
 		}
 	}
 
@@ -281,9 +281,25 @@ class Responsi_A3_Shortcode_Addon {
 		.responsi-column.responsi-two-fifth.spacing-no{ width: '.(((((100-($gutter*4))/5)*2)+$gutter)+$gutter).'% !important; }
 
 		.responsi-column.responsi-two-third.spacing-no{ width: '.(((((100-($gutter*2))/3)*2)+$gutter)+$gutter).'% !important; }
+		
+		@media only screen and (max-width:782px) {
+		    .responsi-column.responsi-layout-column{
+		        width: '.((100-($gutter))/2).'% !important;
+		        margin-right:'.$gutter.'% !important;
+		    }
+		    .responsi-columns-5 .responsi-column:first-child, .responsi-columns-4 .responsi-column:first-child, .responsi-columns-3 .responsi-column:first-child, .responsi-columns-2 .responsi-column:first-child, .responsi-columns-1 .responsi-column:first-child {
+		        margin-left: 0 !important;
+		    }
+		    .responsi-column.responsi-layout-column:nth-child(2n), .responsi-column {
+		        margin-right: 0 !important;
+		    }
+		    .responsi-column.spacing-no {
+		        margin-bottom: 0;
+		    }
+		}
 
-		@media only screen and (max-width:800px) {
-    		.responsi-columns-5 .responsi-column:first-child, .responsi-columns-4 .responsi-column:first-child, .responsi-columns-3 .responsi-column:first-child, .responsi-columns-2 .responsi-column:first-child, .responsi-columns-1 .responsi-column:first-child {
+		@media only screen and (max-width:480px) {
+		    .responsi-columns-5 .responsi-column:first-child, .responsi-columns-4 .responsi-column:first-child, .responsi-columns-3 .responsi-column:first-child, .responsi-columns-2 .responsi-column:first-child, .responsi-columns-1 .responsi-column:first-child {
 		        margin-left: 0 !important;
 		    }
 		    .responsi-column:nth-child(5n), .responsi-column:nth-child(4n), .responsi-column:nth-child(3n), .responsi-column:nth-child(2n), .responsi-column {
@@ -363,26 +379,14 @@ class Responsi_A3_Shortcode_Addon {
 
 	public function customize_preview_inline_style(){
 		if ( is_customize_preview() ) {
-			if( is_child_theme() ){
-				wp_add_inline_style( 'responsi-theme', $this->responsi_build_dynamic_css( true ) );
-			}else{
-				wp_add_inline_style( 'responsi-framework', $this->responsi_build_dynamic_css( true ) );
-			}
+			wp_add_inline_style( 'responsi-shortcode-css', $this->responsi_build_dynamic_css( true ) );
 		} else {
 			$a3_shortcode_custom_css = get_theme_mod( 'a3_shortcode_custom_css' );
 			if ( false === $a3_shortcode_custom_css ) {
 				$this->responsi_dynamic_css();
-				if( is_child_theme() ){
-					wp_add_inline_style( 'responsi-theme', $this->responsi_build_dynamic_css( true ) );
-				}else{
-					wp_add_inline_style( 'responsi-framework', $this->responsi_build_dynamic_css( true ) );
-				}
+				wp_add_inline_style( 'responsi-shortcode-css', $this->responsi_build_dynamic_css( true ) );
 			}else{
-				if( is_child_theme() ){
-					wp_add_inline_style( 'responsi-theme', get_theme_mod( 'a3_shortcode_custom_css' ) );
-				}else{
-					wp_add_inline_style( 'responsi-framework', get_theme_mod( 'a3_shortcode_custom_css' ) );
-				}
+				wp_add_inline_style( 'responsi-shortcode-css', get_theme_mod( 'a3_shortcode_custom_css' ) );
 			}
 		}
 	}

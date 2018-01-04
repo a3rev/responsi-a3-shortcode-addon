@@ -1,5 +1,9 @@
 *** Responsi Shortcodes Changelog ***
 
+= 2.8.8 - 2018/01/04 =
+* Maintenance Update. Fix for column and Flipbox breakdown in mobile devices  
+* Fix - Shortcode column and Flipbox breakdown to 2 columns at 782px and 1 column at 480px
+
 = 2.8.7 - 2017/12/15 =
 * Major maintenance update. Completely rewrite of the customizer controls in Customizer JS API for Compatibility with Responsi v 6.8.2. Don’t upgrade this plugin before you upgrade the framework.
 * Tweak - Refactor of customize controls from using PHP API to use Customizer JS API WP 4.9

@@ -54,7 +54,7 @@ Validation
 Form Elements
 -----------------------------------------------------------------------------------*/
 #TB_ajaxContent #responsi-options .checkbox-wrapper{display:inline-block;}
-#TB_ajaxContent #responsi-options select{margin-bottom:4px;cursor:pointer;opacity:0;padding:0;position:relative;z-index:4;padding:5px;}
+#TB_ajaxContent #responsi-options select{margin-bottom:4px;cursor:pointer;opacity:0;padding:0;position:relative;z-index:4;padding:5px;min-width: 65px;}
 #TB_ajaxContent #responsi-options input[type=text]{margin-left:0;}
 #TB_ajaxContent #responsi-options .wp-picker-input-wrap input[type="text"]{}
 #TB_ajaxContent #responsi-options .responsi-marker-colourpicker-control span.responsi-input-help{display:inline;}
