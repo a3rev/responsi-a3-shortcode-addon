@@ -1,5 +1,10 @@
 *** Responsi Shortcodes Changelog ***
 
+= 2.9.0 - 2018/02/13 =
+* Feature Upgrade - This upgrade features full integration with newly launched a3rev Dashboard plus compatibility with WordPress 4.9.4
+* Framework - Update Check Now feature for compatibility with a3rev Dashboard 2.3.0
+* Tweak - Test for compatibility with WordPress 4.9.4
+
 = 2.8.8 - 2018/01/04 =
 * Maintenance Update. Fix for column and Flipbox breakdown in mobile devices  
 * Fix - Shortcode column and Flipbox breakdown to 2 columns at 782px and 1 column at 480px

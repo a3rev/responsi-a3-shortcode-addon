@@ -31,11 +31,11 @@ function load_plugin_textdomain_responsi_a3_shortcode_addon() {
 		responsi_a3_shortcode_addon_install();
 		global $responsi_a3_shortcode_addon;
 		$responsi_a3_shortcode_addon->responsi_build_css_theme_actived();
-		//wp_redirect( ( ( is_ssl() || force_ssl_admin() ) ? str_replace( 'http:', 'https:', admin_url( 'customize.php' ) ) : str_replace( 'https:', 'http:', admin_url( 'customize.php' ) ) ) );
-		//exit;
 	}
+
 	responsi_shortcode_addon_load_plugin_textdomain();
 }
+
 // Add language
 add_action('init', 'load_plugin_textdomain_responsi_a3_shortcode_addon');
 
