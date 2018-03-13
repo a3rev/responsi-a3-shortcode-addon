@@ -144,6 +144,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'sanitize_hex_color',
                 'default' => isset($responsi_options_a3_shortcode['responsi_style_border']) ? $responsi_options_a3_shortcode['responsi_style_border'] : '#DBDBDB',
                 'transport' => 'postMessage'
             )
@@ -176,6 +177,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_checkboxs',
                 'default' => isset($responsi_options_a3_shortcode['responsi_blockquote_icon']) ? $responsi_options_a3_shortcode['responsi_blockquote_icon'] : 'false',
                 'transport' => 'postMessage'
             )
@@ -193,6 +195,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'sanitize_hex_color',
                 'default' => isset($responsi_options_a3_shortcode['responsi_blockquote_icon_color']) ? $responsi_options_a3_shortcode['responsi_blockquote_icon_color'] : '#CCCCCC',
                 'transport' => 'postMessage'
             )
@@ -224,6 +227,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_checkboxs',
                 'default' => isset($responsi_options_a3_shortcode['responsi_blockquote_boxed']) ? $responsi_options_a3_shortcode['responsi_blockquote_boxed'] : 'false',
                 'transport' => 'postMessage'
             )
@@ -241,6 +245,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_background_color',
                 'default' => isset($responsi_options_a3_shortcode['responsi_blockquote_boxed_bg']) ? $responsi_options_a3_shortcode['responsi_blockquote_boxed_bg'] : array( 'onoff' => 'true', 'color' => '#F9F9F9'),
                 'transport' => 'postMessage'
             )
@@ -259,6 +264,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_border',
                 'default' => isset($responsi_options_a3_shortcode['responsi_blockquote_boxed_border_top']) ? $responsi_options_a3_shortcode['responsi_blockquote_boxed_border_top'] : array(
                     'width' => '0',
                     'style' => 'solid',
@@ -281,6 +287,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                 'sanitize_callback' => 'responsi_sanitize_border',
                 'default' => isset($responsi_options_a3_shortcode['responsi_blockquote_boxed_border_bottom']) ? $responsi_options_a3_shortcode['responsi_blockquote_boxed_border_bottom'] : array(
                     'width' => '0',
                     'style' => 'solid',
@@ -303,6 +310,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                 'sanitize_callback' => 'responsi_sanitize_border',
                 'default' => isset($responsi_options_a3_shortcode['responsi_blockquote_boxed_border_lr']) ? $responsi_options_a3_shortcode['responsi_blockquote_boxed_border_lr'] : array(
                     'width' => '0',
                     'style' => 'solid',
@@ -325,6 +333,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_border_radius',
                 'default' => isset($responsi_options_a3_shortcode['responsi_blockquote_boxed_border_radius']) ? $responsi_options_a3_shortcode['responsi_blockquote_boxed_border_radius'] : array(
                     'corner' => 'rounded',
                     'rounded_value' => '5'
@@ -345,6 +354,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_box_shadow',
                 'default' => isset($responsi_options_a3_shortcode['responsi_blockquote_boxed_box_shadow']) ? $responsi_options_a3_shortcode['responsi_blockquote_boxed_box_shadow'] : array(
                     'onoff' => 'true',
                     'h_shadow' => '0px',
@@ -386,6 +396,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_choices',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_icon_size']) ? $responsi_options_a3_shortcode['responsi_sc_icon_size'] : 'small',
                 'transport' => 'postMessage'
             )
@@ -403,6 +414,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'sanitize_hex_color',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_icon_color']) ? $responsi_options_a3_shortcode['responsi_sc_icon_color'] : '#000000',
                 'transport' => 'postMessage'
             )
@@ -421,6 +433,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_background_color',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_icon_background']) ? $responsi_options_a3_shortcode['responsi_sc_icon_background'] : array( 'onoff' => 'true', 'color' => '#ffffff' ),
                 'transport' => 'postMessage'
             )
@@ -439,6 +452,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_border',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_icon_border']) ? $responsi_options_a3_shortcode['responsi_sc_icon_border'] : array(
                     'width' => '0',
                     'style' => 'solid',
@@ -461,6 +475,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_border_radius',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_icon_border_radius']) ? $responsi_options_a3_shortcode['responsi_sc_icon_border_radius'] : array(
                     'corner' => 'rounded',
                     'rounded_value' => '0'
@@ -481,6 +496,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_box_shadow',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_icon_shadow']) ? $responsi_options_a3_shortcode['responsi_sc_icon_shadow'] : array(
                     'onoff' => 'false',
                     'h_shadow' => '0px',
@@ -513,6 +529,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_numeric',
                 'default' => array(
                     isset($responsi_options_a3_shortcode['responsi_sc_icon_margin_top']) ? $responsi_options_a3_shortcode['responsi_sc_icon_margin_top'] : '0',
                     isset($responsi_options_a3_shortcode['responsi_sc_icon_margin_bottom']) ? $responsi_options_a3_shortcode['responsi_sc_icon_margin_bottom'] : '0',
@@ -542,6 +559,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_numeric',
                 'default' => array(
                     isset($responsi_options_a3_shortcode['responsi_sc_icon_padding_top']) ? $responsi_options_a3_shortcode['responsi_sc_icon_padding_top'] : '0',
                     isset($responsi_options_a3_shortcode['responsi_sc_icon_padding_bottom']) ? $responsi_options_a3_shortcode['responsi_sc_icon_padding_bottom'] : '0',
@@ -578,6 +596,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_typography',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_flip_boxes_front_heading']) ? $responsi_options_a3_shortcode['responsi_sc_flip_boxes_front_heading'] : array(
                     'size' => '18',
                     'line_height' => '1',
@@ -601,6 +620,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_typography',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_flip_boxes_front_text']) ? $responsi_options_a3_shortcode['responsi_sc_flip_boxes_front_text'] : array(
                     'size' => '12',
                     'line_height' => '1.5',
@@ -625,6 +645,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_background_color',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_flip_boxes_front_bg']) ? $responsi_options_a3_shortcode['responsi_sc_flip_boxes_front_bg'] : array( 'onoff' => 'true', 'color' => '#f6f6f6' ),
                 'transport' => 'postMessage'
             )
@@ -643,6 +664,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_border',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_flip_boxes_front_border']) ? $responsi_options_a3_shortcode['responsi_sc_flip_boxes_front_border'] : array(
                     'width' => '0',
                     'style' => 'solid',
@@ -665,6 +687,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_border_radius',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_flip_boxes_front_radius']) ? $responsi_options_a3_shortcode['responsi_sc_flip_boxes_front_radius'] : array(
                     'corner' => 'rounded',
                     'rounded_value' => '0'
@@ -699,6 +722,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_typography',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_flip_boxes_back_heading']) ? $responsi_options_a3_shortcode['responsi_sc_flip_boxes_back_heading'] : array(
                     'size' => '18',
                     'line_height' => '1',
@@ -722,6 +746,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_typography',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_flip_boxes_back_text']) ? $responsi_options_a3_shortcode['responsi_sc_flip_boxes_back_text'] : array(
                     'size' => '12',
                     'line_height' => '1.5',
@@ -746,6 +771,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_background_color',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_flip_boxes_back_bg']) ? $responsi_options_a3_shortcode['responsi_sc_flip_boxes_back_bg'] : array( 'onoff' => 'true', 'color' => '#a0ce4e' ),
                 'transport' => 'postMessage'
             )
@@ -764,6 +790,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_border',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_flip_boxes_back_border']) ? $responsi_options_a3_shortcode['responsi_sc_flip_boxes_back_border'] : array(
                     'width' => '0',
                     'style' => 'solid',
@@ -786,6 +813,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_border_radius',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_flip_boxes_back_radius']) ? $responsi_options_a3_shortcode['responsi_sc_flip_boxes_back_radius'] : array(
                     'corner' => 'rounded',
                     'rounded_value' => '0'
@@ -822,6 +850,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_background_color',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_fullwidth_bg']) ? $responsi_options_a3_shortcode['responsi_sc_fullwidth_bg'] : array( 'onoff' => 'true', 'color' => 'transparent' ),
                 'transport' => 'postMessage'
             )
@@ -840,6 +869,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_border',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_fullwidth_border']) ? $responsi_options_a3_shortcode['responsi_sc_fullwidth_border'] : array(
                     'width' => '0',
                     'style' => 'solid',
@@ -865,6 +895,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_slider',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_fullwidth_content_width']) ? $responsi_options_a3_shortcode['responsi_sc_fullwidth_content_width'] : 940,
                 'transport' => 'postMessage'
             )
@@ -897,6 +928,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_border',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_tab_border']) ? $responsi_options_a3_shortcode['responsi_sc_tab_border'] : array(
                     'width' => '1',
                     'style' => 'solid',
@@ -918,6 +950,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_border_radius',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_tab_corner']) ? $responsi_options_a3_shortcode['responsi_sc_tab_corner'] : array(
                     'corner' => 'square',
                     'rounded_value' => '0'
@@ -938,6 +971,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_checkboxs',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_tab_ctmargin_on']) ? $responsi_options_a3_shortcode['responsi_sc_tab_ctmargin_on'] : 'false',
                 'transport' => 'postMessage'
             )
@@ -960,6 +994,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_numeric',
                 'default' => array(
                     isset($responsi_options_a3_shortcode['responsi_sc_tab_ctmargin_top']) ? $responsi_options_a3_shortcode['responsi_sc_tab_ctmargin_top'] : '0',
                     isset($responsi_options_a3_shortcode['responsi_sc_tab_ctmargin_bottom']) ? $responsi_options_a3_shortcode['responsi_sc_tab_ctmargin_bottom'] : '20'
@@ -994,6 +1029,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_typography',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_tab_font']) ? $responsi_options_a3_shortcode['responsi_sc_tab_font'] : array(
                     'size' => '14',
                     'face' => 'Rokkitt',
@@ -1017,6 +1053,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'sanitize_hex_color',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_tab_icon_color']) ? $responsi_options_a3_shortcode['responsi_sc_tab_icon_color'] : '#333333',
                 'transport' => 'postMessage'
             )
@@ -1034,6 +1071,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_background_color',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_tab_backgroundcolor']) ? $responsi_options_a3_shortcode['responsi_sc_tab_backgroundcolor'] : array('onoff' => 'true', 'color' => '#ebeaea'),
                 'transport' => 'postMessage'
             )
@@ -1052,6 +1090,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_border',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_tab_bordertop']) ? $responsi_options_a3_shortcode['responsi_sc_tab_bordertop'] : array(
                     'width' => '3',
                     'style' => 'solid',
@@ -1074,6 +1113,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_border',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_tab_borderbottom']) ? $responsi_options_a3_shortcode['responsi_sc_tab_borderbottom'] : array(
                     'width' => '0',
                     'style' => 'solid',
@@ -1096,6 +1136,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_border',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_tab_borderleft']) ? $responsi_options_a3_shortcode['responsi_sc_tab_borderleft'] : array(
                     'width' => '0',
                     'style' => 'solid',
@@ -1118,6 +1159,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_border',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_tab_borderright']) ? $responsi_options_a3_shortcode['responsi_sc_tab_borderright'] : array(
                     'width' => '0',
                     'style' => 'solid',
@@ -1139,6 +1181,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_border_radius',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_tab_cornertopleft']) ? $responsi_options_a3_shortcode['responsi_sc_tab_cornertopleft'] : array(
                     'corner' => 'square',
                     'rounded_value' => '0'
@@ -1159,6 +1202,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_border_radius',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_tab_cornertopright']) ? $responsi_options_a3_shortcode['responsi_sc_tab_cornertopright'] : array(
                     'corner' => 'square',
                     'rounded_value' => '0'
@@ -1179,6 +1223,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_border_radius',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_tab_cornerbottomleft']) ? $responsi_options_a3_shortcode['responsi_sc_tab_cornerbottomleft'] : array(
                     'corner' => 'square',
                     'rounded_value' => '0'
@@ -1199,6 +1244,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_border_radius',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_tab_cornerbottomright']) ? $responsi_options_a3_shortcode['responsi_sc_tab_cornerbottomright'] : array(
                     'corner' => 'square',
                     'rounded_value' => '0'
@@ -1219,6 +1265,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_checkboxs',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_tab_margin_on']) ? $responsi_options_a3_shortcode['responsi_sc_tab_margin_on'] : 'true',
                 'transport' => 'postMessage'
             )
@@ -1243,6 +1290,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_numeric',
                 'default' => array(
                     isset($responsi_options_a3_shortcode['responsi_sc_tab_margin_top']) ? $responsi_options_a3_shortcode['responsi_sc_tab_margin_top'] : '0',
                     isset($responsi_options_a3_shortcode['responsi_sc_tab_margin_bottom']) ? $responsi_options_a3_shortcode['responsi_sc_tab_margin_bottom'] : '0',
@@ -1265,6 +1313,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_checkboxs',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_tab_padding_on']) ? $responsi_options_a3_shortcode['responsi_sc_tab_padding_on'] : 'true',
                 'transport' => 'postMessage'
             )
@@ -1289,6 +1338,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_numeric',
                 'default' => array(
                     isset($responsi_options_a3_shortcode['responsi_sc_tab_padding_top']) ? $responsi_options_a3_shortcode['responsi_sc_tab_padding_top'] : '10',
                     isset($responsi_options_a3_shortcode['responsi_sc_tab_padding_bottom']) ? $responsi_options_a3_shortcode['responsi_sc_tab_padding_bottom'] : '10',
@@ -1325,6 +1375,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'sanitize_hex_color',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_tab_coloractive']) ? $responsi_options_a3_shortcode['responsi_sc_tab_coloractive'] : '#333333',
                 'transport' => 'postMessage'
             )
@@ -1342,6 +1393,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_background_color',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_tab_backgroundcoloractive']) ? $responsi_options_a3_shortcode['responsi_sc_tab_backgroundcoloractive'] : array('onoff' => 'true', 'color' => '#ffffff'),
                 'transport' => 'postMessage'
             )
@@ -1359,6 +1411,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'sanitize_hex_color',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_tab_bordertopactive']) ? $responsi_options_a3_shortcode['responsi_sc_tab_bordertopactive'] : '#a0ce4e',
                 'transport' => 'postMessage'
             )
@@ -1376,6 +1429,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'sanitize_hex_color',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_tab_borderbottomactive']) ? $responsi_options_a3_shortcode['responsi_sc_tab_borderbottomactive'] : '#ebeaea',
                 'transport' => 'postMessage'
             )
@@ -1393,6 +1447,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'sanitize_hex_color',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_tab_borderleftactive']) ? $responsi_options_a3_shortcode['responsi_sc_tab_borderleftactive'] : '#ebeaea',
                 'transport' => 'postMessage'
             )
@@ -1410,6 +1465,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'sanitize_hex_color',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_tab_borderrightactive']) ? $responsi_options_a3_shortcode['responsi_sc_tab_borderrightactive'] : '#ebeaea',
                 'transport' => 'postMessage'
             )
@@ -1441,6 +1497,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_typography',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_tab_fontcontent']) ? $responsi_options_a3_shortcode['responsi_sc_tab_fontcontent'] : array(
                     'size' => '12',
                     'line_height' => '1.5',
@@ -1465,6 +1522,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_border',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_tab_cbordertop']) ? $responsi_options_a3_shortcode['responsi_sc_tab_cbordertop'] : array(
                     'width' => '0',
                     'style' => 'solid',
@@ -1487,6 +1545,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_border',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_tab_cborderbottom']) ? $responsi_options_a3_shortcode['responsi_sc_tab_cborderbottom'] : array(
                     'width' => '0',
                     'style' => 'solid',
@@ -1509,6 +1568,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_border',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_tab_cborderleft']) ? $responsi_options_a3_shortcode['responsi_sc_tab_cborderleft'] : array(
                     'width' => '0',
                     'style' => 'solid',
@@ -1531,6 +1591,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_border',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_tab_cborderright']) ? $responsi_options_a3_shortcode['responsi_sc_tab_cborderright'] : array(
                     'width' => '0',
                     'style' => 'solid',
@@ -1552,6 +1613,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_border_radius',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_tab_ccornertopleft']) ? $responsi_options_a3_shortcode['responsi_sc_tab_ccornertopleft'] : array(
                     'corner' => 'square',
                     'rounded_value' => '0'
@@ -1572,6 +1634,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_border_radius',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_tab_ccornertopright']) ? $responsi_options_a3_shortcode['responsi_sc_tab_ccornertopright'] : array(
                     'corner' => 'square',
                     'rounded_value' => '0'
@@ -1592,6 +1655,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_border_radius',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_tab_ccornerbottomleft']) ? $responsi_options_a3_shortcode['responsi_sc_tab_ccornerbottomleft'] : array(
                     'corner' => 'square',
                     'rounded_value' => '0'
@@ -1612,6 +1676,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_border_radius',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_tab_ccornerbottomright']) ? $responsi_options_a3_shortcode['responsi_sc_tab_ccornerbottomright'] : array(
                     'corner' => 'square',
                     'rounded_value' => '0'
@@ -1632,6 +1697,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_checkboxs',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_tab_cmargin_on']) ? $responsi_options_a3_shortcode['responsi_sc_tab_cmargin_on'] : 'false',
                 'transport' => 'postMessage'
             )
@@ -1656,6 +1722,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_numeric',
                 'default' => array(
                     isset($responsi_options_a3_shortcode['responsi_sc_tab_cmargin_top']) ? $responsi_options_a3_shortcode['responsi_sc_tab_cmargin_top'] : '0',
                     isset($responsi_options_a3_shortcode['responsi_sc_tab_cmargin_bottom']) ? $responsi_options_a3_shortcode['responsi_sc_tab_cmargin_bottom'] : '0',
@@ -1678,6 +1745,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_checkboxs',
                 'default' => isset($responsi_options_a3_shortcode['responsi_sc_tab_cpadding_on']) ? $responsi_options_a3_shortcode['responsi_sc_tab_cpadding_on'] : 'true',
                 'transport' => 'postMessage'
             )
@@ -1702,6 +1770,7 @@ class Shortcode_Responsi_Customize
             ),
             'setting' => array(
                 'type' => 'option',
+                'sanitize_callback' => 'responsi_sanitize_numeric',
                 'default' => array(
                     isset($responsi_options_a3_shortcode['responsi_sc_tab_cpadding_top']) ? $responsi_options_a3_shortcode['responsi_sc_tab_cpadding_top'] : '15',
                     isset($responsi_options_a3_shortcode['responsi_sc_tab_cpadding_bottom']) ? $responsi_options_a3_shortcode['responsi_sc_tab_cpadding_bottom'] : '15',
