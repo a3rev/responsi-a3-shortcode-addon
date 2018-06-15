@@ -153,7 +153,7 @@ class Shortcode_Tabs_Class {
 			$backgroundcoloractive = 'transparent';
 		}
 		$styles .='
-		.responsi-tabs.responsi-tabs-'.$this->tabs_counter.' .nav-tabs li .tab-link,.responsi-tabs.responsi-tabs-'.$this->tabs_counter.' .nav-tabs li > a{
+		.responsi-tabs.responsi-tabs-'.$this->tabs_counter.' .nav-tabs li .nav-link,.responsi-tabs.responsi-tabs-'.$this->tabs_counter.' .nav-tabs li > a{
 			background-color:'.$backgroundcolor.';
 			'.$fonts.'
 			border-top:'.str_replace("px", "", $bordertopsize).'px '.strtolower($bordertopstyle).' '.strtolower($bordertopcolor).' !important;
@@ -165,7 +165,7 @@ class Shortcode_Tabs_Class {
 			'.Responsi_A3_Shortcode_Class::_generate_border_radius_css( $cornertopleft, $cornertopright, $cornerbottomleft, $cornerbottomright ).'
 		}
 
-		.responsi-tabs.responsi-tabs-'.$this->tabs_counter.' .nav-tabs li.active .tab-link, .responsi-tabs.responsi-tabs-'.$this->tabs_counter.' .nav-tabs li.active > a,.responsi-tabs.responsi-tabs-'.$this->tabs_counter.' .nav-tabs li:hover .tab-link, .responsi-tabs.responsi-tabs-'.$this->tabs_counter.' .nav-tabs li:hover > a{
+		.responsi-tabs.responsi-tabs-'.$this->tabs_counter.' .nav-tabs li .nav-link.active, .responsi-tabs.responsi-tabs-'.$this->tabs_counter.' .nav-tabs li > a.active,.responsi-tabs.responsi-tabs-'.$this->tabs_counter.' .nav-tabs li:hover .nav-link, .responsi-tabs.responsi-tabs-'.$this->tabs_counter.' .nav-tabs li:hover > a{
 			background-color:'.$backgroundcoloractive.' !important;
 			color:'.$coloractive.' !important;
 			border-top-color:'.$bordertopactive.' !important;
@@ -190,7 +190,7 @@ class Shortcode_Tabs_Class {
 
 		$styles = sprintf( '<style type="text/css">%s</style>', $styles );
 
-		$html = sprintf( '<div %s>%s<div %s><ul %s>', Responsi_A3_Shortcode_Class::attributes( 'tabs-shortcode' ), $styles, Responsi_A3_Shortcode_Class::attributes( 'nav' ), Responsi_A3_Shortcode_Class::attributes( 'nav-tabs'.$justified_class ) );
+		$html = sprintf( '<div %s>%s<div %s><ul %s>', Responsi_A3_Shortcode_Class::attributes( 'tabs-shortcode' ), $styles, Responsi_A3_Shortcode_Class::attributes( 'nav' ), Responsi_A3_Shortcode_Class::attributes( 'nav nav-tabs'.$justified_class ) );
 
 		$is_first_tab = true;
 
@@ -208,11 +208,11 @@ class Shortcode_Tabs_Class {
 			}
 
 			if( $is_first_tab ) {
-				$html .= sprintf( '<li %s><a %s>%s%s</a></li>', Responsi_A3_Shortcode_Class::attributes( 'active' ), Responsi_A3_Shortcode_Class::attributes( 'tabs-shortcode-link', array( 'index' => $i ) ),
+				$html .= sprintf( '<li class="nav-item"><a %s>%s%s</a></li>', Responsi_A3_Shortcode_Class::attributes( 'tabs-shortcode-link', array( 'active' => 'active', 'index' => $i ) ),
 								  $icon, $this->tabs[$i]['title'] );
 				$is_first_tab = false;
 			} else {
-				$html .= sprintf( '<li><a %s>%s%s</a></li>', Responsi_A3_Shortcode_Class::attributes( 'tabs-shortcode-link', array( 'index' => $i ) ),
+				$html .= sprintf( '<li class="nav-item"><a %s>%s%s</a></li>', Responsi_A3_Shortcode_Class::attributes( 'tabs-shortcode-link', array( 'index' => $i ) ),
 								  $icon, $this->tabs[$i]['title'] );
 			}
 		}
@@ -265,8 +265,11 @@ class Shortcode_Tabs_Class {
 		$attr = array();
 
 		$index = $atts['index'];
+		$active = '';
+		if( isset( $atts['active'] ) )
+			$active = ' active';
 
-		$attr['class'] = 'tab-link';
+		$attr['class'] = 'nav-link'.$active;
 		$attr['id'] = strtolower( preg_replace( '/\s+/', '', $this->tabs[$index]['title'] ) );
 		$attr['href'] = '#' . $this->tabs[$index]['unique_id'];
 		$attr['data-toggle'] = 'tab';
@@ -322,7 +325,7 @@ class Shortcode_Tabs_Class {
 		}
 
 		if( ! $this->active ) {
-			$attr['class'] = 'tab-pane fade in active';
+			$attr['class'] = 'tab-pane fade active show';
 			$this->active = true;
 		} else {
 			$attr['class'] = 'tab-pane fade';

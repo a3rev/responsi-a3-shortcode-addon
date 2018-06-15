@@ -1,4 +1,8 @@
-*** Responsi Shortcodes Changelog ***
+** Responsi Shortcodes Changelog ***
+
+= 2.9.2 - 2018/06/15 =
+* This maintenance upgrade is small but important in the it is a major upgrade of the Bootstrap pop up.
+* Tweak - Upgrade Bootstrap to current version 4.1.1
 
 = 2.9.1 - 2018/03/13 =
 * Maintenance Update. This update follows a full security review and extensive security hardening  

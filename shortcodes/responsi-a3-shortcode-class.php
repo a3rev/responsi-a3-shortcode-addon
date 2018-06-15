@@ -82,14 +82,20 @@ class Responsi_A3_Shortcode_Class {
 		$suffix = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
 		$rtl = is_rtl() ? '.rtl' : '';
 		//$rtl = '';
+		wp_register_style( 'bootstrap-modal', esc_url( RESPONSI_A3_SC_SHORTCODES_URL . '/css/modal'.$suffix.'.css' ), array(), '4.1.1', 'all' );
+		wp_register_script( 'bootstrap-util', esc_url( RESPONSI_A3_SC_SHORTCODES_URL . '/js/util' . $suffix . '.js' ), array( 'jquery' ), '4.1.1', true );
+		wp_register_script( 'bootstrap-modal', esc_url( RESPONSI_A3_SC_SHORTCODES_URL . '/js/modal'.$suffix.'.js' ), array( 'jquery', 'bootstrap-util' ), '4.1.1', true );
+		wp_register_script( 'bootstrap-tab', esc_url( RESPONSI_A3_SC_SHORTCODES_URL . '/js/tab'.$suffix.'.js' ), array( 'jquery', 'bootstrap-util' ), '4.1.1', true );
+		wp_register_script( 'bootstrap-collapse', esc_url( RESPONSI_A3_SC_SHORTCODES_URL . '/js/collapse'.$suffix.'.js' ), array( 'jquery', 'bootstrap-util' ), '4.1.1', true );
 		wp_register_style( 'responsi-shortcode-fontawesome', esc_url( RESPONSI_A3_SC_SHORTCODES_URL . '/css/font-awesome'.$suffix.'.css' ),array(), '', 'screen' );
 		wp_register_style( 'responsi-shortcode-fonticomoon', esc_url( RESPONSI_A3_SC_SHORTCODES_URL . '/css/font-icomoon'.$suffix.'.css' ),array(), '', 'screen' );
 		wp_register_style( 'responsi-shortcode-css', esc_url( RESPONSI_A3_SC_SHORTCODES_URL . '/css/shortcode'.$suffix.'.css' ),array(), '', 'screen');
-		wp_register_script( 'responsi-shortcode-js', esc_url( RESPONSI_A3_SC_SHORTCODES_URL . '/js/shortcode'.$suffix.'.js' ), array( 'jquery' ), '1.0.0', true );
+		wp_register_script( 'responsi-shortcode-js', esc_url( RESPONSI_A3_SC_SHORTCODES_URL . '/js/shortcode'.$suffix.'.js' ), array( 'jquery', 'bootstrap-modal', 'bootstrap-tab', 'bootstrap-collapse' ), '1.0.0', true );
 	}
 	public static function _enqueue_css_and_js () {
 		global $load;
 		if( !is_admin() ){
+			wp_enqueue_style( 'bootstrap-modal' );
 			wp_enqueue_style( 'responsi-shortcode-fontawesome' );
 			wp_enqueue_style( 'responsi-shortcode-fonticomoon' );
 			wp_enqueue_style( 'responsi-shortcode-css' );
