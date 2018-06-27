@@ -3,7 +3,7 @@ class Responsi_A3_Shortcode_Addon {
 	var $admin_page;
 
 	public function __construct () {
-		add_action( 'init',array( $this,'global_responsi_options_a3_shortcode'), 2 );
+		add_action( 'init',array( $this,'customize_options'), 2 );
 		add_action( 'responsi_build_dynamic_css_success', array( $this,'a3_shortcode_sass_compile_less_mincss') );
 		add_action( 'responsi_after_setup_theme', array( $this,'responsi_build_css_theme_actived') );
 		add_action( 'init',array( $this,'init') );
@@ -24,7 +24,11 @@ class Responsi_A3_Shortcode_Addon {
 	}
 
 	public function responsi_customize_save_options( $settings ) {
-		global $responsi_options_a3_shortcode, $wp_customize;
+
+		$slug = 'a3_shortcode';
+
+	    global ${'responsi_options_' . $slug}, $wp_customize;
+
 		$post_value = array();
 
 		if( isset($_POST['customized']) ){
@@ -35,33 +39,64 @@ class Responsi_A3_Shortcode_Addon {
 			$post_value = apply_filters( 'responsi_customized_changeset_data_value', $post_value );
 		}
 
-		if( is_array( $responsi_options_a3_shortcode ) && count( $responsi_options_a3_shortcode ) > 0 && is_array( $post_value ) && count( $post_value ) > 0 ){
+		if( is_array( ${'responsi_options_' . $slug} ) && count( ${'responsi_options_' . $slug} ) > 0 && is_array( $post_value ) && count( $post_value ) > 0 ){
 			
-			$_default_options = responsi_default_options( 'a3_shortcode' );
+			add_filter( 'default_settings_' . $slug, create_function( '', 'return true;' ) );
 			
+			$_default_options = responsi_default_options( $slug );
+
+			if ( defined( str_replace("-","_", get_stylesheet() ) . '_' . $slug ) ) {
+				if ( function_exists('default_option_child_theme') ){
+					$_default_options = array_replace_recursive( $_default_options, default_option_child_theme() );
+				}
+			}
+
 			if( is_array( $_default_options ) && count( $_default_options ) > 0 ){
 				
-				$new_options = array();
-
-				if ( is_array($post_value) ) {
-		            if ( is_object( $post_value ) ){
-		                $post_value = clone $post_value;
-		            }
-		            $responsi_options_a3_shortcode = array_replace_recursive( $responsi_options_a3_shortcode, $post_value );
-		        }
-
-				foreach( $responsi_options_a3_shortcode as $key => $value ){
-					if( array_key_exists( $key, $_default_options )){
-						$new_options[$key] = $value;
-						delete_option( $key );
-					}
-				}
+				$new_options = get_option( $slug . '_'.get_stylesheet(), array() );
 
 				$build_sass = false;
 
-				foreach( $post_value as $key => $value ){
-					if( array_key_exists( $key, $new_options )){
-						$build_sass = true;
+				if( is_array( $new_options ) ){
+					
+					if ( is_array($post_value) ) {
+						
+						if ( is_object( $post_value ) ){
+			                $post_value = clone $post_value;
+			            }
+
+			            foreach( $post_value as $key => $value ){
+							if( array_key_exists( $key, $_default_options ) ){
+
+								if( is_array( $value ) && isset( $new_options[$key] ) && is_array( $new_options[$key] ) ){
+									$new_options[$key] = array_merge( $new_options[$key], $value );
+								}else{
+									$new_options[$key] = $value;
+								}
+								$build_sass = true;
+							}
+						}
+
+						$_customize_options = array_replace_recursive( ${'responsi_options_' . $slug}, $post_value );
+						foreach( $_customize_options as $key => $value ){
+							if( array_key_exists( $key, $_default_options )){
+								if( isset( $new_options[$key] ) ){
+									if( is_array( $new_options[$key] ) && is_array( $_default_options[$key] ) ){
+										$new_opt = array_diff_assoc( $new_options[$key], $_default_options[$key] );
+										if( is_array( $new_opt ) && count( $new_opt ) > 0 ){
+											$new_options[$key] = $new_opt;
+										}else{
+											unset($new_options[$key]);
+										}
+									}else{
+										if( !is_array( $new_options[$key] ) && !is_array($_default_options[$key]) && $new_options[$key] == $_default_options[$key] ){
+											unset($new_options[$key]);
+										}
+									}
+								}
+								delete_option( $key );
+							}
+						}
 					}
 				}
 
@@ -70,9 +105,9 @@ class Responsi_A3_Shortcode_Addon {
 				}
 
 				if( $build_sass ) {
-					update_option( 'a3_shortcode_'.get_stylesheet(), $new_options );
+					update_option( $slug . '_'.get_stylesheet(), $new_options );
 					$this->responsi_dynamic_css();
-					do_action( 'a3_shortcode_build_dynamic_css_success', $post_value );
+					do_action( $slug . '_build_dynamic_css_success', $post_value );
 				}
 			}
 		}
@@ -86,8 +121,11 @@ class Responsi_A3_Shortcode_Addon {
 	    }
 	}
 
-	public function global_responsi_options_a3_shortcode(){
-	    global $responsi_options_a3_shortcode, $wp_customize;
+	public function customize_options(){
+
+		$slug = 'a3_shortcode';
+
+	    global ${'responsi_options_' . $slug}, $wp_customize;
 
 	    if( !function_exists('responsi_default_options') ){
 	    	return;
@@ -95,30 +133,30 @@ class Responsi_A3_Shortcode_Addon {
 
 	    $_childthemes = get_stylesheet();
 
-	    $_default_options = responsi_default_options( 'a3_shortcode' );
+	    $_default_options = responsi_default_options( $slug );
 
-	    $_a3_shortcode_options = $_default_options;
+	    $_customize_options = $_default_options;
 
-		if ( defined( str_replace("-","_", $_childthemes ) . '_a3_shortcode' ) ) {
+		if ( defined( str_replace("-","_", $_childthemes ) . '_' . $slug ) ) {
 			if ( function_exists('default_option_child_theme') ){
-				$responsi_options_a3_shortcode = array_replace_recursive( $_a3_shortcode_options, default_option_child_theme() );
+				$_customize_options = array_replace_recursive( $_customize_options, default_option_child_theme() );
 			}
 		}
 
-		$responsi_mods = get_option( 'a3_shortcode_'.$_childthemes, array() );
+		$responsi_mods = get_option( $slug . '_'.$_childthemes, array() );
 
 	    if( is_array( $responsi_mods ) ){
-	        $_a3_shortcode_options = array_replace_recursive( $_a3_shortcode_options, $responsi_mods );
+	        $_customize_options = array_replace_recursive( $_customize_options, $responsi_mods );
 	    }
 	    
 	    if( 'responsi-blank-child' == $_childthemes ){
-	        $responsi_mods = get_option('a3_shortcode_responsi', array());
-	        $responsi_blank_child =  get_option('a3_shortcode_responsi-blank-child', array());
+	        $responsi_mods = get_option( $slug .'_responsi', array() );
+	        $responsi_blank_child =  get_option( $slug . '_responsi-blank-child', array() );
 	        if( is_array($responsi_mods) ){
-	            $_a3_shortcode_options = array_replace_recursive( $_a3_shortcode_options, $responsi_mods );
+	            $_customize_options = array_replace_recursive( $_customize_options, $responsi_mods );
 	        }
 	        if( is_array($responsi_blank_child) ){
-	            $_a3_shortcode_options = array_replace_recursive( $_a3_shortcode_options, $responsi_blank_child );
+	            $_customize_options = array_replace_recursive( $_customize_options, $responsi_blank_child );
 	        }
 	    }
 
@@ -126,7 +164,7 @@ class Responsi_A3_Shortcode_Addon {
 	        $changeset_data = $wp_customize->changeset_data();
 	        if ( is_array($changeset_data) ) {
 	            if( count( $changeset_data ) > 0 ){
-	                $_a3_shortcode_options_preview = array();
+	                $_customize_options_preview = array();
 	                foreach ( $changeset_data as $setting_id => $setting_params ){
 	                    if ( ! array_key_exists( 'value', $setting_params ) ) {
 	                        continue;
@@ -134,18 +172,18 @@ class Responsi_A3_Shortcode_Addon {
 	                    if ( isset( $setting_params['type'] ) && 'theme_mod' === $setting_params['type'] ) {
 							$namespace_pattern = '/^(?P<stylesheet>.+?)::(?P<setting_id>.+)$/';
 							if ( preg_match( $namespace_pattern, $setting_id, $matches ) && get_stylesheet() === $matches['stylesheet'] ) {
-								$_a3_shortcode_options_preview[ $matches['setting_id'] ] = $setting_params['value'];
+								$_customize_options_preview[ $matches['setting_id'] ] = $setting_params['value'];
 							}
 						} else {
-							$_a3_shortcode_options_preview[ $setting_id ] = $setting_params['value'];
+							$_customize_options_preview[ $setting_id ] = $setting_params['value'];
 						}
 	                }
-	                $_a3_shortcode_options_preview = apply_filters( 'responsi_customized_post_value', $_a3_shortcode_options_preview );
-	                if ( is_array($_a3_shortcode_options) && is_array( $_a3_shortcode_options_preview ) && count( $_a3_shortcode_options_preview ) > 0 ) {
-	                    if ( is_object( $_a3_shortcode_options_preview ) ){
-	                        $_a3_shortcode_options_preview = clone $_a3_shortcode_options_preview;
+	                $_customize_options_preview = apply_filters( 'responsi_customized_post_value', $_customize_options_preview );
+	                if ( is_array($_customize_options) && is_array( $_customize_options_preview ) && count( $_customize_options_preview ) > 0 ) {
+	                    if ( is_object( $_customize_options_preview ) ){
+	                        $_customize_options_preview = clone $_customize_options_preview;
 	                    }
-	                    $_a3_shortcode_options = array_replace_recursive( $_a3_shortcode_options, $_a3_shortcode_options_preview );
+	                    $_customize_options = array_replace_recursive( $_customize_options, $_customize_options_preview );
 	                }
 	            }
 	        }
@@ -155,18 +193,18 @@ class Responsi_A3_Shortcode_Addon {
 	        
 	        $post_value = json_decode(wp_unslash($_POST['customized']), true);
 	        $post_value = apply_filters('responsi_customized_post_value', $post_value);
-	        if ( is_array($_a3_shortcode_options) && is_array($post_value) ) {
+	        if ( is_array($_customize_options) && is_array($post_value) ) {
 	            if ( is_object( $post_value ) ){
 	                $post_value = clone $post_value;
 	            }
-	            $_a3_shortcode_options = array_replace_recursive($_a3_shortcode_options, $post_value);
+	            $_customize_options = array_replace_recursive($_customize_options, $post_value);
 	        }
 
 	    }
 
-	    $responsi_options_a3_shortcode = $_a3_shortcode_options;
+	    ${'responsi_options_' . $slug} = $_customize_options;
 
-	    return $responsi_options_a3_shortcode;
+	    return ${'responsi_options_' . $slug};
 	}
 
 	public function a3_shortcode_sass_compile_less_mincss( $post_value ){
@@ -177,19 +215,19 @@ class Responsi_A3_Shortcode_Addon {
 
 	public function responsi_build_dynamic_css( $preview = false ) {
 
-	    global $responsi_options;
+		global $responsi_options, $responsi_options_a3_shortcode;
 
 	    if( !function_exists('responsi_default_options') ){
 	    	return;
 	    }
 
-	    if ( !$preview ) {
-	        $responsi_options_a3_shortcode = $this->global_responsi_options_a3_shortcode();
+	    /*if ( !$preview ) {
+	        $responsi_options_a3_shortcode = $this->customize_options();
 	    } else {
 	        global $responsi_options_a3_shortcode;
-	    }
-	    
-        if (!is_array($responsi_options_a3_shortcode)) {
+	    }*/
+
+	    if (!is_array($responsi_options_a3_shortcode)) {
             return '';
         }
 
@@ -397,6 +435,7 @@ class Responsi_A3_Shortcode_Addon {
 			$options  = array_merge( $options, $responsi_options_a3_shortcode );
 		return $options;
 	}
+
 }
 
 global $responsi_a3_shortcode_addon;

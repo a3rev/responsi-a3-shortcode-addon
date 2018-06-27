@@ -2,7 +2,7 @@
 /*
 Plugin Name: Responsi Shortcodes
 Description: Responsi Shortcodes extends the existing Responsi Framework shortcodes and is an essential tool for creating stunning content without writing code. Includes 360+ fontface Icon shortcodes and Flip Box shortcode. More coming soon.
-Version: 2.9.2
+Version: 2.9.3
 Author: a3rev Software
 Author URI: https://a3rev.com/
 Text Domain: responsi-a3-shortcode-addon
@@ -34,7 +34,7 @@ define( 'RESPONSI_A3_SC_JS_URL',  RESPONSI_A3_SC_URL . '/assets/js' );
 define( 'RESPONSI_A3_SC_CSS_URL',  RESPONSI_A3_SC_URL . '/assets/css' );
 
 define( 'RESPONSI_A3_SC_KEY', 'responsi_a3_shortcode_addon' );
-define( 'RESPONSI_A3_SC_VERSION', '2.9.2' );
+define( 'RESPONSI_A3_SC_VERSION', '2.9.3' );
 
 function responsi_a3_shortcode_addon_activate_validate(){
     if ( 'responsi' !== get_template() ) {
@@ -50,13 +50,11 @@ register_activation_hook(__FILE__,'responsi_a3_shortcode_addon_activate_validate
 if ( !file_exists( get_theme_root().'/responsi/functions.php' ) ) return;
 if ( !isset( $_POST['wp_customize'] ) && get_option('template') != 'responsi' ) return;
 if ( isset( $_POST['wp_customize'] ) && $_POST['wp_customize'] == 'on' && isset( $_POST['theme'] ) && stristr( $_POST['theme'], 'responsi' ) === FALSE ) return;
+if ( version_compare(get_option('responsi_framework_version'), '6.9.5', '<') ) return;
 
 function responsi_addon_shortcode_upgrade_version () {
 	if( version_compare(get_option('a3rev_responsi_a3_shortcode_addon_version'), '2.8.8') === -1 ){
         global $responsi_a3_shortcode_addon;
-        //$theme = get_option( 'stylesheet' );
-        //$version = str_replace('.', '_', '2.8.8');
-        //update_option( 'theme_mods_'.$theme.'_a3_shortcode_'.$version, $responsi_a3_shortcode_addon->global_responsi_options_a3_shortcode() );
         $responsi_a3_shortcode_addon->build_css_after_addon_updated();
 	}
 	

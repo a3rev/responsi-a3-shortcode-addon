@@ -105,7 +105,13 @@ class Shortcode_Responsi_Customize
     public function controls_settings($controls_settings)
     {
 
-        global $responsi_options_a3_shortcode;
+        $_default = apply_filters( 'default_settings_a3_shortcode', false );
+        
+        if( $_default ){
+            $responsi_options_a3_shortcode = array();
+        }else{
+            global $responsi_options_a3_shortcode;
+        }
 
         $_sc_icon_size = array(
             'small' => 'Small - 10px',
