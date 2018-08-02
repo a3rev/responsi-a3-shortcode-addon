@@ -1,5 +1,10 @@
 *** Responsi Shortcodes Changelog ***
 
+= 2.9.4 - 2018/08/02 =
+* This maintenance update upgrades the plugin for compatibility with Responsi Framework v 7.0.1
+* Tweak -  JS support trigger after content customizer selective refresh.
+* Tweak - Test for compatibility with Responsi Framework Feature version 7.0.1
+
 = 2.9.3 - 2018/06/27 =
 * This Maintenance update is a refactor of customizer code for compatibility with Responsi framework version 6.9.6 
 * Refactor - Conversion of single border and border radius controls to a group control for improved customizer menu UI and UX

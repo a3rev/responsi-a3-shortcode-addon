@@ -651,13 +651,15 @@ jQuery.fn.equalHeights = function( min_height, max_height ) {
 	}
 };
 
-jQuery(document).ready(function($) {
+(function( $ ) {
+
 	jQuery('body').addClass('do-animate');
-	jQuery('.responsi-flip-box').mouseover(function() {
+
+	jQuery(document).on('mouseover','.responsi-flip-box', function() {
 		jQuery(this).addClass('hover');
 	});
 
-	jQuery('.responsi-flip-box').mouseout(function() {
+	jQuery(document).on('mouseout','.responsi-flip-box', function() {
 		jQuery(this).removeClass('hover');
 	});
 
@@ -857,4 +859,4 @@ jQuery(document).ready(function($) {
 		}
 	});
 
-});
+})(jQuery);
