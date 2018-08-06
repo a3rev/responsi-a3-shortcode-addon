@@ -1,5 +1,13 @@
 *** Responsi Shortcodes Changelog ***
 
+= 2.9.5 - 2018/08/06 =
+* This maintenance update is for compatibility with WordPress 4.9.8, Gutenberg 3.4.0, PHP 7.1.0, PHP 7.2.0, Responsi Framework 7.0.2
+* Tweak - Tested for compatibility with Framework v 7.0.2
+* Tweak - Tested for compatibility with WordPress 4.9.8
+* Tweak - Tested for compatibility with Gutenberg 3.4.0 
+* Tweak - Replace create_function deprecated in PHP 7.2.0
+* Tweak - Upgrade Modernizr js to latest version 3.6.0
+
 = 2.9.4 - 2018/08/02 =
 * This maintenance update upgrades the plugin for compatibility with Responsi Framework v 7.0.1
 * Tweak -  JS support trigger after content customizer selective refresh.
