@@ -53,7 +53,7 @@ if ( isset( $_POST['wp_customize'] ) && $_POST['wp_customize'] == 'on' && isset(
 if ( version_compare(get_option('responsi_framework_version'), '6.9.5', '<') ) return;
 
 function responsi_addon_shortcode_upgrade_version () {
-	if( version_compare(get_option('a3rev_responsi_a3_shortcode_addon_version'), '2.8.8') === -1 ){
+	if( version_compare(get_option('a3rev_responsi_a3_shortcode_addon_version'), '2.9.7') === -1 ){
         global $responsi_a3_shortcode_addon;
         $responsi_a3_shortcode_addon->build_css_after_addon_updated();
 	}
