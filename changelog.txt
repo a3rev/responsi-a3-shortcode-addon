@@ -1,5 +1,9 @@
 *** Responsi Shortcodes Changelog ***
 
+= 2.9.7 - 2019/07/25 =
+* This upgrade is for compatibility with Responsi Framework 7.5.0
+* Refactor - All plugin CSS and JS from Class ID to Class name for new Responsi Class names.
+
 = 2.9.6 - 2019/04/02 =
 * This maintenance update is for compatibility with WordPress Major version 5.1.1 plus a customizer menu bug fix when using blank child theme.
 * Tweak - Tested for compatibility with WordPress 5.1.1

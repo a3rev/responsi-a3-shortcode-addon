@@ -150,7 +150,7 @@ class Shortcode_Button_Class {
 			$id_output .= ' id="'.$id.'"';
 		}
 
-		if ( $window == 'true') $_window = 'target="_blank"';
+		if ( $window == 'true') $_window = 'target="_blank" rel="noopener"';
 		else $_window = '';
 
 		$html = '';

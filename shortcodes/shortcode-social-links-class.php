@@ -83,7 +83,7 @@ class Shortcode_Social_Links_Class {
 		$style .= 'font-size: '.$size.'px !important;color:'.$color.' !important;';
 
 		$target = '';
-		if ( $window == 'true') $target = 'target="_blank"';
+		if ( $window == 'true') $target = 'target="_blank" rel="noopener"';
 		$container_mp = '';
 		if( $container == 'yes' ){
 			if($background == '') $background = 'transparent';
