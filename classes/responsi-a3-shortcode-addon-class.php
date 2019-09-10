@@ -392,9 +392,9 @@ class Responsi_A3_Shortcode_Addon {
 	    $_blockquote_boxed_box_shadow    = responsi_generate_box_shadow($responsi_options_a3_shortcode['responsi_blockquote_boxed_box_shadow']);
 
 	    if ($_blockquote_icon == 'true') {
-	        $output .= '.entry blockquote:before, .responsi-content-main * blockquote:before, .term-description:before, .entry blockquote:before, .responsi-content-main blockquote:before,.responsi-sc-quote:before{color:' . $_blockquote_icon_color . ' !important;}';
+	        $output .= '.entry blockquote:before, .main * blockquote:before, .term-description:before, .entry blockquote:before, .main blockquote:before,.responsi-sc-quote:before{color:' . $_blockquote_icon_color . ' !important;}';
 	    } else {
-	        $output .= '.entry blockquote:before, .responsi-content-main * blockquote:before, .term-description:before, .entry blockquote:before, .responsi-content-main blockquote:before,.responsi-sc-quote:before{color:#CCCCCC !important;}';
+	        $output .= '.entry blockquote:before, .main * blockquote:before, .term-description:before, .entry blockquote:before, .main blockquote:before,.responsi-sc-quote:before{color:#CCCCCC !important;}';
 	    }
 
 	    $_blockquote_boxed_css = '';
@@ -406,7 +406,7 @@ class Responsi_A3_Shortcode_Addon {
 	        $_blockquote_boxed_css .= 'border-right:' . $_blockquote_boxed_border_lr["width"] . 'px ' . $_blockquote_boxed_border_lr["style"] . ' ' . $_blockquote_boxed_border_lr["color"] . ';';
 	        $_blockquote_boxed_css .= $_blockquote_boxed_border_radius;
 	        $_blockquote_boxed_css .= $_blockquote_boxed_box_shadow;
-	        $output .= '.responsi-sc-quote.boxed,.entry blockquote.boxed, .responsi-content-main blockquote.boxed, .type-post blockquote, .type-page blockquote, .entry blockquote,.page-description blockquote{' . $_blockquote_boxed_css . '}';
+	        $output .= '.responsi-sc-quote.boxed,.entry blockquote.boxed, .main blockquote.boxed, .type-post blockquote, .type-page blockquote, .entry blockquote,.page-description blockquote{' . $_blockquote_boxed_css . '}';
 	    }
 
 	    if( function_exists('responsi_minify_css') ){

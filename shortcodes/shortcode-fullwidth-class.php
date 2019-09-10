@@ -216,7 +216,7 @@ class Shortcode_Fullwidth_Class {
 
 	function attr() {
 
-		$attr['class'] = 'responsi-fullwidth fullwidth-box';
+		$attr['class'] = 'responsi-fullwidth fullwidth-box clearfix';
 		$attr['style'] = '';
 
 		if( self::$args['hundred_percent'] == 'yes' ) {

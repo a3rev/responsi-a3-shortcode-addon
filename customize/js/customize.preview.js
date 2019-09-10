@@ -61,13 +61,13 @@
 
 		var _blockquote_boxed_css = '';
 		if (_blockquote_boxed == 'true') {
-			_blockquote_boxed_css += responsiCustomize.build_background('responsi_blockquote_boxed_bg', true);
-			_blockquote_boxed_css += responsiCustomize.build_border('responsi_blockquote_boxed_border_top', 'top');
-			_blockquote_boxed_css += responsiCustomize.build_border('responsi_blockquote_boxed_border_bottom', 'bottom');
-			_blockquote_boxed_css += responsiCustomize.build_border('responsi_blockquote_boxed_border_lr', 'left');
-			_blockquote_boxed_css += responsiCustomize.build_border('responsi_blockquote_boxed_border_lr', 'right');
-			_blockquote_boxed_css += responsiCustomize.build_border_radius('responsi_blockquote_boxed_border_radius');
-			_blockquote_boxed_css += responsiCustomize.build_box_shadow('responsi_blockquote_boxed_box_shadow', true);
+			_blockquote_boxed_css += _cFn.renderBG('responsi_blockquote_boxed_bg', true);
+			_blockquote_boxed_css += _cFn.renderBorder('responsi_blockquote_boxed_border_top', 'top');
+			_blockquote_boxed_css += _cFn.renderBorder('responsi_blockquote_boxed_border_bottom', 'bottom');
+			_blockquote_boxed_css += _cFn.renderBorder('responsi_blockquote_boxed_border_lr', 'left');
+			_blockquote_boxed_css += _cFn.renderBorder('responsi_blockquote_boxed_border_lr', 'right');
+			_blockquote_boxed_css += _cFn.renderRadius('responsi_blockquote_boxed_border_radius');
+			_blockquote_boxed_css += _cFn.renderShadow('responsi_blockquote_boxed_box_shadow', true);
 		} else {
 			_blockquote_boxed_css += 'background-color:transparent !important;';
 			_blockquote_boxed_css += 'border:none !important;';
@@ -85,7 +85,7 @@
 	}
 
 	$.each(border_fields, function(inx, val) {
-		$.each(typeborder, function(i, v) {
+		$.each(ctrlBorder, function(i, v) {
 			wp.customize(val + '[' + v + ']', function(value) {
 				value.bind(function(to) {
 					_a3_shortcode_preview();
@@ -95,7 +95,7 @@
 	});
 
 	$.each(border_radius_fields, function(inx, val) {
-		$.each(typeradius, function(i, v) {
+		$.each(ctrlRadius, function(i, v) {
 			wp.customize(val + '[' + v + ']', function(value) {
 				value.bind(function(to) {
 					_a3_shortcode_preview();
@@ -105,7 +105,7 @@
 	});
 
 	$.each(shadow_fields, function(inx, val) {
-		$.each(typeshadow, function(i, v) {
+		$.each(ctrlShadow, function(i, v) {
 			wp.customize(val + '[' + v + ']', function(value) {
 				value.bind(function(to) {
 					_a3_shortcode_preview();
@@ -115,7 +115,7 @@
 	});
 
 	$.each(bg_fields, function(inx, val) {
-		$.each(typebg, function(i, v) {
+		$.each(ctrlBG, function(i, v) {
 			wp.customize(val + '[' + v + ']', function(value) {
 				value.bind(function(to) {
 					_a3_shortcode_preview();
@@ -125,7 +125,7 @@
 	});
 
 	$.each(margin_padding_fields, function(inx, val) {
-		$.each(typemp, function(i, v) {
+		$.each(ctrlMarPad, function(i, v) {
 			wp.customize(val + v, function(value) {
 				value.bind(function(to) {
 					_a3_shortcode_preview();
