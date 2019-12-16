@@ -1,4 +1,19 @@
 <?php
+function _customize_menu_a3_shortcode(){
+	$_permisstion = true;
+
+	if( function_exists('framework_a3rev_super_user_menu_permission') ){
+		if( framework_a3rev_super_user_menu_permission('framework_a3rev_permissions_a3_shortcode_addon_roles') ){
+			return true;
+		}else{
+			return false;
+		}
+	}else{
+		return true;
+	}
+	return true;
+}
+
 /**
  * Register Activation Hook
  */

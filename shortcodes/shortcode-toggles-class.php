@@ -1,5 +1,8 @@
 <?php
-class Shortcode_Toggles_Class {
+
+namespace A3Rev\RShortcode;
+
+class Toggles {
 
 	private $accordian_counter = 1;
 	private $collapse_counter = 1;
@@ -40,7 +43,7 @@ class Shortcode_Toggles_Class {
 	 */
 	function render_parent( $args, $content = '') {
 		do_action('_front_enqueue_css_and_js');
-		$defaults = Responsi_A3_Shortcode_Class::set_shortcode_defaults(
+		$defaults = \A3Rev\RShortcode\HookFunction::set_shortcode_defaults(
 			array(
 				'class' 	=> '',
 				'id' 		=> '',
@@ -87,7 +90,7 @@ class Shortcode_Toggles_Class {
 			color:".$iconactivecolor.";
 		}
 		</style>";
-		$html = sprintf( '<div class="clear"></div><div %s><div %s>%s</div></div><div class="clear"></div>', Responsi_A3_Shortcode_Class::attributes( 'toggle-shortcode' ), Responsi_A3_Shortcode_Class::attributes( 'toggle-shortcode-panelgroup' ),  do_shortcode( $content ) );
+		$html = sprintf( '<div class="clear"></div><div %s><div %s>%s</div></div><div class="clear"></div>', \A3Rev\RShortcode\HookFunction::attributes( 'toggle-shortcode' ), \A3Rev\RShortcode\HookFunction::attributes( 'toggle-shortcode-panelgroup' ),  do_shortcode( $content ) );
 
 		$this->accordian_counter++;
 		//return '';
@@ -130,7 +133,7 @@ class Shortcode_Toggles_Class {
 	 */
 	function render_child( $args, $content = '') {
 
-		$defaults = Responsi_A3_Shortcode_Class::set_shortcode_defaults(
+		$defaults = \A3Rev\RShortcode\HookFunction::set_shortcode_defaults(
 			array(
 				'open' 		=> 'no',
 				'title'		=> '&nbsp;',
@@ -181,10 +184,10 @@ class Shortcode_Toggles_Class {
 
 		$this->collapse_id = substr( md5( sprintf( 'collapse-%s-%s', $this->accordian_counter, $this->collapse_counter ) ), 15 );
 
-		$html = sprintf( '<div %s %s><div %s><h4 %s><a %s><i %s></i>%s</a></h4></div><div %s><i %s></i><div %s %s>%s</div></div></div>', Responsi_A3_Shortcode_Class::attributes( 'responsi-panel panel-default' ), Responsi_A3_Shortcode_Class::attributes( 'toggle-shortcode-item' ),
-						 Responsi_A3_Shortcode_Class::attributes( 'panel-heading' ), Responsi_A3_Shortcode_Class::attributes( 'panel-title toggle' ), Responsi_A3_Shortcode_Class::attributes( 'toggle-shortcode-data-toggle' ),
-						 Responsi_A3_Shortcode_Class::attributes( 'toggle-shortcode-icon' ), $title, Responsi_A3_Shortcode_Class::attributes( 'toggle-shortcode-collapse' ),
-						 Responsi_A3_Shortcode_Class::attributes( 'toggle-shortcode-icon' ),Responsi_A3_Shortcode_Class::attributes( 'panel-body toggle-content' ), Responsi_A3_Shortcode_Class::attributes( 'toggle-shortcode-content-collapse' ), do_shortcode($content));
+		$html = sprintf( '<div %s %s><div %s><h4 %s><a %s><i %s></i>%s</a></h4></div><div %s><i %s></i><div %s %s>%s</div></div></div>', \A3Rev\RShortcode\HookFunction::attributes( 'responsi-panel panel-default' ), \A3Rev\RShortcode\HookFunction::attributes( 'toggle-shortcode-item' ),
+						 \A3Rev\RShortcode\HookFunction::attributes( 'panel-heading' ), \A3Rev\RShortcode\HookFunction::attributes( 'panel-title toggle' ), \A3Rev\RShortcode\HookFunction::attributes( 'toggle-shortcode-data-toggle' ),
+						 \A3Rev\RShortcode\HookFunction::attributes( 'toggle-shortcode-icon' ), $title, \A3Rev\RShortcode\HookFunction::attributes( 'toggle-shortcode-collapse' ),
+						 \A3Rev\RShortcode\HookFunction::attributes( 'toggle-shortcode-icon' ),\A3Rev\RShortcode\HookFunction::attributes( 'panel-body toggle-content' ), \A3Rev\RShortcode\HookFunction::attributes( 'toggle-shortcode-content-collapse' ), do_shortcode($content));
 
 		$this->collapse_counter++;
 
@@ -266,5 +269,5 @@ class Shortcode_Toggles_Class {
 
 	}
 }
-$GLOBALS['Shortcode_Toggles_Class'] = new Shortcode_Toggles_Class();
+
 ?>

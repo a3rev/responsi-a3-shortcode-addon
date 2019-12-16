@@ -1,0 +1,21 @@
+{
+    "name": "a3rev/responsi-a3-shortcode-addon",
+    "description": "Responsi Shortcodes extends the existing Responsi Framework shortcodes and is an essential tool for creating stunning content without writing code. Includes 360+ fontface Icon shortcodes and Flip Box shortcode. More coming soon.",
+    "authors": [
+        {
+            "name": "a3rev Software",
+            "email": "admin@a3rev.com"
+        }
+    ],
+    "config": {
+        "optimize-autoloader": true
+    },
+    "require": {
+        "php": ">=5.6|>=7.0"
+    },
+    "autoload": {
+        "psr-4": {
+          "A3Rev\\RShortcode\\": [ "src/", "admin/", "upgrade", "classes", "customize", "shortcodes" ]
+        }
+    }
+}

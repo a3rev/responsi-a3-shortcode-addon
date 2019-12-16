@@ -283,25 +283,25 @@ global $ICONS;
 			<tr>
 				<th valign="top" scope="row"><label for="responsi-value-border" class="">Border Top<span class="optional"></span></label></th>
 				<td class="responsi-marker-border-control responsi-control">
-					<?php Responsi_A3_Shortcode_Class::general_border_type('bordertop', 0, 'solid', '#e5e4e3');?>
+					<?php \A3Rev\RShortcode\HookFunction::general_border_type('bordertop', 0, 'solid', '#e5e4e3');?>
 				</td>
 			</tr>
 			<tr>
 				<th valign="top" scope="row"><label for="responsi-value-border" class="">Border Bottom<span class="optional"></span></label></th>
 				<td class="responsi-marker-border-control responsi-control">
-					<?php Responsi_A3_Shortcode_Class::general_border_type('borderbottom', 1, 'solid', '#e5e4e3');?>
+					<?php \A3Rev\RShortcode\HookFunction::general_border_type('borderbottom', 1, 'solid', '#e5e4e3');?>
 				</td>
 			</tr>
 			<tr>
 				<th valign="top" scope="row"><label for="responsi-value-border" class="">Border Left<span class="optional"></span></label></th>
 				<td class="responsi-marker-border-control responsi-control">
-					<?php Responsi_A3_Shortcode_Class::general_border_type('borderleft', 0, 'solid', '#e5e4e3');?>
+					<?php \A3Rev\RShortcode\HookFunction::general_border_type('borderleft', 0, 'solid', '#e5e4e3');?>
 				</td>
 			</tr>
 			<tr>
 				<th valign="top" scope="row"><label for="responsi-value-border" class="">Border Right<span class="optional"></span></label></th>
 				<td class="responsi-marker-border-control responsi-control">
-					<?php Responsi_A3_Shortcode_Class::general_border_type('borderright', 0, 'solid', '#e5e4e3');?>
+					<?php \A3Rev\RShortcode\HookFunction::general_border_type('borderright', 0, 'solid', '#e5e4e3');?>
 				</td>
 			</tr>
 			<tr>

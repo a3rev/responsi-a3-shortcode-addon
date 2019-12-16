@@ -1,6 +1,8 @@
 <?php
-class Responsi_A3_Shortcode_Addon {
-	var $admin_page;
+
+namespace A3Rev\RShortcode;
+
+class Main {
 
 	public function __construct () {
 		add_action( 'init',array( $this,'customize_options'), 2 );
@@ -446,7 +448,4 @@ class Responsi_A3_Shortcode_Addon {
 	}
 
 }
-
-global $responsi_a3_shortcode_addon;
-$responsi_a3_shortcode_addon = new Responsi_A3_Shortcode_Addon();
 ?>

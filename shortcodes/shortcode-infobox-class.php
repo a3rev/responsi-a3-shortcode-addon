@@ -1,5 +1,8 @@
 <?php
-class Shortcode_Infobox_Class {
+
+namespace A3Rev\RShortcode;
+
+class Infobox {
 
 	public static $args;
 	public static $attr;
@@ -34,7 +37,7 @@ class Shortcode_Infobox_Class {
 	 */
 	function render( $args, $content = '') {
 		do_action('_front_enqueue_css_and_js');
-		$defaults =	Responsi_A3_Shortcode_Class::set_shortcode_defaults(
+		$defaults =	\A3Rev\RShortcode\HookFunction::set_shortcode_defaults(
 			array(
 				'class'					=> '',
 				'id'					=> '',
@@ -87,18 +90,18 @@ class Shortcode_Infobox_Class {
 		$styles = '';
 		$shadow_html = '';
 		if( self::$args['defaultshadow'] == 'yes' && self::$args['customshadow'] != 'true' ) {
-			//$styles = "<style type='text/css'>.infobox-container-{$this->infobox_box_counter} .element-bottomshadow:before,.infobox-container-{$this->infobox_box_counter} .element-bottomshadow:after{opacity:".$defaultshadowopacity.";-webkit-box-shadow: 0 17px 10px ".Responsi_A3_Shortcode_Class::hex2rgba(self::$args['defaultshadowcolor'],0.7).";box-shadow: 0 17px 10px ".Responsi_A3_Shortcode_Class::hex2rgba(self::$args['defaultshadowcolor'],0.7).";}</style>";
-			$shadow_html = '<div class="element-bottomshadowbefore" style="opacity:'.$defaultshadowopacity.';-webkit-box-shadow: 0 17px 10px '.Responsi_A3_Shortcode_Class::hex2rgba(self::$args['defaultshadowcolor'],0.7).';box-shadow: 0 17px 10px '.Responsi_A3_Shortcode_Class::hex2rgba(self::$args['defaultshadowcolor'],0.7).';"></div>';
-			$shadow_html .= '<div class="element-bottomshadowafter" style="opacity:'.$defaultshadowopacity.';-webkit-box-shadow: 0 17px 10px '.Responsi_A3_Shortcode_Class::hex2rgba(self::$args['defaultshadowcolor'],0.7).';box-shadow: 0 17px 10px '.Responsi_A3_Shortcode_Class::hex2rgba(self::$args['defaultshadowcolor'],0.7).';"></div>';
+			//$styles = "<style type='text/css'>.infobox-container-{$this->infobox_box_counter} .element-bottomshadow:before,.infobox-container-{$this->infobox_box_counter} .element-bottomshadow:after{opacity:".$defaultshadowopacity.";-webkit-box-shadow: 0 17px 10px ".\A3Rev\RShortcode\HookFunction::hex2rgba(self::$args['defaultshadowcolor'],0.7).";box-shadow: 0 17px 10px ".\A3Rev\RShortcode\HookFunction::hex2rgba(self::$args['defaultshadowcolor'],0.7).";}</style>";
+			$shadow_html = '<div class="element-bottomshadowbefore" style="opacity:'.$defaultshadowopacity.';-webkit-box-shadow: 0 17px 10px '.\A3Rev\RShortcode\HookFunction::hex2rgba(self::$args['defaultshadowcolor'],0.7).';box-shadow: 0 17px 10px '.\A3Rev\RShortcode\HookFunction::hex2rgba(self::$args['defaultshadowcolor'],0.7).';"></div>';
+			$shadow_html .= '<div class="element-bottomshadowafter" style="opacity:'.$defaultshadowopacity.';-webkit-box-shadow: 0 17px 10px '.\A3Rev\RShortcode\HookFunction::hex2rgba(self::$args['defaultshadowcolor'],0.7).';box-shadow: 0 17px 10px '.\A3Rev\RShortcode\HookFunction::hex2rgba(self::$args['defaultshadowcolor'],0.7).';"></div>';
 			//self::$args['margin_bottom'] = (15 + str_replace("px", "", $margin_bottom)).'px';
 		}
 
 		$icon_html = '';
 		if( $icon != '') {
-			$icon_html = sprintf( '<i class="responsi-shortcode-icon shortcode-icon-%s"%s></i>', $icon, Responsi_A3_Shortcode_Class::attributes( 'infobox-icon-shortcode' ) );
+			$icon_html = sprintf( '<i class="responsi-shortcode-icon shortcode-icon-%s"%s></i>', $icon, \A3Rev\RShortcode\HookFunction::attributes( 'infobox-icon-shortcode' ) );
 		}
 
-		$html = sprintf('<div %s><div %s>%s%s<div class="clear"></div>%s</div></div>', Responsi_A3_Shortcode_Class::attributes( 'infobox-container-shortcode' ), Responsi_A3_Shortcode_Class::attributes( 'infobox-shortcode' ), $icon_html, do_shortcode( $content ), $shadow_html );
+		$html = sprintf('<div %s><div %s>%s%s<div class="clear"></div>%s</div></div>', \A3Rev\RShortcode\HookFunction::attributes( 'infobox-container-shortcode' ), \A3Rev\RShortcode\HookFunction::attributes( 'infobox-shortcode' ), $icon_html, do_shortcode( $content ), $shadow_html );
 
 		$this->infobox_box_counter++;
 
@@ -185,5 +188,5 @@ class Shortcode_Infobox_Class {
 		return $attr;
 	}
 }
-$GLOBALS['Shortcode_Infobox_Class'] = new Shortcode_Infobox_Class();
+
 ?>

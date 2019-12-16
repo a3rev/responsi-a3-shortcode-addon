@@ -1,5 +1,8 @@
 <?php
-class Responsi_A3_Shortcode_Addon_Admin {
+
+namespace A3Rev\RShortcode;
+
+class Admin {
 	var $admin_page;
 
 	public function __construct () {
@@ -21,7 +24,7 @@ class Responsi_A3_Shortcode_Addon_Admin {
 
 		global $wp_roles;
 		if ( ! isset( $wp_roles ) ) {
-			$wp_roles = new WP_Roles();
+			$wp_roles = new \WP_Roles();
 		}
 		$roles = $wp_roles->get_names();
 
@@ -47,22 +50,5 @@ class Responsi_A3_Shortcode_Addon_Admin {
 		return $new_options;
 	}
 
-}
-global $responsi_a3_shortcode_addon_admin;
-$responsi_a3_shortcode_addon_admin = new Responsi_A3_Shortcode_Addon_Admin();
-
-function _customize_menu_a3_shortcode(){
-	$_permisstion = true;
-
-	if( function_exists('framework_a3rev_super_user_menu_permission') ){
-		if( framework_a3rev_super_user_menu_permission('framework_a3rev_permissions_a3_shortcode_addon_roles') ){
-			return true;
-		}else{
-			return false;
-		}
-	}else{
-		return true;
-	}
-	return true;
 }
 ?>

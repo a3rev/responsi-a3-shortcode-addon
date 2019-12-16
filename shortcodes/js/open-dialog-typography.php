@@ -117,7 +117,7 @@ global $ICONS;
 			<tr>
 				<th width="23%" valign="top" scope="row"><label for="responsi-value-typography" class="">Font<span class="optional"></span></label></th>
 				<td class="responsi-marker-font-control">
-					<?php Responsi_A3_Shortcode_Class::general_font_type('typography','Arial, sans-serif' ,12,1.2,'normal','#000000');?>
+					<?php \A3Rev\RShortcode\HookFunction::general_font_type('typography','Arial, sans-serif' ,12,1.2,'normal','#000000');?>
 				</td>
 			</tr>
 		</table>
@@ -201,7 +201,7 @@ global $ICONS;
 			<tr>
 				<th width="23%" valign="top" scope="row"><label for="responsi-value-dropcap" class="">Font<span class="optional"></span></label></th>
 				<td class="responsi-marker-font-control">
-					<?php Responsi_A3_Shortcode_Class::general_font_type('dropcap','Arial, sans-serif' ,40,1.2,'normal','#000000');?>
+					<?php \A3Rev\RShortcode\HookFunction::general_font_type('dropcap','Arial, sans-serif' ,40,1.2,'normal','#000000');?>
 				</td>
 			</tr>
 			<tr>
@@ -314,7 +314,7 @@ global $ICONS;
 			<tr>
 				<th valign="top" scope="row"><label for="responsi-value-qborder" class="">Border<span class="optional"></span></label></th>
 				<td class="responsi-marker-border-control responsi-control">
-					<?php Responsi_A3_Shortcode_Class::general_border_type('qborder_', 0, 'solid', '#dbdbdb');?>
+					<?php \A3Rev\RShortcode\HookFunction::general_border_type('qborder_', 0, 'solid', '#dbdbdb');?>
 				</td>
 			</tr>
 
@@ -347,7 +347,7 @@ global $ICONS;
 			<tr class="qshadow">
 				<th valign="top" scope="row"><label for="responsi-value-qshadow_style" class=""><span class="optional"></span></label></th>
 				<td class="responsi-marker-shadow-control responsi-control">
-					<?php Responsi_A3_Shortcode_Class::general_shadow_type( 'qshadow_', 0, 0, 0, 0, 'inset','#dbdbdb' );?>
+					<?php \A3Rev\RShortcode\HookFunction::general_shadow_type( 'qshadow_', 0, 0, 0, 0, 'inset','#dbdbdb' );?>
 				</td>
 			</tr>
 		</table>

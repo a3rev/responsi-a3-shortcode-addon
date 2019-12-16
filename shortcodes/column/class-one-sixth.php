@@ -1,5 +1,8 @@
 <?php
-class Shortcode_Columns_OneSixth {
+
+namespace A3Rev\RShortcode;
+
+class OneSixth {
 
 	public static $args;
 
@@ -54,10 +57,10 @@ class Shortcode_Columns_OneSixth {
 
 		$clearfix = '';
 		if( self::$args['last'] == 'yes' ) {
-			$clearfix = sprintf( '<div %s></div>', Responsi_A3_Shortcode_Class::attributes( 'responsi-clearfix' ) );
+			$clearfix = sprintf( '<div %s></div>', \A3Rev\RShortcode\HookFunction::attributes( 'responsi-clearfix' ) );
 		}
 
-		$html = sprintf( trim('<div %s><div %s>%s</div></div>%s'), Responsi_A3_Shortcode_Class::attributes( 'one-sixth-shortcode' ), Responsi_A3_Shortcode_Class::attributes( 'one-sixth-shortcode-wrapper' ), do_shortcode( $content ), $clearfix );
+		$html = sprintf( trim('<div %s><div %s>%s</div></div>%s'), \A3Rev\RShortcode\HookFunction::attributes( 'one-sixth-shortcode' ), \A3Rev\RShortcode\HookFunction::attributes( 'one-sixth-shortcode-wrapper' ), do_shortcode( $content ), $clearfix );
 
 		return $html;
 
@@ -122,7 +125,7 @@ class Shortcode_Columns_OneSixth {
 		}
 
 		if( self::$args['bordercolor'] && self::$args['bordersize'] && self::$args['borderstyle'] ) {
-			if( Responsi_A3_Shortcode_Class::is_transparent_color( self::$args['bordercolor'] ) ) {
+			if( \A3Rev\RShortcode\HookFunction::is_transparent_color( self::$args['bordercolor'] ) ) {
 				$attr['style'] .= sprintf( 'outline:%s %s %s;', self::$args['bordersize'], self::$args['borderstyle'], self::$args['bordercolor'] );
 				$attr['style'] .= sprintf( 'outline-offset: -%s;', self::$args['bordersize'] );
 			} else {

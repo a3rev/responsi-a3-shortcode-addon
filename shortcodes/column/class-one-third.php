@@ -1,5 +1,8 @@
 <?php
-class Shortcode_Columns_OneThird {
+
+namespace A3Rev\RShortcode;
+
+class OneThird {
 
 	public static $args;
 
@@ -54,10 +57,10 @@ class Shortcode_Columns_OneThird {
 
 		$clearfix = '';
 		if( self::$args['last'] == 'yes' ) {
-			$clearfix = sprintf( '<div %s></div>', Responsi_A3_Shortcode_Class::attributes( 'responsi-clearfix' ) );
+			$clearfix = sprintf( '<div %s></div>', \A3Rev\RShortcode\HookFunction::attributes( 'responsi-clearfix' ) );
 		}
 
-		$html = sprintf( trim('<div %s><div %s>%s</div></div>%s'), Responsi_A3_Shortcode_Class::attributes( 'one-third-shortcode' ), Responsi_A3_Shortcode_Class::attributes( 'one-third-shortcode-wrapper' ), do_shortcode( $content ), $clearfix );
+		$html = sprintf( trim('<div %s><div %s>%s</div></div>%s'), \A3Rev\RShortcode\HookFunction::attributes( 'one-third-shortcode' ), \A3Rev\RShortcode\HookFunction::attributes( 'one-third-shortcode-wrapper' ), do_shortcode( $content ), $clearfix );
 
 		return $html;
 
@@ -122,7 +125,7 @@ class Shortcode_Columns_OneThird {
 		}
 
 		if( self::$args['bordercolor'] && self::$args['bordersize'] && self::$args['borderstyle'] ) {
-			if( Responsi_A3_Shortcode_Class::is_transparent_color( self::$args['bordercolor'] ) ) {
+			if( \A3Rev\RShortcode\HookFunction::is_transparent_color( self::$args['bordercolor'] ) ) {
 				$attr['style'] .= sprintf( 'outline:%s %s %s;', self::$args['bordersize'], self::$args['borderstyle'], self::$args['bordercolor'] );
 				$attr['style'] .= sprintf( 'outline-offset: -%s;', self::$args['bordersize'] );
 			} else {

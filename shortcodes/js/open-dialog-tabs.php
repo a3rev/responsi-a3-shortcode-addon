@@ -200,7 +200,7 @@ if($default_options['responsi_sc_tab_backgroundcoloractive']['onoff'] == 'true')
 								<tr>
 									<th valign="top" scope="row"><label for="responsi-value-tab_border" class="">Tabs Border<span class="optional"></span></label></th>
 									<td class="responsi-marker-border-control responsi-control">
-										<?php Responsi_A3_Shortcode_Class::general_border_type('tab_border', $default_options['responsi_sc_tab_border']['width'], $default_options['responsi_sc_tab_border']['style'], $default_options['responsi_sc_tab_border']['color']);?>
+										<?php \A3Rev\RShortcode\HookFunction::general_border_type('tab_border', $default_options['responsi_sc_tab_border']['width'], $default_options['responsi_sc_tab_border']['style'], $default_options['responsi_sc_tab_border']['color']);?>
 									</td>
 								</tr>
 								<tr>
@@ -225,7 +225,7 @@ if($default_options['responsi_sc_tab_backgroundcoloractive']['onoff'] == 'true')
 								<tr width="23%">
 									<th valign="top" scope="row"><label for="responsi-value-font" class="">Font<span class="optional"></span></label></th>
 									<td class="responsi-marker-font-control">
-										<?php Responsi_A3_Shortcode_Class::general_font_type('font',$default_options['responsi_sc_tab_font']['face'] ,$default_options['responsi_sc_tab_font']['size'],$default_options['responsi_sc_tab_font']['line_height'],$default_options['responsi_sc_tab_font']['style'],$default_options['responsi_sc_tab_font']['color']);?>
+										<?php \A3Rev\RShortcode\HookFunction::general_font_type('font',$default_options['responsi_sc_tab_font']['face'] ,$default_options['responsi_sc_tab_font']['size'],$default_options['responsi_sc_tab_font']['line_height'],$default_options['responsi_sc_tab_font']['style'],$default_options['responsi_sc_tab_font']['color']);?>
 									</td>
 								</tr>
 								<tr class="icon_bg_ctrl">
@@ -247,25 +247,25 @@ if($default_options['responsi_sc_tab_backgroundcoloractive']['onoff'] == 'true')
 								<tr>
 									<th valign="top" scope="row"><label for="responsi-value-bordertop" class="">Border Top<span class="optional"></span></label></th>
 									<td class="responsi-marker-border-control responsi-control">
-										<?php Responsi_A3_Shortcode_Class::general_border_type('bordertop', $default_options['responsi_sc_tab_bordertop']['width'], $default_options['responsi_sc_tab_bordertop']['style'], $default_options['responsi_sc_tab_bordertop']['color']);?>
+										<?php \A3Rev\RShortcode\HookFunction::general_border_type('bordertop', $default_options['responsi_sc_tab_bordertop']['width'], $default_options['responsi_sc_tab_bordertop']['style'], $default_options['responsi_sc_tab_bordertop']['color']);?>
 									</td>
 								</tr>
 								<tr>
 									<th valign="top" scope="row"><label for="responsi-value-borderbottom" class="">Border Bottom<span class="optional"></span></label></th>
 									<td class="responsi-marker-border-control responsi-control">
-										<?php Responsi_A3_Shortcode_Class::general_border_type('borderbottom', $default_options['responsi_sc_tab_borderbottom']['width'], $default_options['responsi_sc_tab_borderbottom']['style'], $default_options['responsi_sc_tab_borderbottom']['color']);?>
+										<?php \A3Rev\RShortcode\HookFunction::general_border_type('borderbottom', $default_options['responsi_sc_tab_borderbottom']['width'], $default_options['responsi_sc_tab_borderbottom']['style'], $default_options['responsi_sc_tab_borderbottom']['color']);?>
 									</td>
 								</tr>
 								<tr>
 									<th valign="top" scope="row"><label for="responsi-value-borderleft" class="">Border Left<span class="optional"></span></label></th>
 									<td class="responsi-marker-border-control responsi-control">
-										<?php Responsi_A3_Shortcode_Class::general_border_type('borderleft', $default_options['responsi_sc_tab_borderleft']['width'], $default_options['responsi_sc_tab_borderleft']['style'], $default_options['responsi_sc_tab_borderleft']['color']);?>
+										<?php \A3Rev\RShortcode\HookFunction::general_border_type('borderleft', $default_options['responsi_sc_tab_borderleft']['width'], $default_options['responsi_sc_tab_borderleft']['style'], $default_options['responsi_sc_tab_borderleft']['color']);?>
 									</td>
 								</tr>
 								<tr>
 									<th valign="top" scope="row"><label for="responsi-value-borderright" class="">Border Right<span class="optional"></span></label></th>
 									<td class="responsi-marker-border-control responsi-control">
-										<?php Responsi_A3_Shortcode_Class::general_border_type('borderright', $default_options['responsi_sc_tab_borderright']['width'], $default_options['responsi_sc_tab_borderright']['style'], $default_options['responsi_sc_tab_borderright']['color']);?>
+										<?php \A3Rev\RShortcode\HookFunction::general_border_type('borderright', $default_options['responsi_sc_tab_borderright']['width'], $default_options['responsi_sc_tab_borderright']['style'], $default_options['responsi_sc_tab_borderright']['color']);?>
 									</td>
 								</tr>
 								<tr>
@@ -488,31 +488,31 @@ if($default_options['responsi_sc_tab_backgroundcoloractive']['onoff'] == 'true')
 								<tr width="23%">
 									<th valign="top" scope="row"><label for="responsi-value-fontcontent" class="">Font<span class="optional"></span></label></th>
 									<td class="responsi-marker-font-control">
-										<?php Responsi_A3_Shortcode_Class::general_font_type('fontcontent',$default_options['responsi_sc_tab_fontcontent']['face'] ,$default_options['responsi_sc_tab_fontcontent']['size'],$default_options['responsi_sc_tab_fontcontent']['line_height'],$default_options['responsi_sc_tab_fontcontent']['style'],$default_options['responsi_sc_tab_fontcontent']['color']);?>
+										<?php \A3Rev\RShortcode\HookFunction::general_font_type('fontcontent',$default_options['responsi_sc_tab_fontcontent']['face'] ,$default_options['responsi_sc_tab_fontcontent']['size'],$default_options['responsi_sc_tab_fontcontent']['line_height'],$default_options['responsi_sc_tab_fontcontent']['style'],$default_options['responsi_sc_tab_fontcontent']['color']);?>
 									</td>
 								</tr>
 								<tr>
 									<th valign="top" scope="row"><label for="responsi-value-cbordertop" class="">Border Top<span class="optional"></span></label></th>
 									<td class="responsi-marker-border-control responsi-control">
-										<?php Responsi_A3_Shortcode_Class::general_border_type('cbordertop', $default_options['responsi_sc_tab_cbordertop']['width'], $default_options['responsi_sc_tab_cbordertop']['style'], $default_options['responsi_sc_tab_cbordertop']['color']);?>
+										<?php \A3Rev\RShortcode\HookFunction::general_border_type('cbordertop', $default_options['responsi_sc_tab_cbordertop']['width'], $default_options['responsi_sc_tab_cbordertop']['style'], $default_options['responsi_sc_tab_cbordertop']['color']);?>
 									</td>
 								</tr>
 								<tr>
 									<th valign="top" scope="row"><label for="responsi-value-cborderbottom" class="">Border Bottom<span class="optional"></span></label></th>
 									<td class="responsi-marker-border-control responsi-control">
-										<?php Responsi_A3_Shortcode_Class::general_border_type('cborderbottom', $default_options['responsi_sc_tab_cborderbottom']['width'], $default_options['responsi_sc_tab_cborderbottom']['style'], $default_options['responsi_sc_tab_cborderbottom']['color']);?>
+										<?php \A3Rev\RShortcode\HookFunction::general_border_type('cborderbottom', $default_options['responsi_sc_tab_cborderbottom']['width'], $default_options['responsi_sc_tab_cborderbottom']['style'], $default_options['responsi_sc_tab_cborderbottom']['color']);?>
 									</td>
 								</tr>
 								<tr>
 									<th valign="top" scope="row"><label for="responsi-value-cborderleft" class="">Border Left<span class="optional"></span></label></th>
 									<td class="responsi-marker-border-control responsi-control">
-										<?php Responsi_A3_Shortcode_Class::general_border_type('cborderleft', $default_options['responsi_sc_tab_cborderleft']['width'], $default_options['responsi_sc_tab_cborderleft']['style'], $default_options['responsi_sc_tab_cborderleft']['color']);?>
+										<?php \A3Rev\RShortcode\HookFunction::general_border_type('cborderleft', $default_options['responsi_sc_tab_cborderleft']['width'], $default_options['responsi_sc_tab_cborderleft']['style'], $default_options['responsi_sc_tab_cborderleft']['color']);?>
 									</td>
 								</tr>
 								<tr>
 									<th valign="top" scope="row"><label for="responsi-value-cborderright" class="">Border Right<span class="optional"></span></label></th>
 									<td class="responsi-marker-border-control responsi-control">
-										<?php Responsi_A3_Shortcode_Class::general_border_type('cborderright', $default_options['responsi_sc_tab_cborderright']['width'], $default_options['responsi_sc_tab_cborderright']['style'], $default_options['responsi_sc_tab_cborderright']['color']);?>
+										<?php \A3Rev\RShortcode\HookFunction::general_border_type('cborderright', $default_options['responsi_sc_tab_cborderright']['width'], $default_options['responsi_sc_tab_cborderright']['style'], $default_options['responsi_sc_tab_cborderright']['color']);?>
 									</td>
 								</tr>
 								<tr>

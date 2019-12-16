@@ -1,5 +1,8 @@
 <?php
-class Shortcode_Typography_Class {
+
+namespace A3Rev\RShortcode;
+
+class Typography {
 
 	public static $args;
 
@@ -35,7 +38,7 @@ class Shortcode_Typography_Class {
 
 	public function render_typography($atts, $content = null) {
 		do_action('_front_enqueue_css_and_js');
-		$defaults =	Responsi_A3_Shortcode_Class::set_shortcode_defaults(
+		$defaults =	\A3Rev\RShortcode\HookFunction::set_shortcode_defaults(
 			array(
 				'size' => '12px',
 				'line_height' => '1',
@@ -46,13 +49,13 @@ class Shortcode_Typography_Class {
 
 		extract( $defaults );
 		$html = '';
-		$fonts = Responsi_A3_Shortcode_Class::_generate_font_css($size, $face, $style, $color, $line_height);
+		$fonts = \A3Rev\RShortcode\HookFunction::_generate_font_css($size, $face, $style, $color, $line_height);
 		$html = '<span class="shortcode-typography" style="'. $fonts .'">' . do_shortcode( $content ) . '</span>';
 		return $html;
 	}
 	public function render_highlight($atts, $content = null) {
 		do_action('_front_enqueue_css_and_js');
-		$defaults =	Responsi_A3_Shortcode_Class::set_shortcode_defaults(
+		$defaults =	\A3Rev\RShortcode\HookFunction::set_shortcode_defaults(
 			array(
 				'background' => 'transparent',
 				'padding' => 'no',
@@ -72,7 +75,7 @@ class Shortcode_Typography_Class {
 	}
 	public function render_dropcap($atts, $content = null) {
 		do_action('_front_enqueue_css_and_js');
-		$defaults =	Responsi_A3_Shortcode_Class::set_shortcode_defaults(
+		$defaults =	\A3Rev\RShortcode\HookFunction::set_shortcode_defaults(
 			array(
 				'size' => '12px',
 				'line_height' => '1',
@@ -87,7 +90,7 @@ class Shortcode_Typography_Class {
 			), $atts );
 
 		extract( $defaults );
-		$fonts = Responsi_A3_Shortcode_Class::_generate_font_css($size, $face, $style, $color, $line_height).'';
+		$fonts = \A3Rev\RShortcode\HookFunction::_generate_font_css($size, $face, $style, $color, $line_height).'';
 		$margintop = str_replace("px", "", $margintop);
 		$marginbottom = str_replace("px", "", $marginbottom);
 		$marginleft = str_replace("px", "", $marginleft);
@@ -97,7 +100,7 @@ class Shortcode_Typography_Class {
 	}
 	public function render_quotation($atts, $content = null) {
 		do_action('_front_enqueue_css_and_js');
-		$defaults =	Responsi_A3_Shortcode_Class::set_shortcode_defaults(
+		$defaults =	\A3Rev\RShortcode\HookFunction::set_shortcode_defaults(
 			array(
 				'iconcolor' => '#cccccc',
 				'textcolor' => '#000000',
@@ -158,7 +161,7 @@ class Shortcode_Typography_Class {
 	}
 	public function render_title($atts, $content = null) {
 		do_action('_front_enqueue_css_and_js');
-		$defaults =	Responsi_A3_Shortcode_Class::set_shortcode_defaults(
+		$defaults =	\A3Rev\RShortcode\HookFunction::set_shortcode_defaults(
 			array(
 				'class'						=> '',
 				'id' 						=> '',
@@ -181,21 +184,21 @@ class Shortcode_Typography_Class {
 
 			if( self::$args['align'] == 'right' ) {
 
-				$html = sprintf( '<div %s><div %s><div %s></div></div><h%s %s>%s</h%s></div>', Responsi_A3_Shortcode_Class::attributes( 'title-shortcode' ),
-								Responsi_A3_Shortcode_Class::attributes( 'title-sep-container' ), Responsi_A3_Shortcode_Class::attributes( 'title-shortcode-sep' ), $tags,
-								Responsi_A3_Shortcode_Class::attributes( 'title-shortcode-heading' ), do_shortcode( $content ), $tags );
+				$html = sprintf( '<div %s><div %s><div %s></div></div><h%s %s>%s</h%s></div>', \A3Rev\RShortcode\HookFunction::attributes( 'title-shortcode' ),
+								\A3Rev\RShortcode\HookFunction::attributes( 'title-sep-container' ), \A3Rev\RShortcode\HookFunction::attributes( 'title-shortcode-sep' ), $tags,
+								\A3Rev\RShortcode\HookFunction::attributes( 'title-shortcode-heading' ), do_shortcode( $content ), $tags );
 
 			} else {
 
-				$html = sprintf( '<div %s><h%s %s>%s</h%s><div %s><div %s></div></div></div>', Responsi_A3_Shortcode_Class::attributes( 'title-shortcode' ), $tags,
-								 Responsi_A3_Shortcode_Class::attributes( 'title-shortcode-heading' ), do_shortcode( $content ), $tags,
-								 Responsi_A3_Shortcode_Class::attributes( 'title-sep-container' ), Responsi_A3_Shortcode_Class::attributes( 'title-shortcode-sep' ) );
+				$html = sprintf( '<div %s><h%s %s>%s</h%s><div %s><div %s></div></div></div>', \A3Rev\RShortcode\HookFunction::attributes( 'title-shortcode' ), $tags,
+								 \A3Rev\RShortcode\HookFunction::attributes( 'title-shortcode-heading' ), do_shortcode( $content ), $tags,
+								 \A3Rev\RShortcode\HookFunction::attributes( 'title-sep-container' ), \A3Rev\RShortcode\HookFunction::attributes( 'title-shortcode-sep' ) );
 			}
 
 		} else {
 
-			$html = sprintf( '<div %s><h%s %s>%s</h%s></div>', Responsi_A3_Shortcode_Class::attributes( 'title-shortcode' ), $tags,
-							 Responsi_A3_Shortcode_Class::attributes( 'title-shortcode-heading' ), do_shortcode( $content ), $tags );
+			$html = sprintf( '<div %s><h%s %s>%s</h%s></div>', \A3Rev\RShortcode\HookFunction::attributes( 'title-shortcode' ), $tags,
+							 \A3Rev\RShortcode\HookFunction::attributes( 'title-shortcode-heading' ), do_shortcode( $content ), $tags );
 		}
 
 		return $html;
@@ -268,5 +271,5 @@ class Shortcode_Typography_Class {
 	}
 
 }
-$GLOBALS['Shortcode_Typography_Class'] = new Shortcode_Typography_Class();
+
 ?>

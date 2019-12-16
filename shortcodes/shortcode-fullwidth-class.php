@@ -1,5 +1,8 @@
 <?php
-class Shortcode_Fullwidth_Class {
+
+namespace A3Rev\RShortcode;
+
+class Fullwidth {
 
 	public static $args;
 	public static $bg_type = 'image';
@@ -40,7 +43,7 @@ class Shortcode_Fullwidth_Class {
 			$default_options['responsi_sc_fullwidth_border'] = array('width' => '0','style' => 'solid','color' => '#eae9e9');
 		}
 		do_action('_front_enqueue_css_and_js');
-		$defaults =	Responsi_A3_Shortcode_Class::set_shortcode_defaults(
+		$defaults =	\A3Rev\RShortcode\HookFunction::set_shortcode_defaults(
 			array(
 				'wrapelement'				=> 'no',
 				'class'						=> '',
@@ -127,7 +130,7 @@ class Shortcode_Fullwidth_Class {
 
 		if( $fade == 'yes' ) {
 			self::$bg_type = 'faded';
-			$outer_html .= sprintf( '<div %s></div>', Responsi_A3_Shortcode_Class::attributes( 'fullwidth-faded' ) );
+			$outer_html .= sprintf( '<div %s></div>', \A3Rev\RShortcode\HookFunction::attributes( 'fullwidth-faded' ) );
 		}
 
 		if( self::$bg_type == 'video' ) {
@@ -155,7 +158,7 @@ class Shortcode_Fullwidth_Class {
 			}
 
 			if( $overlay_color ) {
-				$outer_html .= sprintf( '<div %s></div>', Responsi_A3_Shortcode_Class::attributes( 'fullwidth-overlay' ) );
+				$outer_html .= sprintf( '<div %s></div>', \A3Rev\RShortcode\HookFunction::attributes( 'fullwidth-overlay' ) );
 			}
 
 			$video_preview_image_html = '';
@@ -168,9 +171,9 @@ class Shortcode_Fullwidth_Class {
 		}
 
 		if( $defaults['menuanchor'] ) {
-			$html = sprintf( '<div class="clear"></div><div id="%s"><div %s>%s<div %s><div class="fw-container" style="%s"><div class="fw-content" style="%s">%s</div></div></div></div></div><div class="clear"></div>', $defaults['menuanchor'], Responsi_A3_Shortcode_Class::attributes( 'fullwidth-shortcode' ), $outer_html, Responsi_A3_Shortcode_Class::attributes( 'responsi-row' ), Shortcode_Fullwidth_Class::attr_container_style(), Shortcode_Fullwidth_Class::attr_content_style(), do_shortcode( $content ) );
+			$html = sprintf( '<div class="clear"></div><div id="%s"><div %s>%s<div %s><div class="fw-container" style="%s"><div class="fw-content" style="%s">%s</div></div></div></div></div><div class="clear"></div>', $defaults['menuanchor'], \A3Rev\RShortcode\HookFunction::attributes( 'fullwidth-shortcode' ), $outer_html, \A3Rev\RShortcode\HookFunction::attributes( 'responsi-row' ), Shortcode_Fullwidth_Class::attr_container_style(), Shortcode_Fullwidth_Class::attr_content_style(), do_shortcode( $content ) );
 		} else {
-			$html = sprintf( '<div class="clear"></div><div %s>%s<div %s><div class="fw-container" style="%s"><div class="fw-content" style="%s">%s</div></div></div></div><div class="clear"></div>', Responsi_A3_Shortcode_Class::attributes( 'fullwidth-shortcode' ), $outer_html, Responsi_A3_Shortcode_Class::attributes( 'responsi-row' ), $this->attr_container_style(), $this->attr_content_style(), do_shortcode( $content ) );
+			$html = sprintf( '<div class="clear"></div><div %s>%s<div %s><div class="fw-container" style="%s"><div class="fw-content" style="%s">%s</div></div></div></div><div class="clear"></div>', \A3Rev\RShortcode\HookFunction::attributes( 'fullwidth-shortcode' ), $outer_html, \A3Rev\RShortcode\HookFunction::attributes( 'responsi-row' ), $this->attr_container_style(), $this->attr_content_style(), do_shortcode( $content ) );
 		}
 
 		return $html;
@@ -366,5 +369,5 @@ class Shortcode_Fullwidth_Class {
 		}
 	}
 }
-$GLOBALS['Shortcode_Fullwidth_Class'] = new Shortcode_Fullwidth_Class();
+
 ?>

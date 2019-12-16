@@ -1,5 +1,8 @@
 <?php
-class Shortcode_Divider_Class {
+
+namespace A3Rev\RShortcode;
+
+class Dividers {
 
 	public static $args;
 	public static $attr;
@@ -33,7 +36,7 @@ class Shortcode_Divider_Class {
 	 */
 	function render( $args, $content = '') {
 		do_action('_front_enqueue_css_and_js');
-		$defaults =	Responsi_A3_Shortcode_Class::set_shortcode_defaults(
+		$defaults =	\A3Rev\RShortcode\HookFunction::set_shortcode_defaults(
 			array(
 				'class'			=> '',
 				'id'			=> '',
@@ -59,17 +62,17 @@ class Shortcode_Divider_Class {
 		self::$args = $defaults;
 
 		if ( $icon && $type != 'none' ) {
-			$icon_insert = sprintf( '<span %s><i %s></i></span>', Responsi_A3_Shortcode_Class::attributes( 'separator-shortcode-icon-wrapper' ), Responsi_A3_Shortcode_Class::attributes( 'separator-shortcode-icon' ) );
+			$icon_insert = sprintf( '<span %s><i %s></i></span>', \A3Rev\RShortcode\HookFunction::attributes( 'separator-shortcode-icon-wrapper' ), \A3Rev\RShortcode\HookFunction::attributes( 'separator-shortcode-icon' ) );
 		} else {
 			$icon_insert = '';
 		}
 
 		$shadow_wrap = '';
 		if ( $type == 'shadow' ) {
-			$shadow_wrap = sprintf( '<div class="sepshadow" %s></div>', Responsi_A3_Shortcode_Class::attributes( 'separator-shortcode-shadow' ) );
+			$shadow_wrap = sprintf( '<div class="sepshadow" %s></div>', \A3Rev\RShortcode\HookFunction::attributes( 'separator-shortcode-shadow' ) );
 		}
 
-		$html = sprintf( '<div %s></div><div %s>%s%s</div>', Responsi_A3_Shortcode_Class::attributes( 'responsi-sep-clear' ), Responsi_A3_Shortcode_Class::attributes( 'separator-shortcode' ), $icon_insert, $shadow_wrap );
+		$html = sprintf( '<div %s></div><div %s>%s%s</div>', \A3Rev\RShortcode\HookFunction::attributes( 'responsi-sep-clear' ), \A3Rev\RShortcode\HookFunction::attributes( 'separator-shortcode' ), $icon_insert, $shadow_wrap );
 
 		return $html;
 
@@ -118,12 +121,12 @@ class Shortcode_Divider_Class {
 		if( self::$args['type'] == 'shadow' ) {
 			$attr['style'] .= "
 				background: none;
-				background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(150, 150, 150, 0)), color-stop(15%, ".self::$args['color']."), color-stop(50%, ".Responsi_A3_Shortcode_Class::hex2rgba(self::$args['color'],0.65)."), color-stop(85%, ".Responsi_A3_Shortcode_Class::hex2rgba(self::$args['color'],0.1)."), color-stop(100%, rgba(150, 150, 150, 0)));
-				background: -webkit-linear-gradient(left, rgba(150, 150, 150, 0) 0%, ".Responsi_A3_Shortcode_Class::hex2rgba(self::$args['color'],0.1)." 15%, ".Responsi_A3_Shortcode_Class::hex2rgba(self::$args['color'],0.65)." 50%, ".Responsi_A3_Shortcode_Class::hex2rgba(self::$args['color'],0.1)." 85%, rgba(150, 150, 150, 0) 100%);
-				background: -moz-linear-gradient(left, rgba(150, 150, 150, 0) 0%, ".Responsi_A3_Shortcode_Class::hex2rgba(self::$args['color'],0.1)." 15%, ".Responsi_A3_Shortcode_Class::hex2rgba(self::$args['color'],0.65)." 50%, ".Responsi_A3_Shortcode_Class::hex2rgba(self::$args['color'],0.1)." 85%, rgba(150, 150, 150, 0) 100%);
-				background: -ms-linear-gradient(left, rgba(150, 150, 150, 0) 0%, ".Responsi_A3_Shortcode_Class::hex2rgba(self::$args['color'],0.1)." 15%, ".Responsi_A3_Shortcode_Class::hex2rgba(self::$args['color'],0.65)." 50%, ".Responsi_A3_Shortcode_Class::hex2rgba(self::$args['color'],0.1)." 85%, rgba(150, 150, 150, 0) 100%);
-				background: -o-linear-gradient(left, rgba(150, 150, 150, 0) 0%, ".Responsi_A3_Shortcode_Class::hex2rgba(self::$args['color'],0.1)." 15%, ".Responsi_A3_Shortcode_Class::hex2rgba(self::$args['color'],0.65)." 50%, ".Responsi_A3_Shortcode_Class::hex2rgba(self::$args['color'],0.1)." 85%, rgba(150, 150, 150, 0) 100%);
-				background: linear-gradient(left, rgba(150, 150, 150, 0) 0%, ".Responsi_A3_Shortcode_Class::hex2rgba(self::$args['color'],0.1)." 15%, ".Responsi_A3_Shortcode_Class::hex2rgba(self::$args['color'],0.65)." 50%, ".Responsi_A3_Shortcode_Class::hex2rgba(self::$args['color'],0.1)." 85%, rgba(150, 150, 150, 0) 100%);
+				background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(150, 150, 150, 0)), color-stop(15%, ".self::$args['color']."), color-stop(50%, ".\A3Rev\RShortcode\HookFunction::hex2rgba(self::$args['color'],0.65)."), color-stop(85%, ".\A3Rev\RShortcode\HookFunction::hex2rgba(self::$args['color'],0.1)."), color-stop(100%, rgba(150, 150, 150, 0)));
+				background: -webkit-linear-gradient(left, rgba(150, 150, 150, 0) 0%, ".\A3Rev\RShortcode\HookFunction::hex2rgba(self::$args['color'],0.1)." 15%, ".\A3Rev\RShortcode\HookFunction::hex2rgba(self::$args['color'],0.65)." 50%, ".\A3Rev\RShortcode\HookFunction::hex2rgba(self::$args['color'],0.1)." 85%, rgba(150, 150, 150, 0) 100%);
+				background: -moz-linear-gradient(left, rgba(150, 150, 150, 0) 0%, ".\A3Rev\RShortcode\HookFunction::hex2rgba(self::$args['color'],0.1)." 15%, ".\A3Rev\RShortcode\HookFunction::hex2rgba(self::$args['color'],0.65)." 50%, ".\A3Rev\RShortcode\HookFunction::hex2rgba(self::$args['color'],0.1)." 85%, rgba(150, 150, 150, 0) 100%);
+				background: -ms-linear-gradient(left, rgba(150, 150, 150, 0) 0%, ".\A3Rev\RShortcode\HookFunction::hex2rgba(self::$args['color'],0.1)." 15%, ".\A3Rev\RShortcode\HookFunction::hex2rgba(self::$args['color'],0.65)." 50%, ".\A3Rev\RShortcode\HookFunction::hex2rgba(self::$args['color'],0.1)." 85%, rgba(150, 150, 150, 0) 100%);
+				background: -o-linear-gradient(left, rgba(150, 150, 150, 0) 0%, ".\A3Rev\RShortcode\HookFunction::hex2rgba(self::$args['color'],0.1)." 15%, ".\A3Rev\RShortcode\HookFunction::hex2rgba(self::$args['color'],0.65)." 50%, ".\A3Rev\RShortcode\HookFunction::hex2rgba(self::$args['color'],0.1)." 85%, rgba(150, 150, 150, 0) 100%);
+				background: linear-gradient(left, rgba(150, 150, 150, 0) 0%, ".\A3Rev\RShortcode\HookFunction::hex2rgba(self::$args['color'],0.1)." 15%, ".\A3Rev\RShortcode\HookFunction::hex2rgba(self::$args['color'],0.65)." 50%, ".\A3Rev\RShortcode\HookFunction::hex2rgba(self::$args['color'],0.1)." 85%, rgba(150, 150, 150, 0) 100%);
 				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00".str_replace('#','',self::$args['color'])."', endColorstr='#00".str_replace('#','',self::$args['color'])."', GradientType=1);
 			";
 		}
@@ -147,10 +150,10 @@ class Shortcode_Divider_Class {
 		if( self::$args['type'] == 'shadow' ) {
 			$attr['style'] = "
 				background: none;
-				background: -webkit-radial-gradient(ellipse at 50% -50%, ".Responsi_A3_Shortcode_Class::hex2rgba(self::$args['color'],0.7)." 0px, rgba(255, 255, 255, 0) 80%);
-			    background: -moz-radial-gradient(ellipse at 50% -50%, ".Responsi_A3_Shortcode_Class::hex2rgba(self::$args['color'],0.7)." 0px, rgba(255, 255, 255, 0) 80%);
-			    background: -o-radial-gradient(ellipse at 50% -50%, ".Responsi_A3_Shortcode_Class::hex2rgba(self::$args['color'],0.7)." 0px, rgba(255, 255, 255, 0) 80%);
-			    background: radial-gradient(ellipse at 50% -50%, ".Responsi_A3_Shortcode_Class::hex2rgba(self::$args['color'],0.7)." 0px, rgba(255, 255, 255, 0) 80%);
+				background: -webkit-radial-gradient(ellipse at 50% -50%, ".\A3Rev\RShortcode\HookFunction::hex2rgba(self::$args['color'],0.7)." 0px, rgba(255, 255, 255, 0) 80%);
+			    background: -moz-radial-gradient(ellipse at 50% -50%, ".\A3Rev\RShortcode\HookFunction::hex2rgba(self::$args['color'],0.7)." 0px, rgba(255, 255, 255, 0) 80%);
+			    background: -o-radial-gradient(ellipse at 50% -50%, ".\A3Rev\RShortcode\HookFunction::hex2rgba(self::$args['color'],0.7)." 0px, rgba(255, 255, 255, 0) 80%);
+			    background: radial-gradient(ellipse at 50% -50%, ".\A3Rev\RShortcode\HookFunction::hex2rgba(self::$args['color'],0.7)." 0px, rgba(255, 255, 255, 0) 80%);
 			";
 		}
 
@@ -184,5 +187,5 @@ class Shortcode_Divider_Class {
 
 	}
 }
-$GLOBALS['Shortcode_Divider_Class'] = new Shortcode_Divider_Class();
+
 ?>

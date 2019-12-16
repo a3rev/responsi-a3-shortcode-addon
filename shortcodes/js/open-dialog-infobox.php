@@ -81,28 +81,28 @@ global $ICONS;
 			<tr>
 				<th valign="top" scope="row"><label for="responsi-value-bordertop" class="">Border Top<span class="optional"></span></label></th>
 				<td class="responsi-marker-border-control responsi-control">
-					<?php Responsi_A3_Shortcode_Class::general_border_type('bordertop', 3, 'solid', '#a0ce4e');?>
+					<?php \A3Rev\RShortcode\HookFunction::general_border_type('bordertop', 3, 'solid', '#a0ce4e');?>
 				</td>
 			</tr>
 
 			<tr>
 				<th valign="top" scope="row"><label for="responsi-value-borderbottom" class="">Border Bottom<span class="optional"></span></label></th>
 				<td class="responsi-marker-border-control responsi-control">
-					<?php Responsi_A3_Shortcode_Class::general_border_type('borderbottom', 1, 'solid', '#e8e6e6');?>
+					<?php \A3Rev\RShortcode\HookFunction::general_border_type('borderbottom', 1, 'solid', '#e8e6e6');?>
 				</td>
 			</tr>
 
 			<tr>
 				<th valign="top" scope="row"><label for="responsi-value-borderleft" class="">Border Left<span class="optional"></span></label></th>
 				<td class="responsi-marker-border-control responsi-control">
-					<?php Responsi_A3_Shortcode_Class::general_border_type('borderleft', 1, 'solid', '#e8e6e6');?>
+					<?php \A3Rev\RShortcode\HookFunction::general_border_type('borderleft', 1, 'solid', '#e8e6e6');?>
 				</td>
 			</tr>
 
 			<tr>
 				<th valign="top" scope="row"><label for="responsi-value-borderright" class="">Border Right<span class="optional"></span></label></th>
 				<td class="responsi-marker-border-control responsi-control">
-					<?php Responsi_A3_Shortcode_Class::general_border_type('borderright', 1, 'solid', '#e8e6e6');?>
+					<?php \A3Rev\RShortcode\HookFunction::general_border_type('borderright', 1, 'solid', '#e8e6e6');?>
 				</td>
 			</tr>
 
@@ -167,7 +167,7 @@ global $ICONS;
 			<tr class="customshadow">
 				<th valign="top" scope="row"><label for="responsi-value-shadow_style" class=""><span class="optional"></span></label></th>
 				<td class="responsi-marker-shadow-control responsi-control">
-					<?php Responsi_A3_Shortcode_Class::general_shadow_type( 'customshadow', '0', '0', '0', '0', 'inset','#dbdbdb' );?>
+					<?php \A3Rev\RShortcode\HookFunction::general_shadow_type( 'customshadow', '0', '0', '0', '0', 'inset','#dbdbdb' );?>
 				</td>
 			</tr>
 			<tr>

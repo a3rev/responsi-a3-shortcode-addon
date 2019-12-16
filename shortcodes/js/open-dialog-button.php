@@ -90,7 +90,7 @@ global $ICONS;
 			<tr>
 				<th width="23%" valign="top" scope="row"><label for="responsi-value-font" class="">Font<span class="optional"></span></label></th>
 				<td class="responsi-marker-font-control">
-					<?php Responsi_A3_Shortcode_Class::general_font_type('font','Arial, sans-serif' ,14,1,'normal','#FFFFFF');?>
+					<?php \A3Rev\RShortcode\HookFunction::general_font_type('font','Arial, sans-serif' ,14,1,'normal','#FFFFFF');?>
 				</td>
 			</tr>
 			<tr>
@@ -130,7 +130,7 @@ global $ICONS;
 			<tr>
 				<th valign="top" scope="row"><label for="responsi-value-border" class="">Border<span class="optional"></span></label></th>
 				<td class="responsi-marker-border-control responsi-control">
-					<?php Responsi_A3_Shortcode_Class::general_border_type('border_', 0, 'solid', '#000000');?>
+					<?php \A3Rev\RShortcode\HookFunction::general_border_type('border_', 0, 'solid', '#000000');?>
 				</td>
 			</tr>
 
@@ -162,7 +162,7 @@ global $ICONS;
 			<tr class="shadow">
 				<th valign="top" scope="row"><label for="responsi-value-shadow_style" class=""><span class="optional"></span></label></th>
 				<td class="responsi-marker-shadow-control responsi-control">
-					<?php Responsi_A3_Shortcode_Class::general_shadow_type( 'shadow_', '0', '0', '0', '0', 'inset','#dbdbdb' );?>
+					<?php \A3Rev\RShortcode\HookFunction::general_shadow_type( 'shadow_', '0', '0', '0', '0', 'inset','#dbdbdb' );?>
 				</td>
 			</tr>
 			<tr>

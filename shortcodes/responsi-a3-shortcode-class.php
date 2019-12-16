@@ -1,5 +1,8 @@
 <?php
-class Responsi_A3_Shortcode_Class {
+
+namespace A3Rev\RShortcode;
+
+class HookFunction {
 
 	private static $gfonts = array();
 	private static $load = false;
@@ -137,7 +140,7 @@ class Responsi_A3_Shortcode_Class {
 	public static function _action_enqueue_css_and_js () {
 		global $load;
 		if( !is_admin() ){
-			Responsi_A3_Shortcode_Class::_enqueue_css_and_js();
+			\A3Rev\RShortcode\HookFunction::_enqueue_css_and_js();
 		}
 	}
 
@@ -145,7 +148,7 @@ class Responsi_A3_Shortcode_Class {
 		global $load;
 		if( !is_admin() ){
 			if($load){
-				Responsi_A3_Shortcode_Class::_enqueue_css_and_js();
+				\A3Rev\RShortcode\HookFunction::_enqueue_css_and_js();
 			}
 		}
 	}
@@ -689,6 +692,4 @@ class Responsi_A3_Shortcode_Class {
 			. '(\\]?)/';                          // 6: Optional second closing brocket for escaping shortcodes: [[tag]]
 	}
 }
-
-$GLOBALS['responsi_a3_shortcode_class'] = new Responsi_A3_Shortcode_Class();
 ?>

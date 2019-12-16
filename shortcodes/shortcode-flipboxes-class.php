@@ -1,5 +1,8 @@
 <?php
-class Shortcode_Flipboxes_Class {
+
+namespace A3Rev\RShortcode;
+
+class Flipboxes {
 
 	private $flipbox_counter = 1;
 
@@ -62,7 +65,7 @@ class Shortcode_Flipboxes_Class {
 	 */
 	function render_parent( $args, $content = '') {
 		do_action('_front_enqueue_css_and_js');
-		$defaults =	Responsi_A3_Shortcode_Class::set_shortcode_defaults(
+		$defaults =	\A3Rev\RShortcode\HookFunction::set_shortcode_defaults(
 			array(
 				'style'					=> '',
 				'wrapelement'			=> 'no',
@@ -84,7 +87,7 @@ class Shortcode_Flipboxes_Class {
 			self::$parent_args['columns'] = 6;
 		}
 
-		$html = sprintf( '<div %s><div class="clear"></div>%s<div class="clear"></div></div><div %s></div>', Responsi_A3_Shortcode_Class::attributes( 'flip-boxes-shortcode' ), do_shortcode( $content ), Responsi_A3_Shortcode_Class::attributes( 'clear' ) );
+		$html = sprintf( '<div %s><div class="clear"></div>%s<div class="clear"></div></div><div %s></div>', \A3Rev\RShortcode\HookFunction::attributes( 'flip-boxes-shortcode' ), do_shortcode( $content ), \A3Rev\RShortcode\HookFunction::attributes( 'clear' ) );
 
 		return $html;
 
@@ -135,7 +138,7 @@ class Shortcode_Flipboxes_Class {
 			$default_options = $responsi_a3_shortcode_addon->global_responsi_options_a3_shortcode();
 		}
 
-		$defaults =	Responsi_A3_Shortcode_Class::set_shortcode_defaults(
+		$defaults =	\A3Rev\RShortcode\HookFunction::set_shortcode_defaults(
 			array(
 				'wrapelement'				=> 'no',
 				'class'						=> '',
@@ -236,39 +239,39 @@ class Shortcode_Flipboxes_Class {
 			$image_height
 		) {
 
-			$image_id = Responsi_A3_Shortcode_Class::get_attachment_id_from_url( $image );
+			$image_id = \A3Rev\RShortcode\HookFunction::get_attachment_id_from_url( $image );
 
 			if( $image_id ) {
 				$alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
 			}
 
-			$icon_output = sprintf( '<img src="%s" width="%s" height="%s" alt="%s" %s />', $image, $image_width, $image_height, $alt, Responsi_A3_Shortcode_Class::attributes( 'flip-box-shortcode-icon' )  );
+			$icon_output = sprintf( '<img src="%s" width="%s" height="%s" alt="%s" %s />', $image, $image_width, $image_height, $alt, \A3Rev\RShortcode\HookFunction::attributes( 'flip-box-shortcode-icon' )  );
 		}
 		if( $fronticon == 'yes' && $icon ) {
-			$icon_output = sprintf( '<i %s></i>', Responsi_A3_Shortcode_Class::attributes( 'flip-box-shortcode-icon' ) );
+			$icon_output = sprintf( '<i %s></i>', \A3Rev\RShortcode\HookFunction::attributes( 'flip-box-shortcode-icon' ) );
 		}
 
 		if( $icon_output ) {
-			$icon_output = sprintf( '<div %s>%s</div>', Responsi_A3_Shortcode_Class::attributes( 'flip-box-shortcode-grafix' ), $icon_output );
+			$icon_output = sprintf( '<div %s>%s</div>', \A3Rev\RShortcode\HookFunction::attributes( 'flip-box-shortcode-grafix' ), $icon_output );
 		} else {
 			$icon_output = '';
 		}
 
 		if( $title_front ) {
-			$title_front_output = sprintf( '<h2 %s>%s</h2>', Responsi_A3_Shortcode_Class::attributes( 'flip-box-shortcode-heading-front' ), $title_front );
+			$title_front_output = sprintf( '<h2 %s>%s</h2>', \A3Rev\RShortcode\HookFunction::attributes( 'flip-box-shortcode-heading-front' ), $title_front );
 		}
 
 		if( $title_back ) {
-			$title_back_output = sprintf( '<h3 %s>%s</h3>', Responsi_A3_Shortcode_Class::attributes( 'flip-box-shortcode-heading-back' ), $title_back );
+			$title_back_output = sprintf( '<h3 %s>%s</h3>', \A3Rev\RShortcode\HookFunction::attributes( 'flip-box-shortcode-heading-back' ), $title_back );
 		}
 
-		$front_inner = sprintf( '<div %s>%s</div>', Responsi_A3_Shortcode_Class::attributes( 'flip-box-front-inner' ), $icon_output . $title_front_output . $text_front );
-		$back_inner = sprintf( '<div %s>%s</div>', Responsi_A3_Shortcode_Class::attributes( 'flip-box-back-inner' ), $title_back_output . do_shortcode( $content ) );
+		$front_inner = sprintf( '<div %s>%s</div>', \A3Rev\RShortcode\HookFunction::attributes( 'flip-box-front-inner' ), $icon_output . $title_front_output . $text_front );
+		$back_inner = sprintf( '<div %s>%s</div>', \A3Rev\RShortcode\HookFunction::attributes( 'flip-box-back-inner' ), $title_back_output . do_shortcode( $content ) );
 
-		$front = sprintf( '<div %s>%s</div>', Responsi_A3_Shortcode_Class::attributes( 'flip-box-shortcode-front-box' ), $front_inner );
-		$back = sprintf( '<div %s>%s</div>', Responsi_A3_Shortcode_Class::attributes( 'flip-box-shortcode-back-box' ), $back_inner );
+		$front = sprintf( '<div %s>%s</div>', \A3Rev\RShortcode\HookFunction::attributes( 'flip-box-shortcode-front-box' ), $front_inner );
+		$back = sprintf( '<div %s>%s</div>', \A3Rev\RShortcode\HookFunction::attributes( 'flip-box-shortcode-back-box' ), $back_inner );
 
-		$html = sprintf( '<div %s><div class="responsi-flip-box"><div %s>%s%s</div></div></div>', Responsi_A3_Shortcode_Class::attributes( 'flip-box-shortcode' ), Responsi_A3_Shortcode_Class::attributes( 'flip-box-inner-wrapper' ), $front, $back );
+		$html = sprintf( '<div %s><div class="responsi-flip-box"><div %s>%s%s</div></div></div>', \A3Rev\RShortcode\HookFunction::attributes( 'flip-box-shortcode' ), \A3Rev\RShortcode\HookFunction::attributes( 'flip-box-inner-wrapper' ), $front, $back );
 
 		$this->flipbox_counter++;
 
@@ -336,9 +339,9 @@ class Shortcode_Flipboxes_Class {
 		if( self::$child_args['border_front_radius'] ) {
 			$attr['style'] .= sprintf( 'border-radius:%s;-webkit-border-radius:%s;', self::$child_args['border_front_radius'], self::$child_args['border_front_radius'] );
 		}
-		$fonts = Responsi_A3_Shortcode_Class::_generate_font_css(self::$child_args['text_front_size'], self::$child_args['text_front_face'], self::$child_args['text_front_style'], self::$child_args['text_front_color'],self::$child_args['text_front_line_height'] );
+		$fonts = \A3Rev\RShortcode\HookFunction::_generate_font_css(self::$child_args['text_front_size'], self::$child_args['text_front_face'], self::$child_args['text_front_style'], self::$child_args['text_front_color'],self::$child_args['text_front_line_height'] );
 		$attr['style'] .= $fonts;
-		//Responsi_A3_Shortcode_Class::_google_webfonts();
+		//\A3Rev\RShortcode\HookFunction::_google_webfonts();
 
 		return $attr;
 
@@ -369,7 +372,7 @@ class Shortcode_Flipboxes_Class {
 		if( self::$child_args['border_back_radius'] ) {
 			$attr['style'] .= sprintf( 'border-radius:%s;-webkit-border-radius:%s;', self::$child_args['border_back_radius'], self::$child_args['border_back_radius'] );
 		}
-		$fonts = Responsi_A3_Shortcode_Class::_generate_font_css(self::$child_args['text_back_size'], self::$child_args['text_back_face'], self::$child_args['text_back_style'], self::$child_args['text_back_color'], self::$child_args['text_back_line_height'] );
+		$fonts = \A3Rev\RShortcode\HookFunction::_generate_font_css(self::$child_args['text_back_size'], self::$child_args['text_back_face'], self::$child_args['text_back_style'], self::$child_args['text_back_color'], self::$child_args['text_back_line_height'] );
 		$attr['style'] .= $fonts;
 
 		return $attr;
@@ -481,7 +484,7 @@ class Shortcode_Flipboxes_Class {
 		if( ! self::$child_args['text_front'] ) {
 			$attr['class'] .= ' without-text';
 		}
-		$fonts = Responsi_A3_Shortcode_Class::_generate_font_css(self::$child_args['title_front_size'], self::$child_args['title_front_face'], self::$child_args['title_front_style'], self::$child_args['title_front_color'], self::$child_args['title_front_line_height'] );
+		$fonts = \A3Rev\RShortcode\HookFunction::_generate_font_css(self::$child_args['title_front_size'], self::$child_args['title_front_face'], self::$child_args['title_front_style'], self::$child_args['title_front_color'], self::$child_args['title_front_line_height'] );
 		$attr['style'] = $fonts;
 
 		return $attr;
@@ -491,7 +494,7 @@ class Shortcode_Flipboxes_Class {
 	function heading_back_attr() {
 
 		$attr['class'] = 'flip-box-heading-back';
-		$fonts = Responsi_A3_Shortcode_Class::_generate_font_css(self::$child_args['title_back_size'], self::$child_args['title_back_face'], self::$child_args['title_back_style'], self::$child_args['title_back_color'], self::$child_args['title_back_line_height'] );
+		$fonts = \A3Rev\RShortcode\HookFunction::_generate_font_css(self::$child_args['title_back_size'], self::$child_args['title_back_face'], self::$child_args['title_back_style'], self::$child_args['title_back_color'], self::$child_args['title_back_line_height'] );
 		$attr['style'] = $fonts;
 		return $attr;
 	}
@@ -537,5 +540,5 @@ class Shortcode_Flipboxes_Class {
 
 	}
 }
-$GLOBALS['Shortcode_Flipboxes_Class'] = new Shortcode_Flipboxes_Class();
+
 ?>

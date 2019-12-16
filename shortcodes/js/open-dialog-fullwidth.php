@@ -83,7 +83,7 @@ global $ICONS;
 			<tr>
 				<th width="23%" valign="top" scope="row"><label for="responsi-value-border" class="">Section Border<span class="optional"></span></label></th>
 				<td class="responsi-marker-border-control responsi-control">
-					<?php Responsi_A3_Shortcode_Class::general_border_type('border', $default_options['responsi_sc_fullwidth_border']['width'], $default_options['responsi_sc_fullwidth_border']['style'], $default_options['responsi_sc_fullwidth_border']['color']);?><span class="responsi-input-help">Section top and bottom border.</span>
+					<?php \A3Rev\RShortcode\HookFunction::general_border_type('border', $default_options['responsi_sc_fullwidth_border']['width'], $default_options['responsi_sc_fullwidth_border']['style'], $default_options['responsi_sc_fullwidth_border']['color']);?><span class="responsi-input-help">Section top and bottom border.</span>
 				</td>
 			</tr>
 			<tr>

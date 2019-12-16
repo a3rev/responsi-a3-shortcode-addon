@@ -1,5 +1,8 @@
 <?php
-class Shortcode_Responsi_Customize
+
+namespace A3Rev\RShortcode;
+
+class Customizer
 {
     public function __construct()
     {
@@ -1792,5 +1795,4 @@ class Shortcode_Responsi_Customize
         return $controls_settings;
     }
 }
-new Shortcode_Responsi_Customize();
 ?>

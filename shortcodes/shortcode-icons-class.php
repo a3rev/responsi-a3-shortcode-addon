@@ -1,5 +1,8 @@
 <?php
-class Shortcode_Icons_Class {
+
+namespace A3Rev\RShortcode;
+
+class Icons {
 
 	public function __construct () {
 		add_filter('responsi_list_shortcode', array($this, '_shortcode_hook'));
@@ -22,7 +25,7 @@ class Shortcode_Icons_Class {
 			global $responsi_a3_shortcode_addon;
 			$default_options = $responsi_a3_shortcode_addon->global_responsi_options_a3_shortcode();
 		}
-		$defaults =	Responsi_A3_Shortcode_Class::set_shortcode_defaults(
+		$defaults =	\A3Rev\RShortcode\HookFunction::set_shortcode_defaults(
 			array(
 				'fronticon' => 'no',
 				'icon' => '',
@@ -155,7 +158,7 @@ class Shortcode_Icons_Class {
 		$icons = '';
 		$alt = '';
 		if( $fronticon != 'yes' && $frontimage == 'yes' && $image && $image_width && $image_height ) {
-			$image_id = Responsi_A3_Shortcode_Class::get_attachment_id_from_url( $image );
+			$image_id = \A3Rev\RShortcode\HookFunction::get_attachment_id_from_url( $image );
 
 			if( $image_id ) {
 				$alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
@@ -212,5 +215,5 @@ class Shortcode_Icons_Class {
 
 	}
 }
-$GLOBALS['Shortcode_Icons_Class'] = new Shortcode_Icons_Class();
+
 ?>

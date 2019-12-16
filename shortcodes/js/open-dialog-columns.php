@@ -127,7 +127,7 @@ global $ICONS;
 			<tr>
 				<th valign="top" scope="row"><label for="responsi-value-border" class="">Border<span class="optional"></span></label></th>
 				<td class="responsi-marker-border-control responsi-control">
-					<?php Responsi_A3_Shortcode_Class::general_border_type('border');?>
+					<?php \A3Rev\RShortcode\HookFunction::general_border_type('border');?>
 				</td>
 			</tr>
 

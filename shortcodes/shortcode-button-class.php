@@ -1,5 +1,8 @@
 <?php
-class Shortcode_Button_Class {
+
+namespace A3Rev\RShortcode;
+
+class Buttons {
 
 	public static $args;
 	public static $attr;
@@ -44,7 +47,7 @@ class Shortcode_Button_Class {
 		}
 
 		do_action('_front_enqueue_css_and_js');
-		$defaults =	Responsi_A3_Shortcode_Class::set_shortcode_defaults(
+		$defaults =	\A3Rev\RShortcode\HookFunction::set_shortcode_defaults(
 			array(
 				'wrapelement'				=> 'no',
 				'class'						=> '',
@@ -106,7 +109,7 @@ class Shortcode_Button_Class {
 		$shadow_blur = str_replace('px', '', $shadow_blur);
 		$shadow_spread = str_replace('px', '', $shadow_spread);
 
-		$fonts = Responsi_A3_Shortcode_Class::_generate_font_css($font_size, $font_face, $font_style, $font_color, $font_line_height, true);
+		$fonts = \A3Rev\RShortcode\HookFunction::_generate_font_css($font_size, $font_face, $font_style, $font_color, $font_line_height, true);
 		$bt_background = 'background-color: '.$background.';background: '.$background.';background: -webkit-gradient(linear, left top, left bottom, from('.$gradient_from.'), to('.$gradient_to.'));background: -webkit-linear-gradient('.$gradient_from.', '.$gradient_to.');background: -moz-linear-gradient(center top, '.$gradient_from.' 0%, '.$gradient_to.' 100%);background: -moz-gradient(center top, '.$gradient_from.' 0%, '.$gradient_to.' 100%);';
 		$bt_margin = 'margin-left:'.$margin_left.' !important;margin-right:'.$margin_right.' !important;margin-top:'.$margin_top.' !important;margin-bottom:'.$margin_bottom.' !important;';
 		$bt_padding = 'padding-left:'.$padding_left.' !important;padding-right:'.$padding_right.' !important;padding-top:'.$padding_top.' !important;padding-bottom:'.$padding_bottom.' !important;';
@@ -155,12 +158,12 @@ class Shortcode_Button_Class {
 
 		$html = '';
 		if( $icon ) {
-			$icon_html = sprintf( '<i %s></i>', Responsi_A3_Shortcode_Class::attributes( 'button-shortcode-icon' ) );
+			$icon_html = sprintf( '<i %s></i>', \A3Rev\RShortcode\HookFunction::attributes( 'button-shortcode-icon' ) );
 			if( $divider == 'yes' ) {
 				if( $position == 'left'){
-					$icon_html = sprintf( '<span %s>%s<span %s></span></span>', Responsi_A3_Shortcode_Class::attributes( 'button-shortcode-icon-class-divder' ), $icon_html, Responsi_A3_Shortcode_Class::attributes( 'button-shortcode-icon-style-divder' ) );
+					$icon_html = sprintf( '<span %s>%s<span %s></span></span>', \A3Rev\RShortcode\HookFunction::attributes( 'button-shortcode-icon-class-divder' ), $icon_html, \A3Rev\RShortcode\HookFunction::attributes( 'button-shortcode-icon-style-divder' ) );
 				}else{
-					$icon_html = sprintf( '<span %s><span %s></span>%s</span>', Responsi_A3_Shortcode_Class::attributes( 'button-shortcode-icon-class-divder' ), Responsi_A3_Shortcode_Class::attributes( 'button-shortcode-icon-style-divder' ), $icon_html );
+					$icon_html = sprintf( '<span %s><span %s></span>%s</span>', \A3Rev\RShortcode\HookFunction::attributes( 'button-shortcode-icon-class-divder' ), \A3Rev\RShortcode\HookFunction::attributes( 'button-shortcode-icon-style-divder' ), $icon_html );
 				}
 			}
 			if( $position == 'left'){
@@ -248,5 +251,5 @@ class Shortcode_Button_Class {
 
 	}
 }
-$GLOBALS['Shortcode_Button_Class'] = new Shortcode_Button_Class();
+
 ?>

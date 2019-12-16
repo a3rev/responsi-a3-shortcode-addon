@@ -1,5 +1,8 @@
 <?php
-class Shortcode_Social_Links_Class {
+
+namespace A3Rev\RShortcode;
+
+class SocialLinks {
 
 	public static $args;
 
@@ -24,7 +27,7 @@ class Shortcode_Social_Links_Class {
 			global $responsi_a3_shortcode_addon;
 			$default_options = $responsi_a3_shortcode_addon->global_responsi_options_a3_shortcode();
 		}
-		$defaults =	Responsi_A3_Shortcode_Class::set_shortcode_defaults(
+		$defaults =	\A3Rev\RShortcode\HookFunction::set_shortcode_defaults(
 			array(
 				'icon' => '',
 				'url' => '#',
@@ -110,7 +113,5 @@ class Shortcode_Social_Links_Class {
 
 		return $icons;
 	}
-
 }
-$GLOBALS['Shortcode_Social_Links_Class'] = new Shortcode_Social_Links_Class();
 ?>

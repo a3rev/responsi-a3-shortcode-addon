@@ -173,7 +173,7 @@ global $ICONS;
 			<tr>
 				<th valign="top" scope="row"><label for="responsi-value-border_front_style" class="">Box Border Style<span class="optional"></span></label></th>
 				<td class="responsi-marker-border-control responsi-control">
-					<?php Responsi_A3_Shortcode_Class::general_border_type('border_front_', $default_options['responsi_sc_flip_boxes_front_border']['width'], $default_options['responsi_sc_flip_boxes_front_border']['style'], $default_options['responsi_sc_flip_boxes_front_border']['color']);?>
+					<?php \A3Rev\RShortcode\HookFunction::general_border_type('border_front_', $default_options['responsi_sc_flip_boxes_front_border']['width'], $default_options['responsi_sc_flip_boxes_front_border']['style'], $default_options['responsi_sc_flip_boxes_front_border']['color']);?>
 				</td>
 			</tr>
 
@@ -198,7 +198,7 @@ global $ICONS;
 			<tr>
 				<th valign="top" scope="row"><label for="responsi-value-border" class="">Title Font<span class="optional"></span></label></th>
 				<td class="responsi-marker-font-control">
-					<?php Responsi_A3_Shortcode_Class::general_font_type('title_front',$default_options['responsi_sc_flip_boxes_front_heading']['face'] ,$default_options['responsi_sc_flip_boxes_front_heading']['size'],$default_options['responsi_sc_flip_boxes_front_heading']['line_height'],$default_options['responsi_sc_flip_boxes_front_heading']['style'],$default_options['responsi_sc_flip_boxes_front_heading']['color']);?>
+					<?php \A3Rev\RShortcode\HookFunction::general_font_type('title_front',$default_options['responsi_sc_flip_boxes_front_heading']['face'] ,$default_options['responsi_sc_flip_boxes_front_heading']['size'],$default_options['responsi_sc_flip_boxes_front_heading']['line_height'],$default_options['responsi_sc_flip_boxes_front_heading']['style'],$default_options['responsi_sc_flip_boxes_front_heading']['color']);?>
 				</td>
 			</tr>
 
@@ -214,7 +214,7 @@ global $ICONS;
 			<tr>
 				<th valign="top" scope="row"><label for="responsi-value-border" class="">Content Font<span class="optional"></span></label></th>
 				<td class="responsi-marker-font-control">
-					<?php Responsi_A3_Shortcode_Class::general_font_type('text_front',$default_options['responsi_sc_flip_boxes_front_text']['face'] ,$default_options['responsi_sc_flip_boxes_front_text']['size'],$default_options['responsi_sc_flip_boxes_front_text']['line_height'],$default_options['responsi_sc_flip_boxes_front_text']['style'],$default_options['responsi_sc_flip_boxes_front_text']['color']);?>
+					<?php \A3Rev\RShortcode\HookFunction::general_font_type('text_front',$default_options['responsi_sc_flip_boxes_front_text']['face'] ,$default_options['responsi_sc_flip_boxes_front_text']['size'],$default_options['responsi_sc_flip_boxes_front_text']['line_height'],$default_options['responsi_sc_flip_boxes_front_text']['style'],$default_options['responsi_sc_flip_boxes_front_text']['color']);?>
 				</td>
 			</tr>
 
@@ -524,7 +524,7 @@ global $ICONS;
 			<tr>
 				<th valign="top" scope="row"><label for="responsi-value-border_front_style" class="">Box Border Style<span class="optional"></span></label></th>
 				<td class="responsi-marker-border-control responsi-control">
-					<?php Responsi_A3_Shortcode_Class::general_border_type('border_back_', $default_options['responsi_sc_flip_boxes_back_border']['width'], $default_options['responsi_sc_flip_boxes_back_border']['style'], $default_options['responsi_sc_flip_boxes_back_border']['color']);?>
+					<?php \A3Rev\RShortcode\HookFunction::general_border_type('border_back_', $default_options['responsi_sc_flip_boxes_back_border']['width'], $default_options['responsi_sc_flip_boxes_back_border']['style'], $default_options['responsi_sc_flip_boxes_back_border']['color']);?>
 				</td>
 			</tr>
 
@@ -549,7 +549,7 @@ global $ICONS;
 			<tr>
 				<th valign="top" scope="row"><label for="responsi-value-text_back" class="">Title Font<span class="optional"></span></label></th>
 				<td class="responsi-marker-font-control">
-					<?php Responsi_A3_Shortcode_Class::general_font_type('title_back',$default_options['responsi_sc_flip_boxes_back_heading']['face'] ,$default_options['responsi_sc_flip_boxes_back_heading']['size'],$default_options['responsi_sc_flip_boxes_back_heading']['line_height'],$default_options['responsi_sc_flip_boxes_back_heading']['style'],$default_options['responsi_sc_flip_boxes_back_heading']['color']);?>
+					<?php \A3Rev\RShortcode\HookFunction::general_font_type('title_back',$default_options['responsi_sc_flip_boxes_back_heading']['face'] ,$default_options['responsi_sc_flip_boxes_back_heading']['size'],$default_options['responsi_sc_flip_boxes_back_heading']['line_height'],$default_options['responsi_sc_flip_boxes_back_heading']['style'],$default_options['responsi_sc_flip_boxes_back_heading']['color']);?>
 				</td>
 			</tr>
 			<tr>
@@ -564,7 +564,7 @@ global $ICONS;
 			<tr>
 				<th valign="top" scope="row"><label for="responsi-value-text_back" class="">Content Font<span class="optional"></span></label></th>
 				<td class="responsi-marker-font-control">
-					<?php Responsi_A3_Shortcode_Class::general_font_type('text_back',$default_options['responsi_sc_flip_boxes_back_text']['face'] ,$default_options['responsi_sc_flip_boxes_back_text']['size'],$default_options['responsi_sc_flip_boxes_back_text']['line_height'],$default_options['responsi_sc_flip_boxes_back_text']['style'],$default_options['responsi_sc_flip_boxes_back_text']['color']);?>
+					<?php \A3Rev\RShortcode\HookFunction::general_font_type('text_back',$default_options['responsi_sc_flip_boxes_back_text']['face'] ,$default_options['responsi_sc_flip_boxes_back_text']['size'],$default_options['responsi_sc_flip_boxes_back_text']['line_height'],$default_options['responsi_sc_flip_boxes_back_text']['style'],$default_options['responsi_sc_flip_boxes_back_text']['color']);?>
 				</td>
 			</tr>
 

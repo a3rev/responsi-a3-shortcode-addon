@@ -1,5 +1,8 @@
 <?php
-class Shortcode_Tabs_Class {
+
+namespace A3Rev\RShortcode;
+
+class Tabs {
 
 	private $tabs_counter = 1;
 	private $tabs = array();
@@ -94,13 +97,13 @@ class Shortcode_Tabs_Class {
 
 		$tabcontentwidth = ( 100 - $tabitemwidth ) - 0.01;
 
-		$fonts = Responsi_A3_Shortcode_Class::_generate_font_css($font_size, $font_face, $font_style, $font_color, $font_line_height, true);
-		$contentfonts = Responsi_A3_Shortcode_Class::_generate_font_css($fontcontent_size, $fontcontent_face, $fontcontent_style, $fontcontent_color, $fontcontent_line_height, true);
+		$fonts = \A3Rev\RShortcode\HookFunction::_generate_font_css($font_size, $font_face, $font_style, $font_color, $font_line_height, true);
+		$contentfonts = \A3Rev\RShortcode\HookFunction::_generate_font_css($fontcontent_size, $fontcontent_face, $fontcontent_style, $fontcontent_color, $fontcontent_line_height, true);
 		$tabcorner = '';
 		if( $tab_corner == 'rounded'){
-			$tabcorner = Responsi_A3_Shortcode_Class::_generate_border_radius_css( $tab_cornervalue, $tab_cornervalue, $tab_cornervalue, $tab_cornervalue );
+			$tabcorner = \A3Rev\RShortcode\HookFunction::_generate_border_radius_css( $tab_cornervalue, $tab_cornervalue, $tab_cornervalue, $tab_cornervalue );
 		}else{
-			$tabcorner = Responsi_A3_Shortcode_Class::_generate_border_radius_css();
+			$tabcorner = \A3Rev\RShortcode\HookFunction::_generate_border_radius_css();
 		}
 
 		if( $ctmargin == 'false' || $ctmargin == false){
@@ -162,7 +165,7 @@ class Shortcode_Tabs_Class {
 			border-right:'.str_replace("px", "", $borderrightsize).'px '.strtolower($borderrightstyle).' '.strtolower($borderrightcolor).' !important;
 			padding-top:'.str_replace("px", "",$padding_top).'px;padding-bottom:'.str_replace("px", "",$padding_bottom).'px;padding-left:'.str_replace("px", "",$padding_left).'px;padding-right:'.str_replace("px", "",$padding_right).'px;
 			margin-top:'.str_replace("px", "",$margin_top).'px;margin-bottom:'.str_replace("px", "",$margin_bottom).'px;margin-left:'.str_replace("px", "",$margin_left).'px;margin-right:'.str_replace("px", "",$margin_right).'px;
-			'.Responsi_A3_Shortcode_Class::_generate_border_radius_css( $cornertopleft, $cornertopright, $cornerbottomleft, $cornerbottomright ).'
+			'.\A3Rev\RShortcode\HookFunction::_generate_border_radius_css( $cornertopleft, $cornertopright, $cornerbottomleft, $cornerbottomright ).'
 		}
 
 		.responsi-tabs.responsi-tabs-'.$this->tabs_counter.' .nav-tabs li .nav-link.active, .responsi-tabs.responsi-tabs-'.$this->tabs_counter.' .nav-tabs li > a.active,.responsi-tabs.responsi-tabs-'.$this->tabs_counter.' .nav-tabs li:hover .nav-link, .responsi-tabs.responsi-tabs-'.$this->tabs_counter.' .nav-tabs li:hover > a{
@@ -184,13 +187,13 @@ class Shortcode_Tabs_Class {
 			border-right:'.str_replace("px", "", $cborderrightsize).'px '.strtolower($cborderrightstyle).' '.strtolower($cborderrightcolor).' !important;
 			padding-top:'.str_replace("px", "",$cpadding_top).'px;padding-bottom:'.str_replace("px", "",$cpadding_bottom).'px;padding-left:'.str_replace("px", "",$cpadding_left).'px;padding-right:'.str_replace("px", "",$cpadding_right).'px;
 			margin-top:'.str_replace("px", "",$cmargin_top).'px;margin-bottom:'.str_replace("px", "",$cmargin_bottom).'px;margin-left:'.str_replace("px", "",$cmargin_left).'px;margin-right:'.str_replace("px", "",$cmargin_right).'px;
-			'.Responsi_A3_Shortcode_Class::_generate_border_radius_css( $ccornertopleft, $ccornertopright, $ccornerbottomleft, $ccornerbottomright ).'
+			'.\A3Rev\RShortcode\HookFunction::_generate_border_radius_css( $ccornertopleft, $ccornertopright, $ccornerbottomleft, $ccornerbottomright ).'
 		}
 		';
 
 		$styles = sprintf( '<style type="text/css">%s</style>', $styles );
 
-		$html = sprintf( '<div %s>%s<div %s><ul %s>', Responsi_A3_Shortcode_Class::attributes( 'tabs-shortcode' ), $styles, Responsi_A3_Shortcode_Class::attributes( 'nav' ), Responsi_A3_Shortcode_Class::attributes( 'nav nav-tabs'.$justified_class ) );
+		$html = sprintf( '<div %s>%s<div %s><ul %s>', \A3Rev\RShortcode\HookFunction::attributes( 'tabs-shortcode' ), $styles, \A3Rev\RShortcode\HookFunction::attributes( 'nav' ), \A3Rev\RShortcode\HookFunction::attributes( 'nav nav-tabs'.$justified_class ) );
 
 		$is_first_tab = true;
 
@@ -204,21 +207,21 @@ class Shortcode_Tabs_Class {
 				if( $this->tabs[$i]['icon_color'] != 'transparent' ){
 					$icon_color = ' style="color:'.$this->tabs[$i]['icon_color'].'"';
 				}
-				$icon =  sprintf( '<i %s%s></i>', Responsi_A3_Shortcode_Class::attributes( 'tabs-shortcode-icon', array( 'index' => $i ) ),$icon_color  );
+				$icon =  sprintf( '<i %s%s></i>', \A3Rev\RShortcode\HookFunction::attributes( 'tabs-shortcode-icon', array( 'index' => $i ) ),$icon_color  );
 			}
 
 			if( $is_first_tab ) {
-				$html .= sprintf( '<li class="nav-item"><a %s>%s%s</a></li>', Responsi_A3_Shortcode_Class::attributes( 'tabs-shortcode-link', array( 'active' => 'active', 'index' => $i ) ),
+				$html .= sprintf( '<li class="nav-item"><a %s>%s%s</a></li>', \A3Rev\RShortcode\HookFunction::attributes( 'tabs-shortcode-link', array( 'active' => 'active', 'index' => $i ) ),
 								  $icon, $this->tabs[$i]['title'] );
 				$is_first_tab = false;
 			} else {
-				$html .= sprintf( '<li class="nav-item"><a %s>%s%s</a></li>', Responsi_A3_Shortcode_Class::attributes( 'tabs-shortcode-link', array( 'index' => $i ) ),
+				$html .= sprintf( '<li class="nav-item"><a %s>%s%s</a></li>', \A3Rev\RShortcode\HookFunction::attributes( 'tabs-shortcode-link', array( 'index' => $i ) ),
 								  $icon, $this->tabs[$i]['title'] );
 			}
 		}
 
 		$html .= '';
-		$html .= sprintf( '</ul></div><div %s>%s</div></div>', Responsi_A3_Shortcode_Class::attributes( 'tab-content' ), do_shortcode($content) );
+		$html .= sprintf( '</ul></div><div %s>%s</div></div>', \A3Rev\RShortcode\HookFunction::attributes( 'tab-content' ), do_shortcode($content) );
 
 		$this->tabs_counter++;
 		$this->active = false;
@@ -298,7 +301,7 @@ class Shortcode_Tabs_Class {
 	 */
 	function render_child( $args, $content = '') {
 
-		$defaults = Responsi_A3_Shortcode_Class::set_shortcode_defaults(
+		$defaults = \A3Rev\RShortcode\HookFunction::set_shortcode_defaults(
 			array(
 				'icon'			=> 'none',
 				'id'			=> '',
@@ -310,7 +313,7 @@ class Shortcode_Tabs_Class {
 
 		self::$child_args = $defaults;
 
-		$html = sprintf( '<div %s><div class="content-tabs">%s</div></div>', Responsi_A3_Shortcode_Class::attributes( 'tabs-shortcode-tab' ), do_shortcode( $content ) );
+		$html = sprintf( '<div %s><div class="content-tabs">%s</div></div>', \A3Rev\RShortcode\HookFunction::attributes( 'tabs-shortcode-tab' ), do_shortcode( $content ) );
 
 		return $html;
 
@@ -350,7 +353,7 @@ class Shortcode_Tabs_Class {
 			global $responsi_a3_shortcode_addon;
 			$default_options = $responsi_a3_shortcode_addon->global_responsi_options_a3_shortcode();
 		}
-		$defaults = Responsi_A3_Shortcode_Class::set_shortcode_defaults(
+		$defaults = \A3Rev\RShortcode\HookFunction::set_shortcode_defaults(
 			array(
 				'class' 					=> '',
 				'id' 						=> '',
@@ -475,7 +478,7 @@ class Shortcode_Tabs_Class {
 			global $responsi_a3_shortcode_addon;
 			$default_options = $responsi_a3_shortcode_addon->global_responsi_options_a3_shortcode();
 		}
-		$defaults = Responsi_A3_Shortcode_Class::set_shortcode_defaults(
+		$defaults = \A3Rev\RShortcode\HookFunction::set_shortcode_defaults(
 			array(
 				'id'	=> '',
 				'icon'	=> '',
@@ -499,7 +502,7 @@ class Shortcode_Tabs_Class {
 	}
 
 	function parse_tab_parameter( $content, $shortcode, $args = null ) {
-		$preg_match_tabs_single = preg_match_all( Responsi_A3_Shortcode_Class::get_shortcode_regex( $shortcode ), $content, $tabs_single );
+		$preg_match_tabs_single = preg_match_all( \A3Rev\RShortcode\HookFunction::get_shortcode_regex( $shortcode ), $content, $tabs_single );
 
 		if( is_array( $tabs_single[0] ) ) {
 			$id = '';
@@ -557,5 +560,5 @@ class Shortcode_Tabs_Class {
 		}
 	}
 }
-$GLOBALS['Shortcode_Tabs_Class'] = new Shortcode_Tabs_Class();
+
 ?>

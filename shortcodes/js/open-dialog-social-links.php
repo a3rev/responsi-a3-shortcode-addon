@@ -160,7 +160,7 @@ global $ICONS_SOCIAL;
 			<tr>
 				<th valign="top" scope="row"><label for="responsi-value-border" class="">Border<span class="optional"></span></label></th>
 				<td class="responsi-marker-border-control responsi-control">
-					<?php Responsi_A3_Shortcode_Class::general_border_type('border_', $default_options['responsi_sc_icon_border']['width'], $default_options['responsi_sc_icon_border']['style'], $default_options['responsi_sc_icon_border']['color']);?>
+					<?php \A3Rev\RShortcode\HookFunction::general_border_type('border_', $default_options['responsi_sc_icon_border']['width'], $default_options['responsi_sc_icon_border']['style'], $default_options['responsi_sc_icon_border']['color']);?>
 				</td>
 			</tr>
 
@@ -195,7 +195,7 @@ global $ICONS_SOCIAL;
 			<tr class="shadow">
 				<th valign="top" scope="row"><label for="responsi-value-shadow_style" class=""><span class="optional"></span></label></th>
 				<td class="responsi-marker-shadow-control responsi-control">
-					<?php Responsi_A3_Shortcode_Class::general_shadow_type( 'shadow_', $default_options['responsi_sc_icon_shadow']['h_shadow'], $default_options['responsi_sc_icon_shadow']['v_shadow'], $default_options['responsi_sc_icon_shadow']['blur'], $default_options['responsi_sc_icon_shadow']['spread'], $default_options['responsi_sc_icon_shadow']['inset'],$default_options['responsi_sc_icon_shadow']['color'] );?>
+					<?php \A3Rev\RShortcode\HookFunction::general_shadow_type( 'shadow_', $default_options['responsi_sc_icon_shadow']['h_shadow'], $default_options['responsi_sc_icon_shadow']['v_shadow'], $default_options['responsi_sc_icon_shadow']['blur'], $default_options['responsi_sc_icon_shadow']['spread'], $default_options['responsi_sc_icon_shadow']['inset'],$default_options['responsi_sc_icon_shadow']['color'] );?>
 				</td>
 			</tr>
 			<tr>
