@@ -46,6 +46,7 @@ function responsi_a3_shortcode_addon_activate_validate(){
 }
 
 register_activation_hook(__FILE__,'responsi_a3_shortcode_addon_activate_validate');
+
 if( !defined( 'RESPONSI_A3_SC_TRAVIS' ) ){
 	if ( !file_exists( get_theme_root().'/responsi/functions.php' ) ) return;
 	if ( !isset( $_POST['wp_customize'] ) && get_option('template') != 'responsi' ) return;
