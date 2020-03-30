@@ -70,7 +70,7 @@ function _manually_load_plugin() {
 	require_once ( responsi_dir().'/functions/admin-functions.php' );
 
 	echo esc_html( 'Loading addons' . PHP_EOL );
-	require dirname( dirname( __FILE__ ) ) . '/responsi-backgrounds.php';
+	require dirname( dirname( __FILE__ ) ) . '/responsi-a3-shortcode.php';
 	update_option('a3rev_responsi_a3_shortcode_addon_version', RESPONSI_A3_SC_VERSION );
 }
 
