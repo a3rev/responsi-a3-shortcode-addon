@@ -53,7 +53,7 @@ if( !defined( 'RESPONSI_A3_SC_TRAVIS' ) ){
 	if ( !isset( $_POST['wp_customize'] ) && get_option('template') != 'responsi' ) return;
 	if ( isset( $_POST['wp_customize'] ) && $_POST['wp_customize'] == 'on' && isset( $_POST['theme'] ) && stristr( $_POST['theme'], 'responsi' ) === FALSE ) return;
 	if ( version_compare(get_option('responsi_framework_version'), '6.9.5', '<') ) return;
-	
+
 }
 
 if ( version_compare( PHP_VERSION, '5.6.0', '>=' ) ) {
@@ -106,40 +106,6 @@ function responsi_addon_shortcode_upgrade_version () {
 add_action( 'after_setup_theme', 'responsi_addon_shortcode_upgrade_version' );
 
 include ( 'upgrade/plugin_upgrade.php' );
-//include ( 'admin/responsi-a3-shortcode-addon-admin.php' );
 include ( 'admin/responsi-a3-shortcode-addon-init.php' );
-//include ( 'classes/responsi-a3-shortcode-addon-class.php' );
-
-//add_filter('responsi_includes_customizer','responsi_shortcodes_includes_customizer');
-function responsi_shortcodes_includes_customizer( $includes_customizer ){
-	$includes_customizer[] = RESPONSI_A3_SC_PATH.'/customize/customize.php';
-	return $includes_customizer;
-}
-
-//include ( 'shortcodes/shortcode-icons-class.php' );
-//include ( 'shortcodes/shortcode-list-generator-class.php' );
-//include ( 'shortcodes/shortcode-typography-class.php' );
-//include ( 'shortcodes/shortcode-button-class.php' );
-//include ( 'shortcodes/shortcode-divider-class.php' );
-//include ( 'shortcodes/shortcode-infobox-class.php' );
-//include ( 'shortcodes/shortcode-toggles-class.php' );
-//include ( 'shortcodes/shortcode-tabs-class.php' );
-//include ( 'shortcodes/shortcode-social-links-class.php' );
-//include ( 'shortcodes/shortcode-flipboxes-class.php' );
-//include ( 'shortcodes/shortcode-fullwidth-class.php' );
-//include ( 'shortcodes/responsi-a3-shortcode-class.php' );
-
-/*include ( 'shortcodes/column/class-five-sixth.php' );
-include ( 'shortcodes/column/class-four-fifth.php' );
-include ( 'shortcodes/column/class-one-fifth.php' );
-include ( 'shortcodes/column/class-one-fourth.php' );
-include ( 'shortcodes/column/class-one-half.php' );
-include ( 'shortcodes/column/class-one-sixth.php' );
-include ( 'shortcodes/column/class-one-third.php' );
-include ( 'shortcodes/column/class-three-fifth.php' );
-include ( 'shortcodes/column/class-three-fourth.php' );
-include ( 'shortcodes/column/class-two-fifth.php' );
-include ( 'shortcodes/column/class-two-third.php' );
-include ( 'shortcodes/shortcode-columns-class.php' );*/
 
 ?>
