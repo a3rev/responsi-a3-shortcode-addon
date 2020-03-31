@@ -24,6 +24,7 @@ require_once $_tests_dir . '/includes/functions.php';
  */
 function _test_includes() {
 	require_once ( responsi_dir().'/functions/admin-functions.php' );
+	require_once ( responsi_dir().'/functions/theme-extension.php' );
 }
 
 
@@ -68,6 +69,7 @@ function _manually_load_plugin() {
 	echo esc_html( 'Loading Responsi theme' . PHP_EOL );
 	require_once responsi_dir() . '/functions.php';
 	require_once ( responsi_dir().'/functions/admin-functions.php' );
+	require_once ( responsi_dir().'/functions/theme-extension.php' );
 
 	echo esc_html( 'Loading addons' . PHP_EOL );
 	require dirname( dirname( __FILE__ ) ) . '/responsi-a3-shortcode.php';
