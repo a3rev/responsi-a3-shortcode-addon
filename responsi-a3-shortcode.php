@@ -2,7 +2,7 @@
 /*
 Plugin Name: Responsi Shortcodes
 Description: Responsi Shortcodes extends the existing Responsi Framework shortcodes and is an essential tool for creating stunning content without writing code. Includes 360+ fontface Icon shortcodes and Flip Box shortcode. More coming soon.
-Version: 2.9.9
+Version: 3.0.0
 Author: a3rev Software
 Author URI: https://a3rev.com/
 Text Domain: responsi-a3-shortcode-addon
@@ -34,7 +34,7 @@ define( 'RESPONSI_A3_SC_JS_URL',  RESPONSI_A3_SC_URL . '/assets/js' );
 define( 'RESPONSI_A3_SC_CSS_URL',  RESPONSI_A3_SC_URL . '/assets/css' );
 
 define( 'RESPONSI_A3_SC_KEY', 'responsi_a3_shortcode_addon' );
-define( 'RESPONSI_A3_SC_VERSION', '2.9.9' );
+define( 'RESPONSI_A3_SC_VERSION', '3.0.0' );
 
 function responsi_a3_shortcode_addon_activate_validate(){
     if ( 'responsi' !== get_template() ) {
@@ -95,7 +95,7 @@ if ( version_compare( PHP_VERSION, '5.6.0', '>=' ) ) {
 }
 
 function responsi_addon_shortcode_upgrade_version () {
-	if( version_compare(get_option('a3rev_responsi_a3_shortcode_addon_version'), '2.9.9') === -1 ){
+	if( version_compare(get_option('a3rev_responsi_a3_shortcode_addon_version'), '3.0.0') === -1 ){
         global $responsi_a3_shortcode_addon;
         $responsi_a3_shortcode_addon->build_css_after_addon_updated();
 	}
