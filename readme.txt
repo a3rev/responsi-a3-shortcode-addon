@@ -3,7 +3,7 @@ Contributors: a3rev, a3rev Software
 Tags: responsi, responsi framework, shortcode add-on
 Requires at least: 4.1
 Tested up to: 4.9.4
-Stable tag: 3.0.0
+Stable tag: 3.0.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
