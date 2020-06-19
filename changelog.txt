@@ -1,5 +1,12 @@
 *** Responsi Shortcodes Changelog ***
 
+= 3.0.2 - 2020/06/19 =
+* This maintenance release is for compatibility with Responsi Framework v 7.9.4 and Responsi Developer Tools v 2.1.0
+* Tweak - CSS for compatibility with Responsi Framework v 7.9.4
+* Tweak - JS for compatibility with Responsi Framework v 7.9.4
+* Tweak - CSS for compatibility with Responsi Developer Tools v 2.1.0
+* Tweak - JS for compatibility with Responsi Developer Tools v 2.1.0
+
 = 3.0.1 - 2020/05/15 =
 * This maintenance release has a bug fix for the quote icon
 * Fix - Quote shortcode icon not showing
