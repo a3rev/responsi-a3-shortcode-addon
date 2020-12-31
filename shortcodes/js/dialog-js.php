@@ -359,6 +359,7 @@ var responsiDialogHelper = {
 
             jQuery(this).iphoneStyle({
                 resizeContainer: true,
+                customWidth:true,
                 containerWidth:container_width,
                 resizeHandle: false,
                 handleMargin: 10,
