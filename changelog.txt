@@ -1,6 +1,10 @@
 *** Responsi Shortcodes Changelog ***
 
-== 3.0.3 - 2020/01/31 =
+= 3.0.4 - 2021/01/27 =
+* This maintenance release has a bug fix for font face not loading in the Firefox browser.
+* Fix - downloadable font: rejected by sanitizer error. fontface not loading on Firefox browser.
+
+= 3.0.3 - 2020/01/31 =
 * This is an important maintenance release that updates our scripts for compatibility with the latest version of jQuery released in WordPress 5.6
 * Tweak - Update JavaScript on plugin for work compatibility with latest version of jQuery
 * Fix - Replace .bind( event, handler ) by .on( event, handler ) for compatibility with latest version of jQuery
