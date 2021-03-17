@@ -577,7 +577,7 @@ var responsiDialogHelper = {
 
                 jQuery( "<tr/>").append(g).append(f).appendTo(b)
             }
-            jQuery( ".responsi-focus-here:first").focus()
+            jQuery( ".responsi-focus-here:first").trigger('focus')
 
 			// Add additional wrappers, etc, to each select box.
 

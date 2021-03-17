@@ -410,7 +410,7 @@ global $ICONS;
 
 	var html_item = jQuery('.sort_table').find('.sort_table_item').html();
 
-	jQuery('.add_new_item_button a').click(function (e) {
+	jQuery('.add_new_item_button a').on( 'click', function (e) {
     	jQuery('.sort_table').append('<div class="sort_table_item">'+html_item+'</div>');
     	var _items = jQuery('.sort_table').find('h2.toggle');
 		jQuery.each( _items, function( key, value ) {
