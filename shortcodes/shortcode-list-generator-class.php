@@ -32,6 +32,8 @@ class Lists {
 				'style' => 'default'
 			), $atts );
 
+		$defaults = array_map( 'esc_attr', $defaults );
+
 		extract( $defaults );
 
 		//return $content;
@@ -93,6 +95,8 @@ class Lists {
 				'animation_direction' 		=> 'left',
 				'animation_speed' 			=> '0.1',
 			), $atts );
+
+		$defaults = array_map( 'esc_attr', $defaults );
 
 		extract( $defaults );
 
@@ -223,6 +227,8 @@ class Lists {
 		);
 
 		$args = wp_parse_args( $args, $defaults );
+
+		$args = array_map( 'esc_attr', $args );
 
 		if( $args['animation'] && $args['animation'] == 'yes' && $args['type'] ) {
 

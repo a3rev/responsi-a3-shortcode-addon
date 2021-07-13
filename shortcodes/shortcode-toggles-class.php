@@ -57,6 +57,8 @@ class Toggles {
 			), $args
 		);
 
+		$defaults = array_map( 'esc_attr', $defaults );
+
 		extract( $defaults );
 
 		self::$parent_args = $defaults;
@@ -172,6 +174,8 @@ class Toggles {
 				'border_corner' 			=> '0',
 			), $args
 		);
+
+		$defaults = array_map( 'esc_attr', $defaults );
 
 		extract( $defaults );
 

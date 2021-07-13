@@ -60,6 +60,8 @@ class SocialLinks {
 				'margin_right' => '0',
 			), $atts );
 
+		$defaults = array_map( 'esc_attr', $defaults );
+
 		extract( $defaults );
 
 		$border_size = str_replace('px', '', $border_size);

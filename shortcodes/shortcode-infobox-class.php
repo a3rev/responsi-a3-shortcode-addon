@@ -83,6 +83,8 @@ class Infobox {
 			), $args
 		);
 
+		$defaults = array_map( 'esc_attr', $defaults );
+
 		self::$args = $defaults;
 
 		extract( $defaults );

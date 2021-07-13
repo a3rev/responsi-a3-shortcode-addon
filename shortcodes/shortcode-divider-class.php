@@ -52,6 +52,8 @@ class Dividers {
 			), $args
 		);
 
+		$defaults = array_map( 'esc_attr', $defaults );
+
 		extract( $defaults );
 
 		if( $iconbackground == '' || $iconbackground == 'transparent' ){

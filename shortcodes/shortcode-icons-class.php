@@ -71,6 +71,8 @@ class Icons {
 				'animation_speed' 			=> '0.1',
 			), $atts );
 
+		$defaults = array_map( 'esc_attr', $defaults );
+
 		extract( $defaults );
 
 		if( isset($atts['border_width']) ){

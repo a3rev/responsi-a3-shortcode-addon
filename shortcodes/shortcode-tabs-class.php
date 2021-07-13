@@ -55,6 +55,8 @@ class Tabs {
 
 		$defaults =  self::$parent_args;
 
+		$defaults = array_map( 'esc_attr', $defaults );
+
 		extract( $defaults );
 
 		if( $cornertl == 'square'){
@@ -309,6 +311,8 @@ class Tabs {
 			), $args
 		);
 
+		$defaults = array_map( 'esc_attr', $defaults );
+
 		extract( $defaults );
 
 		self::$child_args = $defaults;
@@ -452,8 +456,12 @@ class Tabs {
 			), $atts
 		);
 
+		
+		$defaults = array_map( 'esc_attr', $defaults );
+
 
 		$atts = $defaults;
+
 		self::$parent_args = $defaults;
 
 		extract( $defaults );

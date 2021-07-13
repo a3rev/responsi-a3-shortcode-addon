@@ -47,6 +47,8 @@ class Typography {
 				'color' => '#000000',
 			), $atts );
 
+		$defaults = array_map( 'esc_attr', $defaults );
+
 		extract( $defaults );
 		$html = '';
 		$fonts = \A3Rev\RShortcode\HookFunction::_generate_font_css($size, $face, $style, $color, $line_height);
@@ -64,6 +66,8 @@ class Typography {
 				'paddingleft' => '0px',
 				'paddingright' => '0px',
 			), $atts );
+
+		$defaults = array_map( 'esc_attr', $defaults );
 
 		extract( $defaults );
 		$paddingtop = str_replace("px", "", $paddingtop);
@@ -88,6 +92,8 @@ class Typography {
 				'marginleft' => '0px',
 				'marginright' => '0px',
 			), $atts );
+
+		$defaults = array_map( 'esc_attr', $defaults );
 
 		extract( $defaults );
 		$fonts = \A3Rev\RShortcode\HookFunction::_generate_font_css($size, $face, $style, $color, $line_height).'';
@@ -119,6 +125,8 @@ class Typography {
 				'shadow_inset' => 'inset',
 				'shadow_color' => '#dbdbdb',
 			), $atts );
+
+		$defaults = array_map( 'esc_attr', $defaults );
 
 		extract( $defaults );
 
@@ -171,6 +179,8 @@ class Typography {
 				'separatorstyle' 			=> 'solid',
 				'separatorcolor' 			=> '#dbdbdb',
 			), $atts );
+
+		$defaults = array_map( 'esc_attr', $defaults );
 
 		extract( $defaults );
 

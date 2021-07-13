@@ -51,6 +51,8 @@ class FourFifth {
 			), $args
 		);
 
+		$defaults = array_map( 'esc_attr', $defaults );
+
 		extract( $defaults );
 
 		self::$args = $defaults;

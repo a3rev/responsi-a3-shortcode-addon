@@ -81,6 +81,8 @@ class Flipboxes {
 
 		extract( $defaults );
 
+		$defaults = array_map( 'esc_attr', $defaults );
+
 		self::$parent_args = $defaults;
 
 		if( self::$parent_args['columns'] > 6 ) {
@@ -226,6 +228,25 @@ class Flipboxes {
 		}else{
 			$defaults['boxmargintop'] = '0px';
 			$defaults['boxmarginbottom'] = '0px';
+		}
+
+		if( is_array( $defaults ) ){
+
+			$newAttr = array();
+
+			foreach( $defaults as $key => $value ) {
+
+				$array_attr_html = array( 'title_front', 'text_front', 'title_back', 'text_back' );
+
+				if( in_array( $key, $array_attr_html ) ){
+					$newAttr[$key] = $value;
+				}else{
+					$newAttr[$key] = esc_attr( $value );
+				}
+			}
+
+			$defaults = $newAttr;
+
 		}
 
 		extract( $defaults );
