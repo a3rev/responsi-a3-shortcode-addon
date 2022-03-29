@@ -2,7 +2,7 @@
 /*
 Plugin Name: Responsi Shortcodes
 Description: Responsi Shortcodes extends the existing Responsi Framework shortcodes and is an essential tool for creating stunning content without writing code. Includes 360+ fontface Icon shortcodes and Flip Box shortcode. More coming soon.
-Version: 3.0.8
+Version: 3.0.9
 Author: a3rev Software
 Author URI: https://a3rev.com/
 Update URI: a3-responsi-a3-shortcode-addon
@@ -37,11 +37,11 @@ define( 'RESPONSI_A3_SC_JS_URL',  RESPONSI_A3_SC_URL . '/assets/js' );
 define( 'RESPONSI_A3_SC_CSS_URL',  RESPONSI_A3_SC_URL . '/assets/css' );
 
 define( 'RESPONSI_A3_SC_KEY', 'responsi_a3_shortcode_addon' );
-define( 'RESPONSI_A3_SC_VERSION', '3.0.8' );
+define( 'RESPONSI_A3_SC_VERSION', '3.0.9' );
 
 function responsi_a3_shortcode_addon_activate_validate(){
     if ( 'responsi' !== get_template() ) {
-        echo sprintf( __( 'This is a plugin for Responsi Framework, you need to install <a href="%s" target="_blank" rel="noopener">Responsi Framework</a> theme from WordPress first before can activate this.', 'responsi-a3-shortcode-addon' ), 'https://wordpress.org/themes/responsi-framework/' );
+        echo sprintf( wp_kses_post( 'This is a plugin for Responsi Framework, you need to install <a href="%s" target="_blank" rel="noopener">Responsi Framework</a> theme from WordPress first before can activate this.', 'responsi-a3-shortcode-addon' ), 'https://wordpress.org/themes/responsi-framework/' );
         die();
     }
     update_option('a3rev_responsi_a3_shortcode_addon_version', RESPONSI_A3_SC_VERSION );
@@ -54,7 +54,7 @@ if( !defined( 'RESPONSI_A3_SC_TRAVIS' ) ){
 
 	if ( !file_exists( get_theme_root().'/responsi/functions.php' ) ) return;
 	if ( !isset( $_POST['wp_customize'] ) && get_option('template') != 'responsi' ) return;
-	if ( isset( $_POST['wp_customize'] ) && $_POST['wp_customize'] == 'on' && isset( $_POST['theme'] ) && stristr( $_POST['theme'], 'responsi' ) === FALSE ) return;
+	if ( isset( $_POST['wp_customize'] ) && wp_unslash($_POST['wp_customize']) == 'on' && isset( $_POST['theme'] ) && stristr( wp_unslash($_POST['theme']), 'responsi' ) === FALSE ) return;
 	if ( version_compare(get_option('responsi_framework_version'), '6.9.5', '<') ) return;
 
 }
@@ -98,7 +98,7 @@ if ( version_compare( PHP_VERSION, '5.6.0', '>=' ) ) {
 }
 
 function responsi_addon_shortcode_upgrade_version () {
-	if( version_compare(get_option('a3rev_responsi_a3_shortcode_addon_version'), '3.0.8') === -1 ){
+	if( version_compare(get_option('a3rev_responsi_a3_shortcode_addon_version'), '3.0.9') === -1 ){
         global $responsi_a3_shortcode_addon;
         $responsi_a3_shortcode_addon->build_css_after_addon_updated();
 	}
